@@ -2,7 +2,23 @@
   "name": "@returfs/shared-external-react",
   "version": "0.0.0",
   "description": "react shared logic for returfs external marketplace",
+  "scripts": {
+    "rollup": "rollup -c",
+    "rollup-watch": "rollup -c -w"
+  },
   "type": "module",
   "author": "Toluwani Adewale",
-  "license": "proprietary"
+  "license": "proprietary",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.17.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.3"
+  }
 }

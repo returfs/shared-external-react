@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "strict": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["src/**/*"]
+}
