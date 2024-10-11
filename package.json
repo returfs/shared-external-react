@@ -1,6 +1,6 @@
 {
   "name": "@returfs/shared-external-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react shared logic for returfs external marketplace",
   "scripts": {
     "rollup": "rollup -c",
@@ -11,6 +11,9 @@
   "license": "proprietary",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
