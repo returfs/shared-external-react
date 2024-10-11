@@ -1,0 +1,8 @@
+{
+  "name": "@returfs/shared-external-react",
+  "version": "0.0.0",
+  "description": "react shared logic for returfs external marketplace",
+  "type": "module",
+  "author": "Toluwani Adewale",
+  "license": "proprietary"
+}
