@@ -1,1 +1,1 @@
-export * from './GenericPopover';
+export { default as GenericPopover } from './GenericPopover';
