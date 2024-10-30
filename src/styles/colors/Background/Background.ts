@@ -1,8 +1,12 @@
-import { Color } from '../types';
+import { Color } from '../Theme/types';
 
 export const neutralFiftyEightHundredBgColors =
-  'bg-neutral-50 dark:bg-neutral-800';
+  '!bg-neutral-50 dark:!bg-neutral-800';
+export const neutralOneHundredSeventHundredBgColors =
+  '!bg-neutral-100 dark:!bg-neutral-700';
 export const neutralNineHundredBgColors = 'dark:bg-neutral-900';
+export const hoverNeutralOneHundredSevenHundredBgColors =
+  'hover:!bg-neutral-100 dark:hover:!bg-neutral-700';
 
 export const whiteEightHundredBgColors: Color = {
   red: 'bg-white dark:bg-red-800',

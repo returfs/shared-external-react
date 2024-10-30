@@ -6,13 +6,12 @@ import {
   PopoverHeader,
   PopoverBody,
   PopoverFooter,
-  PopoverArrow,
   PopoverCloseButton,
 } from '@chakra-ui/react';
 import { twMerge } from 'tailwind-merge';
 import { GenericPopoverProps } from './types';
 import {
-  neutralNineHundredBgColors,
+  neutralFiftyEightHundredBgColors,
   neutralTwoHundredSevenHundredBorderColors,
 } from '../../styles/colors';
 
@@ -35,26 +34,30 @@ export default function GenericPopover({
       <PopoverContent
         width={'100%'}
         {...contentProps}
-        className={`${twMerge(`${neutralNineHundredBgColors} ${neutralTwoHundredSevenHundredBorderColors} shadow-sm`, contentProps?.className)}`}
+        className={twMerge(
+          neutralFiftyEightHundredBgColors,
+          neutralTwoHundredSevenHundredBorderColors,
+          'border shadow-sm rounded-lg',
+          contentProps?.className,
+        )}
       >
-        <PopoverArrow shadow={'none'} {...arrowProps} />
         <PopoverCloseButton {...closeBtnProps} />
         <PopoverHeader
           height={'35px'}
           {...headerProps}
-          className={`${twMerge(`rounded-t-lg`, headerProps?.className)}`}
+          className={`${twMerge(`bg-transparent rounded-t-md`, headerProps?.className)}`}
         >
           {headerContent}
         </PopoverHeader>
         <PopoverBody
           {...bodyProps}
-          className={`${twMerge(`bg-white dark:bg-neutral-900 rounded-lg`, bodyProps?.className)}`}
+          className={`${twMerge(`bg-transparent`, bodyProps?.className)}`}
         >
           {bodyContent}
         </PopoverBody>
         <PopoverFooter
           {...footerProps}
-          className={`${(twMerge(`bg-white dark:bg-neutral-900 rounded-b-lg`), footerProps?.className)}`}
+          className={`${(twMerge(`bg-transparent rounded-b-lg`), footerProps?.className)}`}
         >
           {footerContent}
         </PopoverFooter>

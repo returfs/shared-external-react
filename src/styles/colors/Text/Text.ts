@@ -1,4 +1,4 @@
-import { Color } from '../types';
+import { Color } from '../Theme/types';
 
 export const twoHundredNineFiftyTextColors: Color = {
   red: 'text-red-200 dark:text-red-950',

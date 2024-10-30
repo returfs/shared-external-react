@@ -1,1 +1,1 @@
-export { ColorKey } from './types';
+export { ColorKey, HexColorKey, ThemeVariant } from './types';

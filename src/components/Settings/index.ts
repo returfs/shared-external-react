@@ -1,1 +1,1 @@
-export { ThemeData, ThemeVariant } from './types';
+export { SettingsData, Settings } from './types';

@@ -27,7 +27,14 @@ export default [
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
     ],
-    external: ['react'],
+    external: [
+      'react',
+      '@chakra-ui/react',
+      '@emotion/react',
+      '@emotion/styled',
+      'typescript',
+      'tailwindcss',
+    ],
   },
   {
     input: 'dist/esm/types/index.d.ts',

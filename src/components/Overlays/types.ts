@@ -21,3 +21,7 @@ export interface GenericPopoverProps {
   bodyContent?: JSX.Element | string;
   footerContent?: JSX.Element | string;
 }
+
+export interface GenericSimpleGridProps {
+  children: JSX.Element;
+}
