@@ -1,6 +1,7 @@
-import { SimpleGridProps } from '@chakra-ui/react';
+import { type VariantProps } from 'class-variance-authority';
 import { HTMLAttributes } from 'react';
+import { type surfaceVariants } from './Surface';
 
-export interface GenericSimpleGridProps extends SimpleGridProps {}
-
-export interface SurfaceProps extends HTMLAttributes<HTMLDivElement> {}
+export interface SurfaceProps
+  extends HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof surfaceVariants> {}

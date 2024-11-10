@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
 import { ColorButtonProps } from './types';
-import { Button } from '@chakra-ui/react';
 import { twMerge } from 'tailwind-merge';
 
 const ColorButton = forwardRef<HTMLButtonElement, ColorButtonProps>(
@@ -8,22 +7,19 @@ const ColorButton = forwardRef<HTMLButtonElement, ColorButtonProps>(
     const { isActive, color, ...restOfProps } = props;
 
     return (
-      <Button
+      <button
         {...restOfProps}
         ref={ref}
         title={color?.toString()}
-        background={color}
-        color={color}
-        height="22px"
-        width="22px"
-        padding={0}
-        minWidth="unset"
-        _hover={{ background: color }}
         className={twMerge(
+          'size-[22px] rounded-lg',
           isActive && 'ring-4 ring-neutral-400',
-          props?.className,
         )}
-      ></Button>
+        style={{
+          backgroundColor: color,
+          color: color,
+        }}
+      ></button>
     );
   },
 );

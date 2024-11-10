@@ -1,14 +1,14 @@
 import { Color } from '../Theme/types';
 
-export const neutralTwoHundredSevenHundredBorderColors =
-  '!border-neutral-200 dark:!border-neutral-700';
-export const neutralTwoHundredSixHundredBorderColors =
-  '!border-neutral-200 dark:!border-neutral-600';
-export const neutralThreeHundredFiveHundredBorderColors =
-  '!border-neutral-300 dark:!border-neutral-500';
-export const neutralFourHundredBorderColors = '!border-neutral-400';
+const neutralTwoHundredSevenHundredBorderColors =
+  'border-neutral-200 dark:border-neutral-700';
+const neutralTwoHundredSixHundredBorderColors =
+  'border-neutral-200 dark:border-neutral-600';
+const neutralThreeHundredFiveHundredBorderColors =
+  'border-neutral-300 dark:border-neutral-500';
+const neutralFourHundredBorderColors = 'border-neutral-400';
 
-export const nineFiftyTwoHundredBorderColors: Color = {
+const nineFiftyTwoHundredBorderColors: Color = {
   red: 'border-red-950 dark:border-red-200',
   orange: 'border-orange-950 dark:border-orange-200',
   yellow: 'border-yellow-950 dark:border-yellow-200',
@@ -21,7 +21,7 @@ export const nineFiftyTwoHundredBorderColors: Color = {
   pink: 'border-pink-950 dark:border-pink-200',
 };
 
-export const twoHundredSevenHundredBorderColors: Color = {
+const twoHundredSevenHundredBorderColors: Color = {
   red: 'border-red-200 dark:border-red-700',
   orange: 'border-orange-200 dark:border-orange-700',
   yellow: 'border-yellow-200 dark:border-yellow-700',
@@ -34,7 +34,7 @@ export const twoHundredSevenHundredBorderColors: Color = {
   pink: 'border-pink-200 dark:border-pink-700',
 };
 
-export const twoHundredEightHundredBorderColors: Color = {
+const twoHundredEightHundredBorderColors: Color = {
   red: 'border-red-200 dark:border-red-800',
   orange: 'border-orange-200 dark:border-orange-800',
   yellow: 'border-yellow-200 dark:border-yellow-800',
@@ -45,4 +45,28 @@ export const twoHundredEightHundredBorderColors: Color = {
   violet: 'border-violet-200 dark:border-violet-800',
   purple: 'border-purple-200 dark:border-purple-800',
   pink: 'border-pink-200 dark:border-pink-800',
+};
+
+const threeHundredSevenHundredBorderColors: Color = {
+  red: 'border-red-300 dark:border-red-700',
+  orange: 'border-orange-300 dark:border-orange-700',
+  yellow: 'border-yellow-300 dark:border-yellow-700',
+  gray: 'border-gray-300 dark:border-gray-700',
+  green: 'border-green-300 dark:border-green-700',
+  blue: 'border-blue-300 dark:border-blue-700',
+  indigo: 'border-indigo-300 dark:border-indigo-700',
+  violet: 'border-violet-300 dark:border-violet-700',
+  purple: 'border-purple-300 dark:border-purple-700',
+  pink: 'border-pink-300 dark:border-pink-700',
+};
+
+export {
+  neutralTwoHundredSevenHundredBorderColors,
+  neutralTwoHundredSixHundredBorderColors,
+  neutralThreeHundredFiveHundredBorderColors,
+  neutralFourHundredBorderColors,
+  nineFiftyTwoHundredBorderColors,
+  twoHundredSevenHundredBorderColors,
+  twoHundredEightHundredBorderColors,
+  threeHundredSevenHundredBorderColors,
 };

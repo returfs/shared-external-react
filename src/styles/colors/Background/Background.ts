@@ -1,12 +1,21 @@
 import { Color } from '../Theme/types';
 
 export const neutralFiftyEightHundredBgColors =
-  '!bg-neutral-50 dark:!bg-neutral-800';
-export const neutralOneHundredSeventHundredBgColors =
-  '!bg-neutral-100 dark:!bg-neutral-700';
+  'bg-neutral-50 dark:bg-neutral-800';
+
+export const neutralOneHundredSevenHundredBgColors =
+  'bg-neutral-100 dark:bg-neutral-700';
+
+export const neutralTwoHundredSevenHundredBgColors =
+  'bg-neutral-200 dark:bg-neutral-700';
+
 export const neutralNineHundredBgColors = 'dark:bg-neutral-900';
+
 export const hoverNeutralOneHundredSevenHundredBgColors =
-  'hover:!bg-neutral-100 dark:hover:!bg-neutral-700';
+  'hover:bg-neutral-100 dark:hover:bg-neutral-700';
+
+export const focusNeutralOneHundredSevenHundredBgColors =
+  'focus:bg-neutral-100 dark:focus:bg-neutral-700';
 
 export const whiteEightHundredBgColors: Color = {
   red: 'bg-white dark:bg-red-800',

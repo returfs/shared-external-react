@@ -12,12 +12,14 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "declarationDir": "types",
-    "outDir": "dist",
+    "declarationDir": "dist/esm/types",
+    "declarationMap": true,
+    "outDir": "dist/esm",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "baseUrl": ".",
     "lib": ["esnext", "dom"]
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "lib"]
 }
