@@ -1,11 +1,7 @@
 import { Item, Trigger } from '@radix-ui/react-select';
-import { ComponentHasColorKey } from '../../../types';
 import { ComponentPropsWithoutRef } from 'react';
 
-export interface SelectProps
-  extends ComponentPropsWithoutRef<typeof Trigger>,
-    ComponentHasColorKey {}
+export interface SelectProps extends ComponentPropsWithoutRef<typeof Trigger> {}
 
 export interface SelectItemProps
-  extends ComponentPropsWithoutRef<typeof Item>,
-    ComponentHasColorKey {}
+  extends ComponentPropsWithoutRef<typeof Item> {}

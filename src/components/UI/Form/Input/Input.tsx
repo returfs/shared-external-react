@@ -8,9 +8,12 @@ import {
   nineFiftyTwoHundredTextColors,
 } from 'src/styles';
 import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles/colors/Ring';
+import { useTheme } from 'src/state';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, colorKey, icon, ...props }, ref) => {
+  ({ className, type, icon, ...props }, ref) => {
+    const { colorKey } = useTheme();
+
     const InputIcon = icon;
 
     return (
