@@ -16,20 +16,23 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: cn(
-          'transform shadow transition-colors duration-200',
+          'transform shadow-sm transition-colors duration-200',
           hoverNeutralOneHundredSevenHundredBgColors,
         ),
-        destructive:
-          'bg-red-500 text-neutral-50 shadow-sm hover:bg-red-500/90 dark:bg-red-900 dark:text-neutral-50 dark:hover:bg-red-900/90',
+        error:
+          'border-red-500 bg-red-50 text-red-800 shadow-sm transition-colors duration-200 dark:border-red-900 dark:bg-red-900 dark:text-red-200 [&>svg]:text-red-800 dark:[&>svg]:text-red-200',
+        success:
+          'border-green-500 bg-green-50 text-green-800 shadow-sm transition-colors duration-200 dark:border-green-900 dark:bg-green-900 dark:text-green-200 [&>svg]:text-green-800 dark:[&>svg]:text-green-200',
+        warning:
+          'border-yellow-500 bg-yellow-50 text-yellow-800 shadow-sm transition-colors duration-200 dark:border-yellow-900 dark:bg-yellow-900 dark:text-yellow-200 [&>svg]:text-yellow-800 dark:[&>svg]:text-yellow-200',
+        info: 'border-blue-500 bg-blue-50 text-blue-800 shadow-sm transition-colors duration-200 dark:border-blue-900 dark:bg-blue-900 dark:text-blue-200 [&>svg]:text-blue-800 dark:[&>svg]:text-blue-200',
         outline:
-          'border border-neutral-200 bg-white shadow-sm hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
-        secondary:
-          'bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80',
+          'border border-neutral-200 bg-white shadow-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
         ghost:
-          'hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
-        link: 'text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50',
+          'shadow-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
+        link: 'text-neutral-900 underline-offset-4 shadow-sm transition-colors duration-200 hover:underline dark:text-neutral-50',
         menu: twMerge(
-          'transform justify-start px-4 py-2 text-left shadow transition-colors duration-200',
+          'transform justify-start px-4 py-2 text-left shadow-sm transition-colors duration-200',
           hoverNeutralOneHundredSevenHundredBgColors,
         ),
       },
@@ -38,7 +41,7 @@ const buttonVariants = cva(
         sm: 'h-8 rounded-lg px-3 text-xs',
         lg: 'h-10 rounded-lg px-8',
         icon: 'size-8',
-        contextMenu: 'h-[30px] w-full rounded-none',
+        menu: 'h-[30px] w-full rounded-none',
       },
     },
     defaultVariants: {

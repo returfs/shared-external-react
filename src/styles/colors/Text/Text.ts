@@ -1,5 +1,4 @@
-import { Color } from "../Theme/types";
-
+import { Color } from '../Theme/types';
 
 const twoHundredNineFiftyTextColors: Color = {
   red: 'text-red-200 dark:text-red-950',
@@ -25,6 +24,19 @@ const fiveHundredFourHundredPlaceholderTextColors: Color = {
   violet: 'placeholder:text-violet-500 dark:placeholder:text-violet-400',
   purple: 'placeholder:text-purple-500 dark:placeholder:text-purple-400',
   pink: 'placeholder:text-pink-500 dark:placeholder:text-pink-400',
+};
+
+const fiveHundredFourHundredTextColors: Color = {
+  red: 'text-red-500 dark:text-red-400',
+  orange: 'text-orange-500 dark:text-orange-400',
+  yellow: 'text-yellow-500 dark:text-yellow-400',
+  gray: 'text-gray-500 dark:text-gray-400',
+  green: 'text-green-500 dark:text-green-400',
+  blue: 'text-blue-500 dark:text-blue-400',
+  indigo: 'text-indigo-500 dark:text-indigo-400',
+  violet: 'text-violet-500 dark:text-violet-400',
+  purple: 'text-purple-500 dark:text-purple-400',
+  pink: 'text-pink-500 dark:text-pink-400',
 };
 
 const sixHundredThreeHundredTextColors: Color = {
@@ -94,6 +106,7 @@ const nineFiftyFiftyFileTextColors: Color = {
 
 export {
   twoHundredNineFiftyTextColors,
+  fiveHundredFourHundredTextColors,
   sixHundredThreeHundredTextColors,
   sixHundredFourHundredTextColors,
   nineHundredOneHundredTextColors,

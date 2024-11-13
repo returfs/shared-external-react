@@ -6,6 +6,7 @@ import {
   RefAttributes,
 } from 'react';
 import { buttonVariants } from './Button';
+import { ComponentHasIsActive } from 'src/components/types';
 
 // Todo: remove this if badasukerubin decides to install the icons package
 export type IconWeight =
@@ -27,14 +28,15 @@ export interface IconProps
 }
 export type Icon = ForwardRefExoticComponent<IconProps>;
 
-export interface ColorButtonProps extends ComponentPropsWithoutRef<'button'> {
+export interface ColorButtonProps
+  extends ComponentPropsWithoutRef<'button'>,
+    ComponentHasIsActive {
   color: string;
-  isActive?: boolean;
 }
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+    VariantProps<typeof buttonVariants>,
+    ComponentHasIsActive {
   asChild?: boolean;
-  isActive?: boolean;
 }
