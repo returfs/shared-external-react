@@ -13,6 +13,19 @@ export const nineFiftyThreeHundredFocusVisibleRingColors: Color = {
   pink: 'focus-visible:ring-pink-950 dark:focus-visible:ring-pink-300',
 };
 
+export const nineFiftyThreeHundredFocusRingColors: Color = {
+  red: 'focus:ring-red-950 dark:focus:ring-red-300',
+  orange: 'focus:ring-orange-950 dark:focus:ring-orange-300',
+  yellow: 'focus:ring-yellow-950 dark:focus:ring-yellow-300',
+  gray: 'focus:ring-gray-950 dark:focus:ring-gray-300',
+  green: 'focus:ring-green-950 dark:focus:ring-green-300',
+  blue: 'focus:ring-blue-950 dark:focus:ring-blue-300',
+  indigo: 'focus:ring-indigo-950 dark:focus:ring-indigo-300',
+  violet: 'focus:ring-violet-950 dark:focus:ring-violet-300',
+  purple: 'focus:ring-purple-950 dark:focus:ring-purple-300',
+  pink: 'focus:ring-pink-950 dark:focus:ring-pink-300',
+};
+
 export const fiveHundredSixHundredRingColors: Color = {
   red: 'ring-red-500 dark:ring-red-600',
   orange: 'ring-orange-500 dark:ring-orange-600',

@@ -1,5 +1,6 @@
 export * from './Alert';
 export * from './Avatar';
+export * from './Badge';
 export * from './Buttons';
 export * from './ContextMenu';
 export * from './Dialog';
@@ -9,5 +10,6 @@ export * from './Portal';
 export * from './Popover';
 export * from './Progress';
 export * from './Separation';
+export * from './Sonner';
 export * from './Table';
 export * from './Tooltip';

@@ -6,7 +6,8 @@ import {
   RefAttributes,
 } from 'react';
 import { buttonVariants } from './Button';
-import { ComponentHasIsActive } from 'src/components/types';
+import { ComponentHasIsActive, ComponentHasIsRightClicked } from '../../types';
+import { sidebarButtonVariants } from './SidebarButton';
 
 // Todo: remove this if badasukerubin decides to install the icons package
 export type IconWeight =
@@ -40,3 +41,9 @@ export interface ButtonProps
     ComponentHasIsActive {
   asChild?: boolean;
 }
+
+export interface SidebarButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<ReturnType<typeof sidebarButtonVariants>>,
+    ComponentHasIsActive,
+    ComponentHasIsRightClicked {}

@@ -32,7 +32,7 @@ const buttonVariants = cva(
           'shadow-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
         link: 'text-neutral-900 underline-offset-4 shadow-sm transition-colors duration-200 hover:underline dark:text-neutral-50',
         menu: twMerge(
-          'transform justify-start px-4 py-2 text-left shadow-sm transition-colors duration-200',
+          'transform justify-start text-left shadow-sm transition-colors duration-200',
           hoverNeutralOneHundredSevenHundredBgColors,
         ),
       },
@@ -41,7 +41,7 @@ const buttonVariants = cva(
         sm: 'h-8 rounded-lg px-3 text-xs',
         lg: 'h-10 rounded-lg px-8',
         icon: 'size-8',
-        menu: 'h-[30px] w-full rounded-none',
+        menu: 'h-[30px] w-full rounded-none px-4 py-2',
       },
     },
     defaultVariants: {
@@ -57,6 +57,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) => {
     const Comp = asChild ? Slot : 'button';
+
     return (
       <Comp
         className={cn(

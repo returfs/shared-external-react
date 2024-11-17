@@ -1,6 +1,19 @@
 import { Color } from '../Theme/types';
 
-const twoHundredNineFiftyTextColors: Color = {
+export const oneHundredEightHundredTextColors: Color = {
+  red: 'text-red-100 dark:text-red-800',
+  orange: 'text-orange-100 dark:text-orange-800',
+  yellow: 'text-yellow-100 dark:text-yellow-800',
+  gray: 'text-gray-100 dark:text-gray-800',
+  green: 'text-green-100 dark:text-green-800',
+  blue: 'text-blue-100 dark:text-blue-800',
+  indigo: 'text-indigo-100 dark:text-indigo-800',
+  violet: 'text-violet-100 dark:text-violet-800',
+  purple: 'text-purple-100 dark:text-purple-800',
+  pink: 'text-pink-100 dark:text-pink-800',
+};
+
+export const twoHundredNineFiftyTextColors: Color = {
   red: 'text-red-200 dark:text-red-950',
   orange: 'text-orange-200 dark:text-orange-950',
   yellow: 'text-yellow-200 dark:text-yellow-950',
@@ -13,7 +26,7 @@ const twoHundredNineFiftyTextColors: Color = {
   pink: 'text-pink-200 dark:text-pink-950',
 };
 
-const fiveHundredFourHundredPlaceholderTextColors: Color = {
+export const fiveHundredFourHundredPlaceholderTextColors: Color = {
   red: 'placeholder:text-red-500 dark:placeholder:text-red-400',
   orange: 'placeholder:text-orange-500 dark:placeholder:text-orange-400',
   yellow: 'placeholder:text-yellow-500 dark:placeholder:text-yellow-400',
@@ -26,7 +39,7 @@ const fiveHundredFourHundredPlaceholderTextColors: Color = {
   pink: 'placeholder:text-pink-500 dark:placeholder:text-pink-400',
 };
 
-const fiveHundredFourHundredTextColors: Color = {
+export const fiveHundredFourHundredTextColors: Color = {
   red: 'text-red-500 dark:text-red-400',
   orange: 'text-orange-500 dark:text-orange-400',
   yellow: 'text-yellow-500 dark:text-yellow-400',
@@ -39,7 +52,7 @@ const fiveHundredFourHundredTextColors: Color = {
   pink: 'text-pink-500 dark:text-pink-400',
 };
 
-const sixHundredThreeHundredTextColors: Color = {
+export const sixHundredThreeHundredTextColors: Color = {
   red: 'text-red-600 dark:text-red-300',
   orange: 'text-orange-600 dark:text-orange-300',
   yellow: 'text-yellow-600 dark:text-yellow-300',
@@ -52,7 +65,7 @@ const sixHundredThreeHundredTextColors: Color = {
   pink: 'text-pink-600 dark:text-pink-300',
 };
 
-const sixHundredFourHundredTextColors: Color = {
+export const sixHundredFourHundredTextColors: Color = {
   red: 'text-red-600 dark:text-red-400',
   orange: 'text-orange-600 dark:text-orange-400',
   yellow: 'text-yellow-600 dark:text-yellow-400',
@@ -65,7 +78,7 @@ const sixHundredFourHundredTextColors: Color = {
   pink: 'text-pink-600 dark:text-pink-400',
 };
 
-const nineHundredOneHundredTextColors: Color = {
+export const nineHundredOneHundredTextColors: Color = {
   red: 'text-red-900 dark:text-red-100',
   orange: 'text-orange-900 dark:text-orange-100',
   yellow: 'text-yellow-900 dark:text-yellow-100',
@@ -78,7 +91,7 @@ const nineHundredOneHundredTextColors: Color = {
   pink: 'text-pink-900 dark:text-pink-100',
 };
 
-const nineFiftyTwoHundredTextColors: Color = {
+export const nineFiftyTwoHundredTextColors: Color = {
   red: 'text-red-950 dark:text-red-200',
   orange: 'text-orange-950 dark:text-orange-200 ',
   yellow: 'text-yellow-950 dark:text-yellow-200 ',
@@ -90,8 +103,25 @@ const nineFiftyTwoHundredTextColors: Color = {
   purple: 'text-purple-950 dark:text-purple-200 ',
   pink: 'text-pink-950 dark:text-pink-200 ',
 };
+export const nineFiftyTwoHundredToasterTextColors: Color = {
+  red: 'group-[.toaster]:text-red-950 dark:group-[.toaster]:text-red-200',
+  orange:
+    'group-[.toaster]:text-orange-950 dark:group-[.toaster]:text-orange-200',
+  yellow:
+    'group-[.toaster]:text-yellow-950 dark:group-[.toaster]:text-yellow-200',
+  gray: 'group-[.toaster]:text-gray-950 dark:group-[.toaster]:text-gray-200',
+  green: 'group-[.toaster]:text-green-950 dark:group-[.toaster]:text-green-200',
+  blue: 'group-[.toaster]:text-blue-950 dark:group-[.toaster]:text-blue-200',
+  indigo:
+    'group-[.toaster]:text-indigo-950 dark:group-[.toaster]:text-indigo-200',
+  violet:
+    'group-[.toaster]:text-violet-950 dark:group-[.toaster]:text-violet-200',
+  purple:
+    'group-[.toaster]:text-purple-950 dark:group-[.toaster]:text-purple-200',
+  pink: 'group-[.toaster]:text-pink-950 dark:group-[.toaster]:text-pink-200',
+};
 
-const nineFiftyFiftyFileTextColors: Color = {
+export const nineFiftyFiftyFileTextColors: Color = {
   red: 'file:text-red-950 dark:file:text-red-50',
   orange: 'file:text-orange-950 dark:file:text-orange-50 ',
   yellow: 'file:text-yellow-950 dark:file:text-yellow-50 ',
@@ -102,15 +132,4 @@ const nineFiftyFiftyFileTextColors: Color = {
   violet: 'file:text-violet-950 dark:file:text-violet-50 ',
   purple: 'file:text-purple-950 dark:file:text-purple-50 ',
   pink: 'file:text-pink-950 dark:file:text-pink-50 ',
-};
-
-export {
-  twoHundredNineFiftyTextColors,
-  fiveHundredFourHundredTextColors,
-  sixHundredThreeHundredTextColors,
-  sixHundredFourHundredTextColors,
-  nineHundredOneHundredTextColors,
-  nineFiftyTwoHundredTextColors,
-  nineFiftyFiftyFileTextColors,
-  fiveHundredFourHundredPlaceholderTextColors,
 };

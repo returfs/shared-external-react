@@ -10,3 +10,6 @@ export interface ComponentHasIsRightClicked {
 export interface ComponentHasIcon {
   icon?: Icon;
 }
+export interface ComponentHasError {
+  hasError?: boolean;
+}

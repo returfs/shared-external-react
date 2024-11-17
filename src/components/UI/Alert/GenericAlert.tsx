@@ -20,7 +20,7 @@ const GenericAlert = React.forwardRef<HTMLDivElement, GenericAlertProps>(
       icon,
       alertType,
       handleClose,
-      ..._
+      ...props
     },
     ref,
   ) => {
@@ -39,9 +39,11 @@ const GenericAlert = React.forwardRef<HTMLDivElement, GenericAlertProps>(
         ref={ref}
         variant={variant}
         className={cn(
-          'mx-auto mt-3 w-[35%]',
-          alertType === 'slide' && 'w-full',
+          'mt-3 w-[35%]',
+          alertType === 'slide' && 'mx-auto w-full',
+          className,
         )}
+        {...props}
       >
         <Icon className="size-5" />
         <AlertTitle className="ml-1">{title}</AlertTitle>
