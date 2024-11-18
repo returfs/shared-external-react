@@ -37,7 +37,7 @@ export interface ColorButtonProps
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants>,
+    VariantProps<ReturnType<typeof buttonVariants>>,
     ComponentHasIsActive {
   asChild?: boolean;
 }

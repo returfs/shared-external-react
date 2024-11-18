@@ -43,6 +43,25 @@ export const oneHundredEightHundredBgColors: Color = {
   pink: 'bg-pink-100 dark:bg-pink-800',
 };
 
+export const dataStateActiveOneHundredEightHundredBgColors: Color = {
+  red: 'data-[state=active]:bg-red-100 dark:data-[state=active]:bg-red-800',
+  orange:
+    'data-[state=active]:bg-orange-100 dark:data-[state=active]:bg-orange-800',
+  yellow:
+    'data-[state=active]:bg-yellow-100 dark:data-[state=active]:bg-yellow-800',
+  gray: 'data-[state=active]:bg-gray-100 dark:data-[state=active]:bg-gray-800',
+  green:
+    'data-[state=active]:bg-green-100 dark:data-[state=active]:bg-green-800',
+  blue: 'data-[state=active]:bg-blue-100 dark:data-[state=active]:bg-blue-800',
+  indigo:
+    'data-[state=active]:bg-indigo-100 dark:data-[state=active]:bg-indigo-800',
+  violet:
+    'data-[state=active]:bg-violet-100 dark:data-[state=active]:bg-violet-800',
+  purple:
+    'data-[state=active]:bg-purple-100 dark:data-[state=active]:bg-purple-800',
+  pink: 'data-[state=active]:bg-pink-100 dark:data-[state=active]:bg-pink-800',
+};
+
 export const oneHundredEightHundredBgChildrenColors: Color = {
   red: '*:bg-red-100 *:dark:bg-red-800',
   orange: '*:bg-orange-100 *:dark:bg-orange-800',

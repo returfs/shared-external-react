@@ -133,3 +133,22 @@ export const nineFiftyFiftyFileTextColors: Color = {
   purple: 'file:text-purple-950 dark:file:text-purple-50 ',
   pink: 'file:text-pink-950 dark:file:text-pink-50 ',
 };
+
+export const dataStateNineFiftyFiftyTextColors: Color = {
+  red: 'data-[state=active]:text-red-950 dark:data-[state=active]:text-red-50',
+  orange:
+    'data-[state=active]:text-orange-950 dark:data-[state=active]:text-orange-50 ',
+  yellow:
+    'data-[state=active]:text-yellow-950 dark:data-[state=active]:text-yellow-50 ',
+  gray: 'data-[state=active]:text-gray-950 dark:data-[state=active]:text-gray-50',
+  green:
+    'data-[state=active]:text-green-950 dark:data-[state=active]:text-green-50 ',
+  blue: 'data-[state=active]:text-blue-950 dark:data-[state=active]:text-blue-50 ',
+  indigo:
+    'data-[state=active]:text-indigo-950 dark:data-[state=active]:text-indigo-50 ',
+  violet:
+    'data-[state=active]:text-violet-950 dark:data-[state=active]:text-violet-50 ',
+  purple:
+    'data-[state=active]:text-purple-950 dark:data-[state=active]:text-purple-50 ',
+  pink: 'data-[state=active]:text-pink-950 dark:data-[state=active]:text-pink-50 ',
+};

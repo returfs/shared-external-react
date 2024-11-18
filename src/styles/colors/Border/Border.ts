@@ -1,14 +1,14 @@
 import { Color } from '../Theme/types';
 
-const neutralTwoHundredSevenHundredBorderColors =
+export const neutralTwoHundredSevenHundredBorderColors =
   'border-neutral-200 dark:border-neutral-700';
-const neutralTwoHundredSixHundredBorderColors =
+export const neutralTwoHundredSixHundredBorderColors =
   'border-neutral-200 dark:border-neutral-600';
-const neutralThreeHundredFiveHundredBorderColors =
+export const neutralThreeHundredFiveHundredBorderColors =
   'border-neutral-300 dark:border-neutral-500';
-const neutralFourHundredBorderColors = 'border-neutral-400';
+export const neutralFourHundredBorderColors = 'border-neutral-400';
 
-const nineFiftyTwoHundredBorderColors: Color = {
+export const nineFiftyTwoHundredBorderColors: Color = {
   red: 'border-red-950 dark:border-red-200',
   orange: 'border-orange-950 dark:border-orange-200',
   yellow: 'border-yellow-950 dark:border-yellow-200',
@@ -21,7 +21,7 @@ const nineFiftyTwoHundredBorderColors: Color = {
   pink: 'border-pink-950 dark:border-pink-200',
 };
 
-const twoHundredSevenHundredBorderColors: Color = {
+export const twoHundredSevenHundredBorderColors: Color = {
   red: 'border-red-200 dark:border-red-700',
   orange: 'border-orange-200 dark:border-orange-700',
   yellow: 'border-yellow-200 dark:border-yellow-700',
@@ -34,7 +34,7 @@ const twoHundredSevenHundredBorderColors: Color = {
   pink: 'border-pink-200 dark:border-pink-700',
 };
 
-const twoHundredEightHundredBorderColors: Color = {
+export const twoHundredEightHundredBorderColors: Color = {
   red: 'border-red-200 dark:border-red-800',
   orange: 'border-orange-200 dark:border-orange-800',
   yellow: 'border-yellow-200 dark:border-yellow-800',
@@ -47,7 +47,7 @@ const twoHundredEightHundredBorderColors: Color = {
   pink: 'border-pink-200 dark:border-pink-800',
 };
 
-const threeHundredSevenHundredBorderColors: Color = {
+export const threeHundredSevenHundredBorderColors: Color = {
   red: 'border-red-300 dark:border-red-700',
   orange: 'border-orange-300 dark:border-orange-700',
   yellow: 'border-yellow-300 dark:border-yellow-700',
@@ -58,15 +58,4 @@ const threeHundredSevenHundredBorderColors: Color = {
   violet: 'border-violet-300 dark:border-violet-700',
   purple: 'border-purple-300 dark:border-purple-700',
   pink: 'border-pink-300 dark:border-pink-700',
-};
-
-export {
-  neutralTwoHundredSevenHundredBorderColors,
-  neutralTwoHundredSixHundredBorderColors,
-  neutralThreeHundredFiveHundredBorderColors,
-  neutralFourHundredBorderColors,
-  nineFiftyTwoHundredBorderColors,
-  twoHundredSevenHundredBorderColors,
-  twoHundredEightHundredBorderColors,
-  threeHundredSevenHundredBorderColors,
 };
