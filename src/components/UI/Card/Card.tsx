@@ -5,6 +5,7 @@ import { useTheme } from 'src/state';
 import {
   fiveHundredFourHundredTextColors,
   neutralFiftyEightHundredBgColors,
+  neutralNineHundredBgColors,
   neutralTwoHundredSevenHundredBorderColors,
 } from 'src/styles';
 
@@ -16,7 +17,7 @@ const Card = React.forwardRef<
     ref={ref}
     className={cn(
       'rounded-lg border',
-      neutralFiftyEightHundredBgColors,
+      neutralNineHundredBgColors,
       neutralTwoHundredSevenHundredBorderColors,
       className,
     )}

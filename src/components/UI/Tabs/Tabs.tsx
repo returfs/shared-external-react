@@ -5,8 +5,8 @@ import { useTheme } from 'src/state';
 import {
   dataStateActiveOneHundredEightHundredBgColors,
   dataStateNineFiftyFiftyTextColors,
+  fiftyNineFiftyBgColors,
   fiveHundredFourHundredTextColors,
-  neutralNineHundredBgColors,
 } from 'src/styles';
 import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles/colors/Ring';
 
@@ -23,7 +23,7 @@ const TabsList = React.forwardRef<
       ref={ref}
       className={cn(
         'inline-flex h-full items-center justify-center rounded-lg p-1',
-        neutralNineHundredBgColors,
+        fiftyNineFiftyBgColors[colorKey],
         fiveHundredFourHundredTextColors[colorKey],
         className,
       )}

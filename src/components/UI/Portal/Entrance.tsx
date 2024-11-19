@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { EntranceProps } from './types';
 import { nineFiftyTwoHundredTextColors } from 'src/styles/colors/Text';
 import { ThemeProvider } from 'src/state';
+import { neutralNineHundredBgColors } from 'src/styles';
 
 const Entrance = forwardRef<HTMLDivElement, EntranceProps>(
   ({ themeColor, ...props }, ref: Ref<HTMLDivElement>) => {
@@ -12,7 +13,8 @@ const Entrance = forwardRef<HTMLDivElement, EntranceProps>(
           {...props}
           ref={ref}
           className={twMerge(
-            'h-full bg-neutral-100 dark:bg-neutral-900',
+            'h-full',
+            neutralNineHundredBgColors,
             nineFiftyTwoHundredTextColors[themeColor],
             props.className,
           )}
