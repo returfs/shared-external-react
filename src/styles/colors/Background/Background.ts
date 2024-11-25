@@ -114,6 +114,25 @@ export const nineFiftyTwoHundredBgColors: Color = {
   pink: 'bg-pink-950 dark:bg-pink-200',
 };
 
+export const dataStateCheckedNineHundredFiftyBgColors: Color = {
+  red: 'data-[state=checked]:bg-red-900 dark:data-[state=checked]:bg-red-50',
+  orange:
+    'data-[state=checked]:bg-orange-900 dark:data-[state=checked]:bg-orange-50',
+  yellow:
+    'data-[state=checked]:bg-yellow-900 dark:data-[state=checked]:bg-yellow-50',
+  gray: 'data-[state=checked]:bg-gray-900 dark:data-[state=checked]:bg-gray-50',
+  green:
+    'data-[state=checked]:bg-green-900 dark:data-[state=checked]:bg-green-50',
+  blue: 'data-[state=checked]:bg-blue-900 dark:data-[state=checked]:bg-blue-50',
+  indigo:
+    'data-[state=checked]:bg-indigo-900 dark:data-[state=checked]:bg-indigo-50',
+  violet:
+    'data-[state=checked]:bg-violet-900 dark:data-[state=checked]:bg-violet-50',
+  purple:
+    'data-[state=checked]:bg-purple-900 dark:data-[state=checked]:bg-purple-50',
+  pink: 'data-[state=checked]:bg-pink-900 dark:data-[state=checked]:bg-pink-50',
+};
+
 export const fiftyNineFiftyBgColors: Color = {
   red: 'bg-red-50 dark:bg-red-950',
   orange: 'bg-orange-50 dark:bg-orange-950',

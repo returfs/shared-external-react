@@ -11,6 +11,7 @@ export * from './Portal';
 export * from './Popover';
 export * from './Progress';
 export * from './Separation';
+export * from './Sidebar';
 export * from './Sonner';
 export * from './Table';
 export * from './Tabs';

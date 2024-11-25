@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { ColorKey } from 'src/styles';
+import { ColorKey } from '../../styles/colors/Theme/types';
 
 export interface ThemeContextProps {
   colorKey: ColorKey;

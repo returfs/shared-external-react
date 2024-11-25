@@ -5,7 +5,6 @@ import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import { visualizer } from 'rollup-plugin-visualizer';
-import treeShakeable from 'rollup-plugin-tree-shakeable';
 
 import packageJson from './package.json' assert { type: 'json' };
 
@@ -13,10 +12,6 @@ export default [
   {
     input: 'src/index.ts',
     output: [
-      //   {
-      //     file: packageJson.main,
-      //     format: 'cjs',
-      //   },
       {
         file: packageJson.module,
         format: 'esm',
@@ -39,14 +34,10 @@ export default [
       //     filename: './bundle-analysis.html',
       //     open: true,
       //   }),
-      treeShakeable(),
     ],
     external: [
       'react',
       'react-dom',
-      '@chakra-ui/react',
-      '@emotion/react',
-      '@emotion/styled',
       'typescript',
       'tailwindcss',
       'tailwind-merge',

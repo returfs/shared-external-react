@@ -4,13 +4,13 @@ import { cva } from 'class-variance-authority';
 
 import { twMerge } from 'tailwind-merge';
 import { cn } from 'src/lib';
+import { ColorKey } from '../../../styles/colors/Theme/types';
 import {
-  ColorKey,
   hoverNeutralOneHundredSevenHundredBgColors,
   hoverOneHundredEightHundredBgColors,
   neutralOneHundredSevenHundredBgColors,
   oneHundredEightHundredBgColors,
-} from 'src/styles';
+} from '../../../styles/colors/Background/Background';
 import { ButtonProps } from './types';
 import { useTheme } from 'src/state';
 
@@ -44,6 +44,7 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           ),
         },
         size: {
+          link: 'py-2',
           default: 'h-9 p-2',
           sm: 'h-8 rounded-lg px-3 text-xs',
           lg: 'h-10 rounded-lg px-8',

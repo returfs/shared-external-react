@@ -46,7 +46,7 @@ const FormDescription = React.forwardRef<
 FormDescription.displayName = 'FormDescription';
 
 const FormMessage = React.forwardRef<HTMLParagraphElement, FormMessageProps>(
-  ({ className, children, message, ...props }, ref) => {
+  ({ className, children, message, variant = null, ...props }, ref) => {
     const body = message || children;
 
     if (!body) {
@@ -58,6 +58,9 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, FormMessageProps>(
         ref={ref}
         className={cn(
           'text-[0.8rem] font-medium text-red-400 dark:text-red-800',
+          variant === 'info' && 'text-blue-400 dark:text-blue-800',
+          variant === 'success' && 'text-green-400 dark:text-green-800',
+          variant === 'warning' && 'text-yellow-400 dark:text-yellow-800',
           className,
         )}
         {...props}

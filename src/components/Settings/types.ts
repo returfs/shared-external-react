@@ -1,4 +1,4 @@
-import { Color, ThemeVariant } from 'src/styles/colors/Theme/types';
+import { Color, ThemeVariant } from '../../styles/colors/Theme/types';
 
 export enum SettingsData {
   // Layout

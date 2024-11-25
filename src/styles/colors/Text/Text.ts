@@ -1,5 +1,24 @@
 import { Color } from '../Theme/types';
 
+export const dataStateCheckedFiftyNineHundredTextColors: Color = {
+  red: 'data-[state=checked]:text-red-50 dark:data-[state=checked]:text-red-900',
+  orange:
+    'data-[state=checked]:text-orange-50 dark:data-[state=checked]:text-orange-900',
+  yellow:
+    'data-[state=checked]:text-yellow-50 dark:data-[state=checked]:text-yellow-900',
+  gray: 'data-[state=checked]:text-gray-50 dark:data-[state=checked]:text-gray-900',
+  green:
+    'data-[state=checked]:text-green-50 dark:data-[state=checked]:text-green-900',
+  blue: 'data-[state=checked]:text-blue-50 dark:data-[state=checked]:text-blue-900',
+  indigo:
+    'data-[state=checked]:text-indigo-50 dark:data-[state=checked]:text-indigo-900',
+  violet:
+    'data-[state=checked]:text-violet-50 dark:data-[state=checked]:text-violet-900',
+  purple:
+    'data-[state=checked]:text-purple-50 dark:data-[state=checked]:text-purple-900',
+  pink: 'data-[state=checked]:text-pink-50 dark:data-[state=checked]:text-pink-900',
+};
+
 export const oneHundredEightHundredTextColors: Color = {
   red: 'text-red-100 dark:text-red-800',
   orange: 'text-orange-100 dark:text-orange-800',
