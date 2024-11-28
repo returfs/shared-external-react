@@ -1,6 +1,7 @@
 export * from './Alert';
 export * from './Avatar';
 export * from './Badge';
+export * from './Breadcrumb';
 export * from './Buttons';
 export * from './Card';
 export * from './ContextMenu';

@@ -42,11 +42,16 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
             hoverNeutralOneHundredSevenHundredBgColors,
             isActive && neutralOneHundredSevenHundredBgColors,
           ),
+          tab: twMerge(
+            'transform justify-start text-left shadow-sm transition-colors duration-200',
+            hoverOneHundredEightHundredBgColors[colorKey],
+            isActive && oneHundredEightHundredBgColors[colorKey],
+          ),
         },
         size: {
           link: 'py-2',
           default: 'h-9 p-2',
-          sm: 'h-8 rounded-lg px-3 text-xs',
+          sm: 'h-8 rounded-lg px-2 text-xs',
           lg: 'h-10 rounded-lg px-8',
           icon: 'size-8 [&_svg]:size-4',
           menu: 'h-[30px] w-full rounded-none px-4 py-2',

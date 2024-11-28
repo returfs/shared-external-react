@@ -3,7 +3,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import terser from '@rollup/plugin-terser';
-import postcss from 'rollup-plugin-postcss';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 import packageJson from './package.json' assert { type: 'json' };
@@ -13,13 +12,13 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: packageJson.module,
-        format: 'esm',
+        file: packageJson.main,
+        format: 'cjs',
+      },
+      {
         sourcemap: true,
-        // format: 'es',
-        // dir: 'dist/esm',
-        // preserveModules: true,
-        // preserveModulesRoot: 'src',
+        format: 'esm',
+        dir: 'dist/esm',
       },
     ],
     plugins: [
@@ -27,9 +26,6 @@ export default [
       commonjs(),
       typescript({ tsconfig: './tsconfig.json' }),
       terser(),
-      //   postcss({
-      //     extract: true,
-      //   }),
       //   visualizer({
       //     filename: './bundle-analysis.html',
       //     open: true,

@@ -3,7 +3,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
 import { useIsMobile } from 'src/hooks/use-mobile';
 import { cn } from 'src/lib/utils';
-import { SquareHalf } from '@phosphor-icons/react';
+import { List } from '@phosphor-icons/react';
 import { Button } from '../Buttons';
 import { Input } from '../Form';
 import { Separator } from '../Separation';
@@ -25,6 +25,8 @@ import {
 } from '../../../styles/colors/Background/Background';
 import { twoHundredEightHundredBorderColors } from '../../../styles/colors/Border/Border';
 import { ColorKey } from 'src/styles';
+import { useSidebarResize } from 'src/hooks/use-sidebar-resize';
+import { mergeButtonRefs } from 'src/lib/merge-button-refs';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar:state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -32,6 +34,9 @@ const SIDEBAR_WIDTH = '16rem';
 const SIDEBAR_WIDTH_MOBILE = '18rem';
 const SIDEBAR_WIDTH_ICON = '3.3rem';
 const SIDEBAR_KEYBOARD_SHORTCUT = 'b';
+
+const MIN_SIDEBAR_WIDTH = '12rem';
+const MAX_SIDEBAR_WIDTH = '48rem';
 
 const SidebarContext = React.createContext<SidebarContextType | null>(null);
 
@@ -50,6 +55,7 @@ const SidebarProvider = React.forwardRef<
     defaultOpen?: boolean;
     open?: boolean;
     onOpenChange?: (open: boolean) => void;
+    defaultWidth?: string;
   }
 >(
   (
@@ -60,12 +66,16 @@ const SidebarProvider = React.forwardRef<
       className,
       style,
       children,
+      defaultWidth = SIDEBAR_WIDTH,
       ...props
     },
     ref,
   ) => {
     const isMobile = useIsMobile();
     const [openMobile, setOpenMobile] = React.useState(false);
+
+    const [width, setWidth] = React.useState(defaultWidth);
+    const [isDraggingRail, setIsDraggingRail] = React.useState(false);
 
     // This is the internal state of the sidebar.
     // We use openProp and setOpenProp for control from outside the component.
@@ -89,7 +99,12 @@ const SidebarProvider = React.forwardRef<
     // Helper to toggle the sidebar.
     const toggleSidebar = React.useCallback(() => {
       return isMobile ? setOpenMobile(open => !open) : setOpen(open => !open);
-    }, [isMobile, setOpen, setOpenMobile]);
+    }, [
+      isMobile,
+      setOpen,
+      //* remove setOpenMobile from dependencies because setOpenMobile are state setters created by useState
+      // setOpenMobile
+    ]);
 
     // Adds a keyboard shortcut to toggle the sidebar.
     React.useEffect(() => {
@@ -120,6 +135,10 @@ const SidebarProvider = React.forwardRef<
         openMobile,
         setOpenMobile,
         toggleSidebar,
+        width,
+        setWidth,
+        isDraggingRail,
+        setIsDraggingRail,
       }),
       [
         state,
@@ -127,8 +146,10 @@ const SidebarProvider = React.forwardRef<
         setOpen,
         isMobile,
         openMobile,
-        setOpenMobile,
+        // setOpenMobile,
         toggleSidebar,
+        width,
+        isDraggingRail,
       ],
     );
 
@@ -138,7 +159,7 @@ const SidebarProvider = React.forwardRef<
           <div
             style={
               {
-                '--sidebar-width': SIDEBAR_WIDTH,
+                '--sidebar-width': width,
                 '--sidebar-width-icon': SIDEBAR_WIDTH_ICON,
                 ...style,
               } as React.CSSProperties
@@ -178,7 +199,8 @@ const Sidebar = React.forwardRef<
     },
     ref,
   ) => {
-    const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
+    const { isMobile, state, openMobile, setOpenMobile, isDraggingRail } =
+      useSidebar();
     const { colorKey } = useTheme();
 
     if (collapsible === 'none') {
@@ -230,6 +252,7 @@ const Sidebar = React.forwardRef<
         data-collapsible={state === 'collapsed' ? collapsible : ''}
         data-variant={variant}
         data-side={side}
+        data-dragging={isDraggingRail}
       >
         {/* This is what handles the sidebar gap on desktop */}
         <div
@@ -240,6 +263,7 @@ const Sidebar = React.forwardRef<
             variant === 'floating' || variant === 'inset'
               ? 'group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4))]'
               : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon]',
+            'group-data-[dragging=true]_*:!duration-0 group-data-[dragging=true]:!duration-0',
           )}
         />
         <div
@@ -252,6 +276,7 @@ const Sidebar = React.forwardRef<
             variant === 'floating' || variant === 'inset'
               ? 'p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4)_+2px)]'
               : 'group-data-[collapsible=icon]:w-[--sidebar-width-icon] group-data-[side=left]:border-r group-data-[side=right]:border-l',
+            'group-data-[dragging=true]_*:!duration-0 group-data-[dragging=true]:!duration-0',
             fiftyNineFiftyBgColors[colorKey],
             twoHundredEightHundredBorderColors[colorKey],
             className,
@@ -290,7 +315,7 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      <SquareHalf />
+      <List />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );
@@ -299,17 +324,37 @@ SidebarTrigger.displayName = 'SidebarTrigger';
 
 const SidebarRail = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<'button'>
->(({ className, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar();
+  React.ComponentProps<'button'> & {
+    enableDrag?: boolean;
+  }
+>(({ className, enableDrag = true, ...props }, ref) => {
+  const { toggleSidebar, setWidth, state, width, setIsDraggingRail } =
+    useSidebar();
+
+  const { dragRef, isDragging, handleMouseDown } = useSidebarResize({
+    enableDrag,
+    onResize: setWidth,
+    onToggle: toggleSidebar,
+    currentWidth: width,
+    isCollapsed: state === 'collapsed',
+    minResizeWidth: MIN_SIDEBAR_WIDTH,
+    maxResizeWidth: MAX_SIDEBAR_WIDTH,
+    setIsDraggingRail,
+  });
+
+  const combinedRef = React.useMemo(
+    () => mergeButtonRefs([ref, dragRef]),
+    [ref, dragRef],
+  );
 
   return (
     <button
-      ref={ref}
+      ref={combinedRef}
       data-sidebar="rail"
       aria-label="Toggle Sidebar"
       tabIndex={-1}
-      onClick={toggleSidebar}
+      //   onClick={toggleSidebar}
+      onMouseDown={handleMouseDown}
       title="Toggle Sidebar"
       className={cn(
         'hover:after:bg-sidebar-border absolute inset-y-0 z-20 hidden w-4 -translate-x-1/2 transition-all ease-linear after:absolute after:inset-y-0 after:left-1/2 after:w-[2px] group-data-[side=left]:-right-4 group-data-[side=right]:left-0 sm:flex',
@@ -318,6 +363,7 @@ const SidebarRail = React.forwardRef<
         'group-data-[collapsible=offcanvas]:hover:bg-sidebar group-data-[collapsible=offcanvas]:translate-x-0 group-data-[collapsible=offcanvas]:after:left-full',
         '[[data-side=left][data-collapsible=offcanvas]_&]:-right-2',
         '[[data-side=right][data-collapsible=offcanvas]_&]:-left-2',
+        isDragging.current ? '[[data-side=left]_&]:cursor-ew-resize' : '',
         className,
       )}
       {...props}

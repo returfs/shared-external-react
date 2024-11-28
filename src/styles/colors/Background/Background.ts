@@ -17,6 +17,10 @@ export const hoverNeutralOneHundredSevenHundredBgColors =
 export const focusNeutralOneHundredSevenHundredBgColors =
   'focus:bg-neutral-100 dark:focus:bg-neutral-700';
 
+export const evenNTrBgColors = 'even:bg-neutral-50 dark:even:bg-neutral-800';
+
+export const oddNTrBgColors = 'odd:bg-neutral-50 dark:odd:bg-neutral-800';
+
 export const whiteEightHundredBgColors: Color = {
   red: 'bg-white dark:bg-red-800',
   orange: 'bg-white dark:bg-orange-800',

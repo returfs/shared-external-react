@@ -140,6 +140,19 @@ export const nineFiftyTwoHundredToasterTextColors: Color = {
   pink: 'group-[.toaster]:text-pink-950 dark:group-[.toaster]:text-pink-200',
 };
 
+export const nineFiftyFiftyTextColors: Color = {
+  red: 'text-red-950 dark:text-red-50',
+  orange: 'text-orange-950 dark:text-orange-50 ',
+  yellow: 'text-yellow-950 dark:text-yellow-50 ',
+  gray: 'text-gray-950 dark:text-gray-50',
+  green: 'text-green-950 dark:text-green-50 ',
+  blue: 'text-blue-950 dark:text-blue-50 ',
+  indigo: 'text-indigo-950 dark:text-indigo-50 ',
+  violet: 'text-violet-950 dark:text-violet-50 ',
+  purple: 'text-purple-950 dark:text-purple-50 ',
+  pink: 'text-pink-950 dark:text-pink-50 ',
+};
+
 export const nineFiftyFiftyFileTextColors: Color = {
   red: 'file:text-red-950 dark:file:text-red-50',
   orange: 'file:text-orange-950 dark:file:text-orange-50 ',
@@ -151,6 +164,19 @@ export const nineFiftyFiftyFileTextColors: Color = {
   violet: 'file:text-violet-950 dark:file:text-violet-50 ',
   purple: 'file:text-purple-950 dark:file:text-purple-50 ',
   pink: 'file:text-pink-950 dark:file:text-pink-50 ',
+};
+
+export const nineFiftyFiftyHoverTextColors: Color = {
+  red: 'hover:text-red-950 dark:hover:text-red-50',
+  orange: 'hover:text-orange-950 dark:hover:text-orange-50 ',
+  yellow: 'hover:text-yellow-950 dark:hover:text-yellow-50 ',
+  gray: 'hover:text-gray-950 dark:hover:text-gray-50',
+  green: 'hover:text-green-950 dark:hover:text-green-50 ',
+  blue: 'hover:text-blue-950 dark:hover:text-blue-50 ',
+  indigo: 'hover:text-indigo-950 dark:hover:text-indigo-50 ',
+  violet: 'hover:text-violet-950 dark:hover:text-violet-50 ',
+  purple: 'hover:text-purple-950 dark:hover:text-purple-50 ',
+  pink: 'hover:text-pink-950 dark:hover:text-pink-50 ',
 };
 
 export const dataStateNineFiftyFiftyTextColors: Color = {

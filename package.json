@@ -22,7 +22,6 @@
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.47",
     "rollup": "^4.17.2",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-postcss": "^4.0.2",
