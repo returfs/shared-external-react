@@ -1,13 +1,13 @@
 {
   "name": "@returfs/shared-external-react",
-  "version": "0.2.9",
-  "description": "react shared logic for returfs external marketplace",
+  "version": "0.3.9",
+  "description": "react shared logic for returfs external and internal marketplace",
   "scripts": {
     "rollup": "rollup -c",
     "rollup:watch": "rollup -c -w"
   },
   "author": "Toluwani Adewale",
-  "license": "proprietary",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
