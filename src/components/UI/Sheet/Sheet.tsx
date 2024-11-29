@@ -5,6 +5,12 @@ import * as SheetPrimitive from '@radix-ui/react-dialog';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from 'src/lib';
 import { X } from '@phosphor-icons/react';
+import { useTheme } from 'src/state';
+import {
+  fiveHundredFourHundredTextColors,
+  nineFiftyFiftyTextColors,
+  nineFiftyThreeHundredFocusRingColors,
+} from 'src/styles';
 
 const Sheet = SheetPrimitive.Root;
 
@@ -20,7 +26,7 @@ const SheetOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Overlay
     className={cn(
-      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80',
+      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-neutral-950/30 backdrop-blur-[2px]',
       className,
     )}
     {...props}
@@ -55,22 +61,34 @@ interface SheetContentProps
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = 'right', className, children, ...props }, ref) => (
-  <SheetPortal>
-    <SheetOverlay />
-    <SheetPrimitive.Content
-      ref={ref}
-      className={cn(sheetVariants({ side }), className)}
-      {...props}
-    >
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:ring-offset-neutral-950 dark:focus:ring-neutral-300 dark:data-[state=open]:bg-neutral-800">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
-      {children}
-    </SheetPrimitive.Content>
-  </SheetPortal>
-));
+>(function SheetContent(
+  { side = 'right', className, children, ...props },
+  ref,
+) {
+  const { colorKey } = useTheme();
+
+  return (
+    <SheetPortal>
+      <SheetOverlay />
+      <SheetPrimitive.Content
+        ref={ref}
+        className={cn(sheetVariants({ side }), className)}
+        {...props}
+      >
+        <SheetPrimitive.Close
+          className={cn(
+            'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-neutral-500 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-neutral-100 dark:data-[state=open]:bg-neutral-800',
+            nineFiftyThreeHundredFocusRingColors[colorKey],
+          )}
+        >
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
+        {children}
+      </SheetPrimitive.Content>
+    </SheetPortal>
+  );
+});
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
 const SheetHeader = ({
@@ -104,28 +122,41 @@ SheetFooter.displayName = 'SheetFooter';
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
->(({ className, ...props }, ref) => (
-  <SheetPrimitive.Title
-    ref={ref}
-    className={cn(
-      'text-lg font-semibold text-neutral-950 dark:text-neutral-50',
-      className,
-    )}
-    {...props}
-  />
-));
+>(function SheetTitle({ className, ...props }, ref) {
+  const { colorKey } = useTheme();
+
+  return (
+    <SheetPrimitive.Title
+      ref={ref}
+      className={cn(
+        'text-lg font-semibold',
+        nineFiftyFiftyTextColors[colorKey],
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
 const SheetDescription = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
->(({ className, ...props }, ref) => (
-  <SheetPrimitive.Description
-    ref={ref}
-    className={cn('text-sm text-neutral-500 dark:text-neutral-400', className)}
-    {...props}
-  />
-));
+>(function SheetDescription({ className, ...props }, ref) {
+  const { colorKey } = useTheme();
+
+  return (
+    <SheetPrimitive.Description
+      ref={ref}
+      className={cn(
+        'text-sm',
+        fiveHundredFourHundredTextColors[colorKey],
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {
