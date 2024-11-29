@@ -1,10 +1,11 @@
 {
   "name": "@returfs/shared-external-react",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "react shared logic for returfs external and internal marketplace",
   "scripts": {
     "rollup": "rollup -c",
-    "rollup:watch": "rollup -c -w"
+    "rollup:watch": "rollup -c -w",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "author": "Toluwani Adewale",
   "license": "MIT",
@@ -30,7 +31,8 @@
     "tailwindcss": "^3.4.13",
     "tailwindcss-animate": "^1.0.7",
     "tslib": "^2.7.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "standard-version": "^9.3.0"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
