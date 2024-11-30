@@ -32,8 +32,8 @@ export default [
       //   }),
     ],
     external: [
-      'react',
-      'react-dom',
+      //   'react',
+      //   'react-dom',
       'typescript',
       'tailwindcss',
       'tailwind-merge',
