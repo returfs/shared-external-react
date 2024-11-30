@@ -1,6 +1,6 @@
 {
   "name": "@returfs/shared-external-react",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "description": "react shared logic for returfs external and internal marketplace",
   "scripts": {
     "rollup": "rollup -c",
