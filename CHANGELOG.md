@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.12](https://github.com/returfs/marketplace_external/compare/v0.3.11...v0.3.12) (2024-11-30)
+
+
+### Features
+
+* split shared react ([342a5b1](https://github.com/returfs/marketplace_external/commit/342a5b1b7de790396059868f9f7970d809f2ce32))
+
 ### [0.3.11](https://github.com/returfs/marketplace_external/compare/v0.3.10...v0.3.11) (2024-11-29)
 
 ### 0.3.10 (2024-11-29)
