@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.15](https://github.com/returfs/marketplace_external/compare/v0.3.14...v0.3.15) (2024-11-30)
+
+
+### Features
+
+* redefining packages ([794bbdb](https://github.com/returfs/marketplace_external/commit/794bbdba0d0d599074af02989151f03e66846168))
+
 ### [0.3.14](https://github.com/returfs/marketplace_external/compare/v0.3.13...v0.3.14) (2024-11-30)
 
 
