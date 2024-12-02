@@ -1,6 +1,3 @@
 [submodule "returfs/shared-external-react"]
 	path = returfs/shared-external-react
 	url = https://github.com/returfs/shared-external-react
-[submodule "returfs/shared-external-laravel"]
-	path = returfs/shared-external-laravel
-	url = https://github.com/returfs/shared-external-laravel
