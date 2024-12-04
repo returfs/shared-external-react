@@ -31,7 +31,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
               )}
             >
-              <InputIcon className="size-6 flex-shrink-0" />
+              <InputIcon className="size-5 flex-shrink-0" />
             </button>
           </span>
         )}
