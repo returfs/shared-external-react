@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.16](https://github.com/returfs/marketplace_external/compare/v0.3.15...v0.3.16) (2024-12-08)
+
+
+### Features
+
+* crud extensions ([1226341](https://github.com/returfs/marketplace_external/commit/1226341f56f2fd9a08109fbd2fed788dc16e2d9b))
+* uuids => ulids ([6a42520](https://github.com/returfs/marketplace_external/commit/6a4252095c2a93e213d1d939289e61fa5db929ff))
+
 ### [0.3.15](https://github.com/returfs/marketplace_external/compare/v0.3.14...v0.3.15) (2024-11-30)
 
 
