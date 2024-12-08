@@ -1,39 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  html,
-  body {
-    height: 100%;
-    /* prevent swipe to navigate back or forawrd */
-    overscroll-behavior-x: none;
-  }
-
-  /* Prevent autofill background color change */
-  input:-webkit-autofill,
-  input:-webkit-autofill:focus {
-    transition:
-      background-color 600000s 0s,
-      color 600000s 0s;
-  }
-
-  input[data-autocompleted] {
-    background-color: transparent !important;
-  }
-
-  /* Chrome, Safari, Opera */
-  .scrollbar-cloak::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* IE, Edge, Firefox */
-  .scrollbar-cloak {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-}
-
-[x-cloak] {
-  display: none;
-}
