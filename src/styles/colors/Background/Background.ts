@@ -17,6 +17,9 @@ export const hoverNeutralOneHundredSevenHundredBgColors =
 export const dataStateOpenOneHundredSevenHundredBgColors =
   'data-[state=open]:bg-neutral-100 dark:data-[state=open]:bg-neutral-700';
 
+export const dataSelectedTrueOneHundredSevenHundredBgColors =
+  'data-[selected=true]:bg-neutral-100 dark:data-[selected=true]:bg-neutral-700';
+
 export const focusNeutralOneHundredSevenHundredBgColors =
   'focus:bg-neutral-100 dark:focus:bg-neutral-700';
 

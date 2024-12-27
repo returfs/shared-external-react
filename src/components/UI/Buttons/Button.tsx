@@ -8,11 +8,17 @@ import { ColorKey } from '../../../styles/colors/Theme/types';
 import {
   hoverNeutralOneHundredSevenHundredBgColors,
   hoverOneHundredEightHundredBgColors,
+  neutralFiftyEightHundredBgColors,
   neutralOneHundredSevenHundredBgColors,
   oneHundredEightHundredBgColors,
 } from '../../../styles/colors/Background/Background';
 import { ButtonProps } from './types';
 import { useTheme } from 'src/state';
+import {
+  neutralTwoHundredSevenHundredBorderColors,
+  nineFiftyThreeHundredFocusVisibleRingColors,
+  threeHundredSevenHundredBorderColors,
+} from 'src/styles';
 
 const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
   cva(
@@ -32,8 +38,11 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           warning:
             'border-yellow-500 bg-yellow-50 text-yellow-800 shadow-sm transition-colors duration-200 dark:border-yellow-900 dark:bg-yellow-900 dark:text-yellow-200 [&>svg]:text-yellow-800 dark:[&>svg]:text-yellow-200',
           info: 'border-blue-500 bg-blue-50 text-blue-800 shadow-sm transition-colors duration-200 dark:border-blue-900 dark:bg-blue-900 dark:text-blue-200 [&>svg]:text-blue-800 dark:[&>svg]:text-blue-200',
-          outline:
-            'border border-neutral-200 bg-white shadow-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
+          outline: cn(
+            'border shadow-sm transition-colors duration-200',
+            threeHundredSevenHundredBorderColors[colorKey],
+            nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
+          ),
           ghost:
             'shadow-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
           link: 'text-neutral-900 underline-offset-4 shadow-sm transition-colors duration-200 hover:underline dark:text-neutral-50',

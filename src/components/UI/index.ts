@@ -4,6 +4,8 @@ export * from './Badge';
 export * from './Breadcrumb';
 export * from './Buttons';
 export * from './Card';
+export * from './Calendar';
+export * from './Command';
 export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
