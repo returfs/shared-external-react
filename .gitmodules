@@ -5,8 +5,3 @@ url = https://github.com/returfs/shared-external-react
 path = returfs/shared-external-laravel
 url = https://github.com/returfs/shared-external-laravel
 [submodule "returfs/skeleton-returfs-package"]
-path = returfs/skeleton-returfs-package
-url = https://github.com/returfs/skeleton-returfs-package
-[submodule "returfs/generator-returfs-package/generators/skeleton-returfs-package"]
-	path = returfs/generator-returfs-package/generators/skeleton-returfs-package
-	url = https://github.com/returfs/skeleton-returfs-package
