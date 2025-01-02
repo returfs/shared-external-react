@@ -4,13 +4,14 @@ import { Command as CommandPrimitive } from 'cmdk';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { cn } from 'src/lib';
 import { Dialog, DialogContent } from '../Dialog';
-import {
-  fiveHundredFourHundredPlaceholderTextColors,
-  hoverNeutralOneHundredSevenHundredBgColors,
-  neutralFiftyEightHundredBgColors,
-  neutralTwoHundredSevenHundredBorderColors,
-} from 'src/styles';
+import { fiveHundredFourHundredPlaceholderTextColors } from 'src/styles';
 import { useTheme } from 'src/state';
+import {
+  surfaceBgColors,
+  surfaceBorderBgColors,
+  surfaceBorderColors,
+  surfaceHoverBgColors,
+} from 'src/styles/colors/Group';
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -20,7 +21,7 @@ const Command = React.forwardRef<
     ref={ref}
     className={cn(
       'flex h-full w-full flex-col overflow-hidden rounded-lg',
-      neutralFiftyEightHundredBgColors,
+      surfaceBgColors,
       className,
     )}
     {...props}
@@ -51,10 +52,7 @@ const CommandInput = ({
 
   return (
     <div
-      className={cn(
-        'flex items-center border-b px-3',
-        neutralTwoHundredSevenHundredBorderColors,
-      )}
+      className={cn('flex items-center border-b px-3', surfaceBorderColors)}
       cmdk-input-wrapper=""
     >
       <MagnifyingGlass className="mr-0 size-6 shrink-0 opacity-50" />
@@ -134,7 +132,7 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn('-mx-1 h-px bg-neutral-200 dark:bg-neutral-800', className)}
+    className={cn('-mx-1 h-px', surfaceBorderBgColors, className)}
     {...props}
   />
 ));
@@ -148,8 +146,7 @@ const CommandItem = React.forwardRef<
     ref={ref}
     className={cn(
       'relative flex cursor-default select-none items-center gap-2 rounded-lg px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
-      //   dataSelectedTrueOneHundredSevenHundredBgColors,
-      hoverNeutralOneHundredSevenHundredBgColors,
+      surfaceHoverBgColors,
       className,
     )}
     {...props}

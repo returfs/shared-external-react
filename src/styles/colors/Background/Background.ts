@@ -9,19 +9,31 @@ export const neutralOneHundredSevenHundredBgColors =
 export const neutralTwoHundredSevenHundredBgColors =
   'bg-neutral-200 dark:bg-neutral-700';
 
+export const neutralTwoHundredEightHundredBgColors =
+  'bg-neutral-200 dark:bg-neutral-800';
+
 export const neutralNineHundredBgColors = 'dark:bg-neutral-900';
 
 export const hoverNeutralOneHundredSevenHundredBgColors =
   'hover:bg-neutral-100 dark:hover:bg-neutral-700';
 
+export const hoverNeutralOneHundredEightHundredBgColors =
+  'hover:bg-neutral-100 dark:hover:bg-neutral-800';
+
 export const dataStateOpenOneHundredSevenHundredBgColors =
   'data-[state=open]:bg-neutral-100 dark:data-[state=open]:bg-neutral-700';
+
+export const dataStateOpenOneHundredEightHundredBgColors =
+  'data-[state=open]:bg-neutral-100 dark:data-[state=open]:bg-neutral-800';
 
 export const dataSelectedTrueOneHundredSevenHundredBgColors =
   'data-[selected=true]:bg-neutral-100 dark:data-[selected=true]:bg-neutral-700';
 
 export const focusNeutralOneHundredSevenHundredBgColors =
   'focus:bg-neutral-100 dark:focus:bg-neutral-700';
+
+export const focusNeutralOneHundredEightHundredBgColors =
+  'focus:bg-neutral-100 dark:focus:bg-neutral-800';
 
 export const evenNTrBgColors = 'even:bg-neutral-50 dark:even:bg-neutral-800';
 

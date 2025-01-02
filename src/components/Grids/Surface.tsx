@@ -1,17 +1,12 @@
 import React, { forwardRef } from 'react';
 import { SurfaceProps } from './types';
 import { twMerge } from 'tailwind-merge';
-import { neutralFiftyEightHundredBgColors } from 'src/styles';
 import { cva } from 'class-variance-authority';
 import { cn } from 'src/lib';
-import { neutralTwoHundredSevenHundredBorderColors } from 'src/styles/colors/Border';
+import { surfaceBgAndBorderColors } from 'src/styles/colors/Group';
 
 export const surfaceVariants = cva(
-  twMerge(
-    'rounded-lg border shadow-sm',
-    neutralFiftyEightHundredBgColors,
-    neutralTwoHundredSevenHundredBorderColors,
-  ),
+  twMerge('rounded-lg border shadow-sm', surfaceBgAndBorderColors),
   {
     variants: {
       variant: {

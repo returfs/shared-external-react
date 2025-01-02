@@ -1,7 +1,11 @@
 import { Color } from '../Theme/types';
 
+export const neutralTwoHundredEightHundredBorderColors =
+  'border-neutral-200 dark:border-neutral-800';
 export const neutralTwoHundredSevenHundredBorderColors =
   'border-neutral-200 dark:border-neutral-700';
+export const neutralTwoHundredOverSeventySevenHundredOverSeventyBorderColors =
+  'border-neutral-200/70 dark:border-neutral-700/70';
 export const neutralTwoHundredSixHundredBorderColors =
   'border-neutral-200 dark:border-neutral-600';
 export const neutralThreeHundredFiveHundredBorderColors =

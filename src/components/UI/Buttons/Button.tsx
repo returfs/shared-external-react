@@ -6,17 +6,15 @@ import { twMerge } from 'tailwind-merge';
 import { cn } from 'src/lib';
 import { ColorKey } from '../../../styles/colors/Theme/types';
 import {
-  hoverNeutralOneHundredSevenHundredBgColors,
   hoverOneHundredEightHundredBgColors,
-  neutralFiftyEightHundredBgColors,
-  neutralOneHundredSevenHundredBgColors,
   oneHundredEightHundredBgColors,
 } from '../../../styles/colors/Background/Background';
 import { ButtonProps } from './types';
 import { useTheme } from 'src/state';
 import {
-  neutralTwoHundredSevenHundredBorderColors,
   nineFiftyThreeHundredFocusVisibleRingColors,
+  surfaceActiveBgColors,
+  surfaceHoverBgColors,
   threeHundredSevenHundredBorderColors,
 } from 'src/styles';
 
@@ -32,12 +30,12 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
             isActive && oneHundredEightHundredBgColors[colorKey],
           ),
           error:
-            'border-red-500 bg-red-50 text-red-800 shadow-sm transition-colors duration-200 dark:border-red-900 dark:bg-red-900 dark:text-red-200 [&>svg]:text-red-800 dark:[&>svg]:text-red-200',
+            'border-red-300 bg-red-50 text-red-800 shadow-sm transition-colors duration-200 dark:border-red-700 dark:bg-red-900 dark:text-red-200 [&>svg]:text-red-800 dark:[&>svg]:text-red-200',
           success:
-            'border-green-500 bg-green-50 text-green-800 shadow-sm transition-colors duration-200 dark:border-green-900 dark:bg-green-900 dark:text-green-200 [&>svg]:text-green-800 dark:[&>svg]:text-green-200',
+            'border-green-300 bg-green-50 text-green-800 shadow-sm transition-colors duration-200 dark:border-green-700 dark:bg-green-900 dark:text-green-200 [&>svg]:text-green-800 dark:[&>svg]:text-green-200',
           warning:
-            'border-yellow-500 bg-yellow-50 text-yellow-800 shadow-sm transition-colors duration-200 dark:border-yellow-900 dark:bg-yellow-900 dark:text-yellow-200 [&>svg]:text-yellow-800 dark:[&>svg]:text-yellow-200',
-          info: 'border-blue-500 bg-blue-50 text-blue-800 shadow-sm transition-colors duration-200 dark:border-blue-900 dark:bg-blue-900 dark:text-blue-200 [&>svg]:text-blue-800 dark:[&>svg]:text-blue-200',
+            'border-yellow-300 bg-yellow-50 text-yellow-800 shadow-sm transition-colors duration-200 dark:border-yellow-700 dark:bg-yellow-900 dark:text-yellow-200 [&>svg]:text-yellow-800 dark:[&>svg]:text-yellow-200',
+          info: 'border-blue-300 bg-blue-50 text-blue-800 shadow-sm transition-colors duration-200 dark:border-blue-700 dark:bg-blue-900 dark:text-blue-200 [&>svg]:text-blue-800 dark:[&>svg]:text-blue-200',
           outline: cn(
             'border shadow-sm transition-colors duration-200',
             threeHundredSevenHundredBorderColors[colorKey],
@@ -48,8 +46,8 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           link: 'text-neutral-900 underline-offset-4 shadow-sm transition-colors duration-200 hover:underline dark:text-neutral-50',
           menu: twMerge(
             'transform justify-start text-left shadow-sm transition-colors duration-200',
-            hoverNeutralOneHundredSevenHundredBgColors,
-            isActive && neutralOneHundredSevenHundredBgColors,
+            surfaceHoverBgColors,
+            isActive && surfaceActiveBgColors,
           ),
           tab: twMerge(
             'transform justify-start text-left shadow-sm transition-colors duration-200',
