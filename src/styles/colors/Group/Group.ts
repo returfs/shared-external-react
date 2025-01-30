@@ -1,26 +1,25 @@
 import { cn } from 'src/lib';
 import {
-  focusNeutralOneHundredEightHundredBgColors,
-  hoverNeutralOneHundredEightHundredBgColors,
+  focusNeutralTwoHundredEightHundredBgColors,
+  hoverNeutralTwoHundredEightHundredBgColors,
   neutralNineHundredBgColors,
   neutralTwoHundredEightHundredBgColors,
 } from '../Background';
-import { neutralTwoHundredOverSeventySevenHundredOverSeventyBorderColors } from '../Border';
+import { neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors } from '../Border';
 
 export const surfaceBgAndBorderColors = cn(
-  ' shadow-2xl',
   neutralNineHundredBgColors,
-  neutralTwoHundredOverSeventySevenHundredOverSeventyBorderColors,
+  neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors,
 );
 
 export const surfaceBgColors = cn(' shadow-2xl', neutralNineHundredBgColors);
 
-export const surfaceFocusBgColors = focusNeutralOneHundredEightHundredBgColors;
+export const surfaceFocusBgColors = focusNeutralTwoHundredEightHundredBgColors;
 
-export const surfaceHoverBgColors = hoverNeutralOneHundredEightHundredBgColors;
+export const surfaceHoverBgColors = hoverNeutralTwoHundredEightHundredBgColors;
 
 export const surfaceBorderColors =
-  neutralTwoHundredOverSeventySevenHundredOverSeventyBorderColors;
+  neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors;
 
 export const surfaceBorderBgColors = neutralTwoHundredEightHundredBgColors;
 

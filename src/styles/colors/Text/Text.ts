@@ -122,6 +122,20 @@ export const nineFiftyTwoHundredTextColors: Color = {
   purple: 'text-purple-950 dark:text-purple-200 ',
   pink: 'text-pink-950 dark:text-pink-200 ',
 };
+
+export const sevenHundredTwoHundredSvgTextColors: Color = {
+  red: '[&_svg]:text-red-700 dark:[&_svg]:text-red-200',
+  orange: '[&_svg]:text-orange-700 dark:[&_svg]:text-orange-200',
+  yellow: '[&_svg]:text-yellow-700 dark:[&_svg]:text-yellow-200',
+  gray: '[&_svg]:text-gray-700 dark:[&_svg]:text-gray-200',
+  green: '[&_svg]:text-green-700 dark:[&_svg]:text-green-200',
+  blue: '[&_svg]:text-blue-700 dark:[&_svg]:text-blue-200',
+  indigo: '[&_svg]:text-indigo-700 dark:[&_svg]:text-indigo-200',
+  violet: '[&_svg]:text-violet-700 dark:[&_svg]:text-violet-200',
+  purple: '[&_svg]:text-purple-700 dark:[&_svg]:text-purple-200',
+  pink: '[&_svg]:text-pink-700 dark:[&_svg]:text-pink-200',
+};
+
 export const nineFiftyTwoHundredToasterTextColors: Color = {
   red: 'group-[.toaster]:text-red-950 dark:group-[.toaster]:text-red-200',
   orange:

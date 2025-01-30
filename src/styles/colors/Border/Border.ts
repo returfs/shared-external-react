@@ -4,8 +4,8 @@ export const neutralTwoHundredEightHundredBorderColors =
   'border-neutral-200 dark:border-neutral-800';
 export const neutralTwoHundredSevenHundredBorderColors =
   'border-neutral-200 dark:border-neutral-700';
-export const neutralTwoHundredOverSeventySevenHundredOverSeventyBorderColors =
-  'border-neutral-200/70 dark:border-neutral-700/70';
+export const neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors =
+  'border-neutral-300/70 dark:border-neutral-700/70';
 export const neutralTwoHundredSixHundredBorderColors =
   'border-neutral-200 dark:border-neutral-600';
 export const neutralThreeHundredFiveHundredBorderColors =
@@ -50,6 +50,33 @@ export const twoHundredEightHundredBorderColors: Color = {
   purple: 'border-purple-200 dark:border-purple-800',
   pink: 'border-pink-200 dark:border-pink-800',
 };
+
+export const twoHundredOverSeventySevenHundredOverSeventyBorderColors: Color = {
+  red: 'border-red-200/70 dark:border-red-700/70',
+  orange: 'border-orange-200/70 dark:border-orange-700/70',
+  yellow: 'border-yellow-200/70 dark:border-yellow-700/70',
+  gray: 'border-gray-200/70 dark:border-gray-700/70',
+  green: 'border-green-200/70 dark:border-green-700/70',
+  blue: 'border-blue-200/70 dark:border-blue-700/70',
+  indigo: 'border-indigo-200/70 dark:border-indigo-700/70',
+  violet: 'border-violet-200/70 dark:border-violet-700/70',
+  purple: 'border-purple-200/70 dark:border-purple-700/70',
+  pink: 'border-pink-200/70 dark:border-pink-700/70',
+};
+
+export const threeHundredOverSeventySevenHundredOverSeventyBorderColors: Color =
+  {
+    red: 'border-red-300/70 dark:border-red-700/70',
+    orange: 'border-orange-300/70 dark:border-orange-700/70',
+    yellow: 'border-yellow-300/70 dark:border-yellow-700/70',
+    gray: 'border-gray-300/70 dark:border-gray-700/70',
+    green: 'border-green-300/70 dark:border-green-700/70',
+    blue: 'border-blue-300/70 dark:border-blue-700/70',
+    indigo: 'border-indigo-300/70 dark:border-indigo-700/70',
+    violet: 'border-violet-300/70 dark:border-violet-700/70',
+    purple: 'border-purple-300/70 dark:border-purple-700/70',
+    pink: 'border-pink-300/70 dark:border-pink-700/70',
+  };
 
 export const threeHundredSevenHundredBorderColors: Color = {
   red: 'border-red-300 dark:border-red-700',

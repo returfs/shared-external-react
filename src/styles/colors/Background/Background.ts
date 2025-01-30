@@ -12,19 +12,19 @@ export const neutralTwoHundredSevenHundredBgColors =
 export const neutralTwoHundredEightHundredBgColors =
   'bg-neutral-200 dark:bg-neutral-800';
 
-export const neutralNineHundredBgColors = 'dark:bg-neutral-900';
+export const neutralNineHundredBgColors = 'bg-neutral-100 dark:bg-neutral-900';
 
 export const hoverNeutralOneHundredSevenHundredBgColors =
   'hover:bg-neutral-100 dark:hover:bg-neutral-700';
 
-export const hoverNeutralOneHundredEightHundredBgColors =
-  'hover:bg-neutral-100 dark:hover:bg-neutral-800';
+export const hoverNeutralTwoHundredEightHundredBgColors =
+  'hover:bg-neutral-200 dark:hover:bg-neutral-800';
 
 export const dataStateOpenOneHundredSevenHundredBgColors =
   'data-[state=open]:bg-neutral-100 dark:data-[state=open]:bg-neutral-700';
 
-export const dataStateOpenOneHundredEightHundredBgColors =
-  'data-[state=open]:bg-neutral-100 dark:data-[state=open]:bg-neutral-800';
+export const dataStateOpenTwoHundredEightHundredBgColors =
+  'data-[state=open]:bg-neutral-200 dark:data-[state=open]:bg-neutral-800';
 
 export const dataSelectedTrueOneHundredSevenHundredBgColors =
   'data-[selected=true]:bg-neutral-100 dark:data-[selected=true]:bg-neutral-700';
@@ -32,8 +32,8 @@ export const dataSelectedTrueOneHundredSevenHundredBgColors =
 export const focusNeutralOneHundredSevenHundredBgColors =
   'focus:bg-neutral-100 dark:focus:bg-neutral-700';
 
-export const focusNeutralOneHundredEightHundredBgColors =
-  'focus:bg-neutral-100 dark:focus:bg-neutral-800';
+export const focusNeutralTwoHundredEightHundredBgColors =
+  'focus:bg-neutral-200 dark:focus:bg-neutral-800';
 
 export const evenNTrBgColors = 'even:bg-neutral-50 dark:even:bg-neutral-800';
 
@@ -52,36 +52,36 @@ export const whiteEightHundredBgColors: Color = {
   pink: 'bg-white dark:bg-pink-800',
 };
 
-export const oneHundredEightHundredBgColors: Color = {
-  red: 'bg-red-100 dark:bg-red-800',
-  orange: 'bg-orange-100 dark:bg-orange-800',
-  yellow: 'bg-yellow-100 dark:bg-yellow-800',
-  gray: 'bg-gray-100 dark:bg-gray-800',
-  green: 'bg-green-100 dark:bg-green-800',
-  blue: 'bg-blue-100 dark:bg-blue-800',
-  indigo: 'bg-indigo-100 dark:bg-indigo-800',
-  violet: 'bg-violet-100 dark:bg-violet-800',
-  purple: 'bg-purple-100 dark:bg-purple-800',
-  pink: 'bg-pink-100 dark:bg-pink-800',
+export const twoHundredEightHundredBgColors: Color = {
+  red: 'bg-red-200 dark:bg-red-800',
+  orange: 'bg-orange-200 dark:bg-orange-800',
+  yellow: 'bg-yellow-200 dark:bg-yellow-800',
+  gray: 'bg-gray-200 dark:bg-gray-800',
+  green: 'bg-green-200 dark:bg-green-800',
+  blue: 'bg-blue-200 dark:bg-blue-800',
+  indigo: 'bg-indigo-200 dark:bg-indigo-800',
+  violet: 'bg-violet-200 dark:bg-violet-800',
+  purple: 'bg-purple-200 dark:bg-purple-800',
+  pink: 'bg-pink-200 dark:bg-pink-800',
 };
 
-export const dataStateActiveOneHundredEightHundredBgColors: Color = {
-  red: 'data-[state=active]:bg-red-100 dark:data-[state=active]:bg-red-800',
+export const dataStateActiveTwoHundredEightHundredBgColors: Color = {
+  red: 'data-[state=active]:bg-red-200 dark:data-[state=active]:bg-red-800',
   orange:
-    'data-[state=active]:bg-orange-100 dark:data-[state=active]:bg-orange-800',
+    'data-[state=active]:bg-orange-200 dark:data-[state=active]:bg-orange-800',
   yellow:
-    'data-[state=active]:bg-yellow-100 dark:data-[state=active]:bg-yellow-800',
-  gray: 'data-[state=active]:bg-gray-100 dark:data-[state=active]:bg-gray-800',
+    'data-[state=active]:bg-yellow-200 dark:data-[state=active]:bg-yellow-800',
+  gray: 'data-[state=active]:bg-gray-200 dark:data-[state=active]:bg-gray-800',
   green:
-    'data-[state=active]:bg-green-100 dark:data-[state=active]:bg-green-800',
-  blue: 'data-[state=active]:bg-blue-100 dark:data-[state=active]:bg-blue-800',
+    'data-[state=active]:bg-green-200 dark:data-[state=active]:bg-green-800',
+  blue: 'data-[state=active]:bg-blue-200 dark:data-[state=active]:bg-blue-800',
   indigo:
-    'data-[state=active]:bg-indigo-100 dark:data-[state=active]:bg-indigo-800',
+    'data-[state=active]:bg-indigo-200 dark:data-[state=active]:bg-indigo-800',
   violet:
-    'data-[state=active]:bg-violet-100 dark:data-[state=active]:bg-violet-800',
+    'data-[state=active]:bg-violet-200 dark:data-[state=active]:bg-violet-800',
   purple:
-    'data-[state=active]:bg-purple-100 dark:data-[state=active]:bg-purple-800',
-  pink: 'data-[state=active]:bg-pink-100 dark:data-[state=active]:bg-pink-800',
+    'data-[state=active]:bg-purple-200 dark:data-[state=active]:bg-purple-800',
+  pink: 'data-[state=active]:bg-pink-200 dark:data-[state=active]:bg-pink-800',
 };
 
 export const oneHundredEightHundredBgChildrenColors: Color = {
@@ -168,15 +168,15 @@ export const fiftyNineFiftyBgColors: Color = {
   pink: 'bg-pink-50 dark:bg-pink-950',
 };
 
-export const hoverOneHundredEightHundredBgColors: Color = {
-  red: 'hover:bg-red-100 dark:hover:bg-red-800',
-  orange: 'hover:bg-orange-100 dark:hover:bg-orange-800',
-  yellow: 'hover:bg-yellow-100 dark:hover:bg-yellow-800',
-  gray: 'hover:bg-gray-100 dark:hover:bg-gray-800',
-  green: 'hover:bg-green-100 dark:hover:bg-green-800',
-  blue: 'hover:bg-blue-100 dark:hover:bg-blue-800',
-  indigo: 'hover:bg-indigo-100 dark:hover:bg-indigo-800',
-  violet: 'hover:bg-violet-100 dark:hover:bg-violet-800',
-  purple: 'hover:bg-purple-100 dark:hover:bg-purple-800',
-  pink: 'hover:bg-pink-100 dark:hover:bg-pink-800',
+export const hoverTwoHundredEightHundredBgColors: Color = {
+  red: 'hover:bg-red-200 dark:hover:bg-red-800',
+  orange: 'hover:bg-orange-200 dark:hover:bg-orange-800',
+  yellow: 'hover:bg-yellow-200 dark:hover:bg-yellow-800',
+  gray: 'hover:bg-gray-200 dark:hover:bg-gray-800',
+  green: 'hover:bg-green-200 dark:hover:bg-green-800',
+  blue: 'hover:bg-blue-200 dark:hover:bg-blue-800',
+  indigo: 'hover:bg-indigo-200 dark:hover:bg-indigo-800',
+  violet: 'hover:bg-violet-200 dark:hover:bg-violet-800',
+  purple: 'hover:bg-purple-200 dark:hover:bg-purple-800',
+  pink: 'hover:bg-pink-200 dark:hover:bg-pink-800',
 };

@@ -12,6 +12,7 @@ import {
   surfaceBorderColors,
   surfaceHoverBgColors,
 } from 'src/styles/colors/Group';
+import { ComponentHasIcon } from '../../types';
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -41,23 +42,30 @@ const CommandDialog = ({ children, ...props }: DialogProps) => {
   );
 };
 
-const CommandInput = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>) => {
-  const inputRef =
-    React.useRef<React.ElementRef<typeof CommandPrimitive.Input>>(null);
-
+const CommandInput = React.forwardRef<
+  React.ElementRef<typeof CommandPrimitive.Input>,
+  React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input> &
+    ComponentHasIcon & {
+      hasSeparator?: boolean;
+    }
+>(({ className, icon, hasIcon = true, hasSeparator = true, ...props }, ref) => {
   const { colorKey } = useTheme();
+  const InputIcon = icon || MagnifyingGlass;
 
   return (
     <div
-      className={cn('flex items-center border-b px-3', surfaceBorderColors)}
+      className={cn(
+        'flex w-full items-center px-3',
+        hasSeparator && 'border-b',
+        surfaceBorderColors,
+      )}
       cmdk-input-wrapper=""
     >
-      <MagnifyingGlass className="mr-0 size-6 shrink-0 opacity-50" />
+      {hasIcon || icon ? (
+        <InputIcon className="mr-0 size-6 shrink-0 opacity-50" />
+      ) : null}
       <CommandPrimitive.Input
-        ref={inputRef}
+        ref={ref}
         className={cn(
           'flex h-9 w-full rounded-lg border-0 bg-transparent px-2 py-1 text-base outline-none ring-0 focus-visible:border-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
           fiveHundredFourHundredPlaceholderTextColors[colorKey],
@@ -67,7 +75,7 @@ const CommandInput = ({
       />
     </div>
   );
-};
+});
 
 CommandInput.displayName = CommandPrimitive.Input.displayName;
 

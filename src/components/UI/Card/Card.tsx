@@ -10,6 +10,7 @@ import {
   fiveHundredSixHundredRingColors,
   neutralNineHundredBgColors,
   surfaceBorderColors,
+  threeHundredOverSeventySevenHundredOverSeventyBorderColors,
 } from 'src/styles';
 
 const cardVariants = (colorKey: ColorKey) =>
@@ -24,6 +25,8 @@ const cardVariants = (colorKey: ColorKey) =>
         warning:
           'border-yellow-300 transition-colors duration-200 dark:border-yellow-700 [&>svg]:text-yellow-800 dark:[&>svg]:text-yellow-200',
         info: 'border-blue-300 transition-colors duration-200 dark:border-blue-700 [&>svg]:text-blue-800 dark:[&>svg]:text-blue-200',
+        color:
+          threeHundredOverSeventySevenHundredOverSeventyBorderColors[colorKey],
       },
       backgroundVariant: {
         default: cn('', neutralNineHundredBgColors),

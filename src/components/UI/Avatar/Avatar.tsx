@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cn } from 'src/lib';
-import { twoHundredSevenHundredBorderColors } from 'src/styles/colors/Border';
+import { threeHundredSevenHundredBorderColors } from 'src/styles/colors/Border';
 import { AvatarProps } from './types';
 import { useTheme } from 'src/state';
+import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles';
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
@@ -15,8 +16,9 @@ const Avatar = React.forwardRef<
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(
-        'relative flex h-10 w-10 shrink-0 cursor-pointer overflow-hidden rounded-full border-2',
-        twoHundredSevenHundredBorderColors[colorKey],
+        'relative flex size-9 shrink-0 cursor-pointer overflow-hidden rounded-full border',
+        threeHundredSevenHundredBorderColors[colorKey],
+        nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
         className,
       )}
       {...props}

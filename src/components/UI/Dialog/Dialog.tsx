@@ -3,7 +3,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from '@phosphor-icons/react';
 import { cn } from 'src/lib';
 import {
-  dataStateOpenOneHundredEightHundredBgColors,
+  dataStateOpenTwoHundredEightHundredBgColors,
   fiveHundredFourHundredTextColors,
 } from 'src/styles';
 import { useTheme } from 'src/state';
@@ -56,7 +56,7 @@ const DialogContent = React.forwardRef<
         <DialogPrimitive.Close
           className={cn(
             'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-neutral-500 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:text-neutral-500 dark:data-[state=open]:text-neutral-400',
-            dataStateOpenOneHundredEightHundredBgColors,
+            dataStateOpenTwoHundredEightHundredBgColors,
             nineFiftyThreeHundredFocusRingColors[colorKey],
           )}
         >
