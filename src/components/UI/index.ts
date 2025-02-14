@@ -1,4 +1,5 @@
 export * from './Alert';
+export * from './AlertDialog';
 export * from './Avatar';
 export * from './Badge';
 export * from './Breadcrumb';
