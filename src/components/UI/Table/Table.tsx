@@ -1,18 +1,42 @@
 import * as React from 'react';
 import { cn } from 'src/lib';
+import { useTheme } from 'src/state';
+import {
+  fiveHundredFourHundredTextColors,
+  neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors,
+  surfaceBgAndBorderColors,
+} from 'src/styles';
+
+const TableContainer = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        'relative w-full overflow-auto rounded-lg',
+        neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors,
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 
 const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-  <div className="relative w-full overflow-auto">
+>(({ className, ...props }, ref) => {
+  return (
     <table
       ref={ref}
       className={cn('w-full caption-bottom text-sm', className)}
       {...props}
     />
-  </div>
-));
+  );
+});
+
 Table.displayName = 'Table';
 
 const TableHeader = React.forwardRef<
@@ -57,8 +81,9 @@ const TableRow = React.forwardRef<
   <tr
     ref={ref}
     className={cn(
-      'border-b transition-colors hover:bg-neutral-100/50 data-[state=selected]:bg-neutral-100 dark:hover:bg-neutral-800/50 dark:data-[state=selected]:bg-neutral-800',
+      'border-b transition-colors hover:opacity-80 data-[state=selected]:bg-neutral-100 dark:data-[state=selected]:bg-neutral-800',
       className,
+      surfaceBgAndBorderColors,
     )}
     {...props}
   />
@@ -68,16 +93,21 @@ TableRow.displayName = 'TableRow';
 const TableHead = React.forwardRef<
   HTMLTableCellElement,
   React.ThHTMLAttributes<HTMLTableCellElement>
->(({ className, ...props }, ref) => (
-  <th
-    ref={ref}
-    className={cn(
-      'h-10 px-2 text-left align-middle font-medium text-neutral-500 dark:text-neutral-400 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
-      className,
-    )}
-    {...props}
-  />
-));
+>(({ className, ...props }, ref) => {
+  const { colorKey } = useTheme();
+
+  return (
+    <th
+      ref={ref}
+      className={cn(
+        'h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+        fiveHundredFourHundredTextColors[colorKey],
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 TableHead.displayName = 'TableHead';
 
 const TableCell = React.forwardRef<
@@ -111,6 +141,7 @@ const TableCaption = React.forwardRef<
 TableCaption.displayName = 'TableCaption';
 
 export {
+  TableContainer,
   Table,
   TableHeader,
   TableBody,

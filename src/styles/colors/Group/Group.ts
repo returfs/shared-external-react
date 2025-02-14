@@ -3,7 +3,7 @@ import {
   focusNeutralTwoHundredEightHundredBgColors,
   hoverNeutralTwoHundredEightHundredBgColors,
   neutralNineHundredBgColors,
-  neutralTwoHundredEightHundredBgColors,
+  neutralThreeHundredOverSeventySevenHundredOverSeventyBgColors,
 } from '../Background';
 import { neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors } from '../Border';
 
@@ -21,6 +21,8 @@ export const surfaceHoverBgColors = hoverNeutralTwoHundredEightHundredBgColors;
 export const surfaceBorderColors =
   neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors;
 
-export const surfaceBorderBgColors = neutralTwoHundredEightHundredBgColors;
+export const surfaceBorderBgColors =
+  neutralThreeHundredOverSeventySevenHundredOverSeventyBgColors;
 
-export const surfaceActiveBgColors = neutralTwoHundredEightHundredBgColors;
+export const surfaceActiveBgColors =
+  neutralThreeHundredOverSeventySevenHundredOverSeventyBgColors;

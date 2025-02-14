@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'src/lib';
-import { neutralTwoHundredSevenHundredBgColors } from 'src/styles';
+import { surfaceBorderBgColors } from 'src/styles';
 
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
@@ -18,7 +18,7 @@ const Separator = React.forwardRef<
       className={cn(
         'shrink-0',
         orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
-        neutralTwoHundredSevenHundredBgColors,
+        surfaceBorderBgColors,
         className,
       )}
       {...props}

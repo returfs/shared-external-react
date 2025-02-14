@@ -20,9 +20,9 @@ export enum TurfView {
 }
 
 export interface Settings {
-  [SettingsData.ThemeVariant]: ThemeVariant;
-  [SettingsData.ThemeColor]: keyof Color;
-  [SettingsData.TurfView]: TurfView;
-  [SettingsData.SidebarOpen]: string;
-  [SettingsData.SidebarWidth]: number;
+  [SettingsData.ThemeVariant]?: ThemeVariant;
+  [SettingsData.ThemeColor]?: keyof Color;
+  [SettingsData.TurfView]?: TurfView;
+  [SettingsData.SidebarOpen]?: string;
+  [SettingsData.SidebarWidth]?: number;
 }

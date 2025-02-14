@@ -1,4 +1,5 @@
 export {
+  TableContainer,
   Table,
   TableHeader,
   TableBody,

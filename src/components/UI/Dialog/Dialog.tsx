@@ -122,7 +122,7 @@ const DialogDescription = React.forwardRef<
     <DialogPrimitive.Description
       ref={ref}
       className={cn(
-        'max-h-80 w-full whitespace-normal text-sm',
+        'max-h-80 w-full whitespace-normal break-keep text-sm',
         fiveHundredFourHundredTextColors[colorKey],
         className,
       )}

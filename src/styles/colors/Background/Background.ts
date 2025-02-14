@@ -12,6 +12,9 @@ export const neutralTwoHundredSevenHundredBgColors =
 export const neutralTwoHundredEightHundredBgColors =
   'bg-neutral-200 dark:bg-neutral-800';
 
+export const neutralThreeHundredOverSeventySevenHundredOverSeventyBgColors =
+  'bg-neutral-300/70 dark:bg-neutral-700/70';
+
 export const neutralNineHundredBgColors = 'bg-neutral-100 dark:bg-neutral-900';
 
 export const hoverNeutralOneHundredSevenHundredBgColors =
