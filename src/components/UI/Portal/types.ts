@@ -1,12 +1,18 @@
 import { HTMLAttributes } from 'react';
-import { Settings } from '../../Settings/types';
+import { ResourceSettings } from '../../Settings/types';
 import { ColorKey } from '../../../styles/colors/Theme/types';
+import { ResourceItem, ResourceUser } from 'src/logic/types';
 
 export interface EntranceProps extends HTMLAttributes<HTMLDivElement> {
   themeColor: ColorKey;
 }
 
-export interface PortalSystemProps {
+interface PortalSystemPropsRequired {
+  resourceItem: ResourceItem;
   resourceRoute: string;
-  settings: Settings;
+  resourceSettings: ResourceSettings;
+  resourceUser: ResourceUser;
+  onResourceUpdate: (resource: File) => void;
 }
+
+export type PortalSystemProps = Partial<PortalSystemPropsRequired>;

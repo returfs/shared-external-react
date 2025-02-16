@@ -1,1 +1,1 @@
-export { SettingsData, Settings } from './types';
+export { ResourceSettingsData, ResourceSettings } from './types';

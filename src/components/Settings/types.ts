@@ -1,16 +1,8 @@
-import { Color, ThemeVariant } from '../../styles/colors/Theme/types';
+import { Color } from '../../styles/colors/Theme/types';
 
-export enum SettingsData {
-  // Layout
-  SidebarOpen = 'sidebar-open',
-  SidebarWidth = 'sidebar-width',
-
+export enum ResourceSettingsData {
   // Theme
-  ThemeVariant = 'theme-variant',
   ThemeColor = 'theme-color',
-
-  // Turfs
-  TurfView = 'turf-view',
 }
 
 export enum TurfView {
@@ -19,10 +11,6 @@ export enum TurfView {
   Stack = 'stack',
 }
 
-export interface Settings {
-  [SettingsData.ThemeVariant]?: ThemeVariant;
-  [SettingsData.ThemeColor]?: keyof Color;
-  [SettingsData.TurfView]?: TurfView;
-  [SettingsData.SidebarOpen]?: string;
-  [SettingsData.SidebarWidth]?: number;
+export interface ResourceSettings {
+  [ResourceSettingsData.ThemeColor]: keyof Color;
 }
