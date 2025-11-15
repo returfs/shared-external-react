@@ -1,1 +1,2 @@
-export { Model } from './types';
+export * from './Models';
+export * from './Data';

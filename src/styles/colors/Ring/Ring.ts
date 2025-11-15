@@ -1,4 +1,4 @@
-import { Color } from '../Theme/types';
+import { Color } from 'src/logic/Data/types';
 
 export const oneHundredEightHundredRingColors: Color = {
   red: 'ring-red-100 dark:ring-red-800',

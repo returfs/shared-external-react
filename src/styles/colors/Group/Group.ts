@@ -6,6 +6,7 @@ import {
   neutralThreeHundredOverSeventySevenHundredOverSeventyBgColors,
 } from '../Background';
 import { neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors } from '../Border';
+import { neutralThreeHundredOverSeventySevenHundredOverSeventyDivideColors } from '../Divide';
 
 export const surfaceBgAndBorderColors = cn(
   neutralNineHundredBgColors,
@@ -20,6 +21,9 @@ export const surfaceHoverBgColors = hoverNeutralTwoHundredEightHundredBgColors;
 
 export const surfaceBorderColors =
   neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors;
+
+export const surfaceDivideColors =
+  neutralThreeHundredOverSeventySevenHundredOverSeventyDivideColors;
 
 export const surfaceBorderBgColors =
   neutralThreeHundredOverSeventySevenHundredOverSeventyBgColors;

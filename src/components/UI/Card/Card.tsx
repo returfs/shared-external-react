@@ -5,13 +5,13 @@ import { cn } from 'src/lib';
 import { useTheme } from 'src/state';
 
 import {
-  ColorKey,
   fiveHundredFourHundredTextColors,
   fiveHundredSixHundredRingColors,
   neutralNineHundredBgColors,
   surfaceBorderColors,
   threeHundredOverSeventySevenHundredOverSeventyBorderColors,
 } from 'src/styles';
+import { ColorKey } from 'src/logic';
 
 const cardVariants = (colorKey: ColorKey) =>
   cva('rounded-lg border', {

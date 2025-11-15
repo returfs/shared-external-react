@@ -3,10 +3,17 @@ import { SurfaceProps } from './types';
 import { twMerge } from 'tailwind-merge';
 import { cva } from 'class-variance-authority';
 import { cn } from 'src/lib';
-import { surfaceBgAndBorderColors } from 'src/styles/colors/Group';
+import {
+  surfaceBgAndBorderColors,
+  surfaceDivideColors,
+} from 'src/styles/colors/Group';
 
 export const surfaceVariants = cva(
-  twMerge('rounded-lg border shadow-sm', surfaceBgAndBorderColors),
+  twMerge(
+    'rounded-lg border shadow-sm',
+    surfaceBgAndBorderColors,
+    surfaceDivideColors,
+  ),
   {
     variants: {
       variant: {

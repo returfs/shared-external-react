@@ -1,4 +1,4 @@
-import { Color } from '../Theme/types';
+import { Color } from 'src/logic/Data/types';
 
 export const nineFiftyTwoHundredOutlineColors: Color = {
   red: 'outline-red-950 dark:outline-red-200',

@@ -3,9 +3,9 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from 'src/lib';
 import { useTheme } from 'src/state';
 import { nineFiftyTwoHundredBorderColors } from 'src/styles/colors/Border';
-import { ColorKey } from '../../../styles/colors/Theme/types';
 import { eightHundredOneHundredBgColors } from '../../../styles/colors/Background/Background';
 import { oneHundredEightHundredTextColors } from '../../../styles/colors/Text/Text';
+import { ColorKey } from 'src/logic/Data';
 
 const badgeVariants = (colorKey: ColorKey) =>
   cva(

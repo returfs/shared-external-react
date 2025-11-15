@@ -4,7 +4,6 @@ import { cva } from 'class-variance-authority';
 
 import { twMerge } from 'tailwind-merge';
 import { cn } from 'src/lib';
-import { ColorKey } from '../../../styles/colors/Theme/types';
 import {
   hoverTwoHundredEightHundredBgColors,
   twoHundredEightHundredBgColors,
@@ -17,6 +16,7 @@ import {
   surfaceHoverBgColors,
   threeHundredSevenHundredBorderColors,
 } from 'src/styles';
+import { ColorKey } from 'src/logic/Data';
 
 const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
   cva(
@@ -61,7 +61,7 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           default: 'h-9 p-2',
           sm: 'h-8 rounded-lg px-2 text-xs',
           lg: 'h-10 rounded-lg px-8',
-          icon: 'size-8 [&_svg]:size-4',
+          icon: 'size-8 shrink-0 [&_svg]:size-4',
           menu: 'h-[30px] w-full rounded-none px-4 py-2',
         },
       },

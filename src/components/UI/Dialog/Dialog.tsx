@@ -26,7 +26,6 @@ const DialogOverlay = React.forwardRef<
     ref={ref}
     className={cn(
       'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-neutral-950/30 backdrop-blur-[2px]',
-
       className,
     )}
     {...props}
@@ -36,8 +35,10 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
+    onClose?: () => void;
+  }
+>(({ className, children, onClose, ...props }, ref) => {
   const { colorKey } = useTheme();
 
   return (
@@ -59,6 +60,7 @@ const DialogContent = React.forwardRef<
             dataStateOpenTwoHundredEightHundredBgColors,
             nineFiftyThreeHundredFocusRingColors[colorKey],
           )}
+          onClick={onClose && (() => onClose())}
         >
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>

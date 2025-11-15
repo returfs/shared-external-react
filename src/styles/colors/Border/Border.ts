@@ -1,4 +1,4 @@
-import { Color } from '../Theme/types';
+import { Color } from 'src/logic/Data/types';
 
 export const neutralTwoHundredEightHundredBorderColors =
   'border-neutral-200 dark:border-neutral-800';

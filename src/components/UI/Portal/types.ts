@@ -1,18 +1,24 @@
-import { HTMLAttributes } from 'react';
-import { ResourceSettings } from '../../Settings/types';
-import { ColorKey } from '../../../styles/colors/Theme/types';
-import { ResourceItem, ResourceUser } from 'src/logic/types';
+import { HTMLAttributes, ReactNode } from 'react';
+import { ColorKey } from '../../../logic';
+import {
+  ResourceItem,
+  ResourceSettings,
+  ResourceUser,
+} from '../../../logic/Models/types';
 
 export interface EntranceProps extends HTMLAttributes<HTMLDivElement> {
   themeColor: ColorKey;
 }
 
-interface PortalSystemPropsRequired {
-  resourceItem: ResourceItem;
-  resourceRoute: string;
-  resourceSettings: ResourceSettings;
-  resourceUser: ResourceUser;
-  onResourceUpdate: (resource: File) => void;
+export interface EntranceHeaderProps extends HTMLAttributes<HTMLDivElement> {
+  fullname: string;
+  children: ReactNode;
 }
 
-export type PortalSystemProps = Partial<PortalSystemPropsRequired>;
+export interface PortalSystemPropsRequired {
+  resourceItem: ResourceItem;
+  resourceSettings: ResourceSettings;
+  resourceUser: ResourceUser;
+}
+
+export interface PortalSystemProps extends PortalSystemPropsRequired {}

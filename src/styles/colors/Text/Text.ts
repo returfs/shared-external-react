@@ -1,4 +1,4 @@
-import { Color } from '../Theme/types';
+import { Color } from 'src/logic/Data/types';
 
 export const dataStateCheckedFiftyNineHundredTextColors: Color = {
   red: 'data-[state=checked]:text-red-50 dark:data-[state=checked]:text-red-900',

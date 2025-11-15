@@ -1,3 +1,8 @@
+export enum ResourceSettingsData {
+  ThemeColor = 'theme-color',
+  HexThemeColor = 'hex-theme-color',
+}
+
 export enum ColorKey {
   Red = 'red',
   Orange = 'orange',
@@ -24,12 +29,16 @@ export enum HexColorKey {
   Pink = '#FFC0CC',
 }
 
-export type Color = {
-  [key in ColorKey]: string;
-};
-
 export enum ThemeVariant {
   Dark = 'dark',
   Light = 'light',
   SystemDefault = 'system-default',
 }
+
+export type Color = {
+  [key in ColorKey]: string;
+};
+
+export type HexColor = {
+  [key in HexColorKey]: string;
+};
