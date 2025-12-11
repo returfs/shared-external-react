@@ -1,14 +1,14 @@
-import * as React from 'react';
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import { cn } from 'src/lib';
 import { Check } from '@phosphor-icons/react';
-import { useTheme } from 'src/state';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import * as React from 'react';
+import { cn } from '../../../../lib';
+import { useTheme } from '../../../../state';
 import {
   dataStateCheckedFiftyNineHundredTextColors,
   dataStateCheckedNineHundredFiftyBgColors,
   threeHundredSevenHundredBorderColors,
-} from 'src/styles';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles/colors/Ring';
+} from '../../../../styles';
+import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
 
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
@@ -20,7 +20,7 @@ const Checkbox = React.forwardRef<
     <CheckboxPrimitive.Root
       ref={ref}
       className={cn(
-        'peer h-4 w-4 shrink-0 rounded-md border shadow focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50',
+        'focus-visible:outline-hidden peer h-4 w-4 shrink-0 rounded-md border shadow-sm focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50',
         threeHundredSevenHundredBorderColors[colorKey],
         nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
         dataStateCheckedNineHundredFiftyBgColors[colorKey],

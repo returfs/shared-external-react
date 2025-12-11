@@ -1,18 +1,18 @@
-import * as React from 'react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
 import { type DialogProps } from '@radix-ui/react-dialog';
 import { Command as CommandPrimitive } from 'cmdk';
-import { MagnifyingGlass } from '@phosphor-icons/react';
-import { cn } from 'src/lib';
-import { Dialog, DialogContent } from '../Dialog';
-import { fiveHundredFourHundredPlaceholderTextColors } from 'src/styles';
-import { useTheme } from 'src/state';
+import * as React from 'react';
+import { cn } from '../../../lib';
+import { useTheme } from '../../../state';
+import { fiveHundredFourHundredPlaceholderTextColors } from '../../../styles';
 import {
   surfaceBgColors,
   surfaceBorderBgColors,
   surfaceBorderColors,
   surfaceHoverBgColors,
-} from 'src/styles/colors/Group';
+} from '../../../styles/colors/Group';
 import { ComponentHasIcon } from '../../types';
+import { Dialog, DialogContent } from '../Dialog';
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -34,7 +34,7 @@ const CommandDialog = ({ children, ...props }: DialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0">
-        <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-500 dark:[&_[cmdk-group-heading]]:text-neutral-400 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
+        <Command className="**:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group-heading]]:text-neutral-500 dark:**:[[cmdk-group-heading]]:text-neutral-400 **:[[cmdk-group]]:px-2 **:[[cmdk-input]]:h-12 **:[[cmdk-item]]:px-2 **:[[cmdk-item]]:py-3 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
           {children}
         </Command>
       </DialogContent>
@@ -67,7 +67,7 @@ const CommandInput = React.forwardRef<
       <CommandPrimitive.Input
         ref={ref}
         className={cn(
-          'flex h-9 w-full rounded-lg border-0 bg-transparent px-2 py-1 text-base outline-none ring-0 focus-visible:border-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+          'outline-hidden flex h-9 w-full rounded-lg border-0 bg-transparent px-2 py-1 text-base ring-0 focus-visible:border-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
           fiveHundredFourHundredPlaceholderTextColors[colorKey],
           className,
         )}
@@ -125,7 +125,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
-      'overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-500 dark:[&_[cmdk-group-heading]]:text-neutral-400',
+      '**:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:py-1.5 **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group-heading]]:text-neutral-500 dark:**:[[cmdk-group-heading]]:text-neutral-400 overflow-hidden p-1',
       className,
     )}
     {...props}
@@ -153,7 +153,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
-      'relative flex cursor-default select-none items-center gap-2 rounded-lg px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
+      'outline-hidden relative flex cursor-default select-none items-center gap-2 rounded-lg px-2 py-1.5 text-sm data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
       surfaceHoverBgColors,
       className,
     )}
@@ -182,12 +182,12 @@ CommandShortcut.displayName = 'CommandShortcut';
 export {
   Command,
   CommandDialog,
-  CommandInput,
-  CommandList,
   CommandEmpty,
-  CommandLoading,
   CommandGroup,
+  CommandInput,
   CommandItem,
-  CommandShortcut,
+  CommandList,
+  CommandLoading,
   CommandSeparator,
+  CommandShortcut,
 };

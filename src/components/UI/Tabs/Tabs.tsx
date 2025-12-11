@@ -1,14 +1,14 @@
-import * as React from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { cn } from 'src/lib';
-import { useTheme } from 'src/state';
+import * as React from 'react';
+import { cn } from '../../../lib';
+import { useTheme } from '../../../state';
 import {
   dataStateActiveTwoHundredEightHundredBgColors,
   dataStateNineFiftyFiftyTextColors,
   fiftyNineFiftyBgColors,
   fiveHundredFourHundredTextColors,
-} from 'src/styles';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles/colors/Ring';
+} from '../../../styles';
+import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../styles/colors/Ring';
 
 const Tabs = TabsPrimitive.Root;
 
@@ -43,7 +43,7 @@ const TabsTrigger = React.forwardRef<
     <TabsPrimitive.Trigger
       ref={ref}
       className={cn(
-        'inline-flex h-[30px] items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-white transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow dark:ring-offset-neutral-950',
+        'focus-visible:outline-hidden inline-flex h-[30px] items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-white transition-all focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm dark:ring-offset-neutral-950',
         dataStateActiveTwoHundredEightHundredBgColors[colorKey],
         dataStateNineFiftyFiftyTextColors[colorKey],
         nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
@@ -63,7 +63,7 @@ const TabsContent = React.forwardRef<
     <TabsPrimitive.Content
       ref={ref}
       className={cn(
-        'mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 dark:ring-offset-neutral-950 dark:focus-visible:ring-neutral-300',
+        'focus-visible:outline-hidden mt-2 ring-offset-white focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 dark:ring-offset-neutral-950 dark:focus-visible:ring-neutral-300',
         className,
       )}
       {...props}
@@ -72,4 +72,4 @@ const TabsContent = React.forwardRef<
 });
 TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs, TabsContent, TabsList, TabsTrigger };

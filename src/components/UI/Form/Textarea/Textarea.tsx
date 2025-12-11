@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import { cn } from 'src/lib/utils';
-import { useTheme } from 'src/state';
+import { cn } from '../../../../lib/utils';
+import { useTheme } from '../../../../state';
 import {
   fiveHundredFourHundredPlaceholderTextColors,
   nineFiftyFiftyFileTextColors,
   nineFiftyThreeHundredFocusVisibleRingColors,
   threeHundredSevenHundredBorderColors,
-} from 'src/styles';
+} from '../../../../styles';
 
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
@@ -19,7 +19,7 @@ const Textarea = React.forwardRef<
     <div className="relative flex flex-col">
       <textarea
         className={cn(
-          'flex min-h-[56px] w-full rounded-lg border bg-transparent px-3 py-2 text-base shadow-sm focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+          'shadow-xs focus-visible:outline-hidden flex min-h-[56px] w-full rounded-lg border bg-transparent px-3 py-2 text-base focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
           bottomPane && 'pb-8',
           threeHundredSevenHundredBorderColors[colorKey],
           nineFiftyFiftyFileTextColors[colorKey],

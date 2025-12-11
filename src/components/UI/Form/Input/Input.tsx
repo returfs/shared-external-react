@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react';
 import { InputProps } from './types';
-import { cn } from 'src/lib';
-import { threeHundredSevenHundredBorderColors } from 'src/styles/colors/Border';
+import { cn } from '../../../../lib';
+import { threeHundredSevenHundredBorderColors } from '../../../../styles/colors/Border';
 import {
   fiveHundredFourHundredPlaceholderTextColors,
   nineFiftyFiftyFileTextColors,
-} from 'src/styles';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles/colors/Ring';
-import { useTheme } from 'src/state';
+} from '../../../../styles';
+import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
+import { useTheme } from '../../../../state';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, icon, ...props }, ref) => {
@@ -22,21 +22,21 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             <button
               type="submit"
               className={cn(
-                'focus:shadow-outline focus:outline-none dark:bg-transparent',
+                'focus:shadow-outline focus:outline-hidden dark:bg-transparent',
                 threeHundredSevenHundredBorderColors[colorKey],
                 nineFiftyFiftyFileTextColors[colorKey],
                 fiveHundredFourHundredPlaceholderTextColors[colorKey],
                 nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
               )}
             >
-              <InputIcon className="size-6 flex-shrink-0" />
+              <InputIcon className="size-6 shrink-0" />
             </button>
           </span>
         )}
         <input
           type={type}
           className={cn(
-            'flex h-9 w-full rounded-lg border bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+            'shadow-xs focus-visible:outline-hidden flex h-9 w-full rounded-lg border bg-transparent px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
             threeHundredSevenHundredBorderColors[colorKey],
             nineFiftyFiftyFileTextColors[colorKey],
             fiveHundredFourHundredPlaceholderTextColors[colorKey],

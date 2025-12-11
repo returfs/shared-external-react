@@ -1,1 +1,6 @@
-export { Model, ResourceItem, ResourceUser, ResourceSettings } from './types';
+export type {
+  Model,
+  ResourceItem,
+  ResourceSettings,
+  ResourceUser,
+} from './types';

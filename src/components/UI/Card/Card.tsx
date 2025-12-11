@@ -1,17 +1,17 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import * as React from 'react';
+import { cn } from '../../../lib';
+import { useTheme } from '../../../state';
 import { ComponentHasIsActive } from '../../types';
-import { cn } from 'src/lib';
-import { useTheme } from 'src/state';
 
+import { ColorKey } from '../../../logic';
 import {
   fiveHundredFourHundredTextColors,
   fiveHundredSixHundredRingColors,
   neutralNineHundredBgColors,
   surfaceBorderColors,
   threeHundredOverSeventySevenHundredOverSeventyBorderColors,
-} from 'src/styles';
-import { ColorKey } from 'src/logic';
+} from '../../../styles';
 
 const cardVariants = (colorKey: ColorKey) =>
   cva('rounded-lg border', {
@@ -139,9 +139,9 @@ CardFooter.displayName = 'CardFooter';
 
 export {
   Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardDescription,
   CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 };

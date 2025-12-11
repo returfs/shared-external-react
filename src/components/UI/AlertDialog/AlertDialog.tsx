@@ -1,9 +1,9 @@
-import * as React from 'react';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
-import { cn } from 'src/lib';
-import { fiveHundredFourHundredTextColors } from 'src/styles';
-import { useTheme } from 'src/state';
-import { surfaceBgAndBorderColors } from 'src/styles/colors/Group';
+import * as React from 'react';
+import { cn } from '../../../lib';
+import { useTheme } from '../../../state';
+import { fiveHundredFourHundredTextColors } from '../../../styles';
+import { surfaceBgAndBorderColors } from '../../../styles/colors/Group';
 import { buttonVariants } from '../Buttons';
 
 const AlertDialog = AlertDialogPrimitive.Root;
@@ -149,14 +149,14 @@ AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName;
 
 export {
   AlertDialog,
-  AlertDialogPortal,
-  AlertDialogOverlay,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogFooter,
-  AlertDialogTitle,
-  AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
 };

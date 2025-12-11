@@ -1,6 +1,6 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
+import { cn } from '../../../lib';
 import { ColorButtonProps } from './types';
-import { twMerge } from 'tailwind-merge';
 
 const ColorButton = forwardRef<HTMLButtonElement, ColorButtonProps>(
   (props, ref) => {
@@ -11,7 +11,7 @@ const ColorButton = forwardRef<HTMLButtonElement, ColorButtonProps>(
         {...restOfProps}
         ref={ref}
         title={color?.toString()}
-        className={twMerge(
+        className={cn(
           'size-[22px] rounded-lg',
           isActive && 'ring-4 ring-neutral-400',
         )}

@@ -1,19 +1,19 @@
-import * as React from 'react';
+import { CaretDown, CaretUp, Check } from '@phosphor-icons/react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { CaretDown, Check, CaretUp } from '@phosphor-icons/react';
-import { cn } from 'src/lib';
-import { SelectItemProps, SelectProps } from './types';
-import { threeHundredSevenHundredBorderColors } from 'src/styles/colors/Border';
+import * as React from 'react';
+import { cn } from '../../../../lib';
+import { useTheme } from '../../../../state';
 import {
   neutralTwoHundredSevenHundredBgColors,
   nineFiftyTwoHundredTextColors,
-} from 'src/styles';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from 'src/styles/colors/Ring';
-import { useTheme } from 'src/state';
+} from '../../../../styles';
+import { threeHundredSevenHundredBorderColors } from '../../../../styles/colors/Border';
 import {
   surfaceBgAndBorderColors,
   surfaceFocusBgColors,
-} from 'src/styles/colors/Group';
+} from '../../../../styles/colors/Group';
+import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
+import { SelectItemProps, SelectProps } from './types';
 
 const Select = SelectPrimitive.Root;
 
@@ -31,7 +31,7 @@ const SelectTrigger = React.forwardRef<
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(
-        'flex h-9 w-full items-center justify-between whitespace-nowrap rounded-lg border bg-transparent px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+        'shadow-xs focus:outline-hidden flex h-9 w-full items-center justify-between whitespace-nowrap rounded-lg border bg-transparent px-3 py-2 text-sm focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
         threeHundredSevenHundredBorderColors[colorKey],
         nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
         className,
@@ -90,7 +90,7 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cn(
-        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-lg border shadow-lg dark:shadow-2xl',
+        'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 min-w-32 overflow-hidden rounded-lg border shadow-lg dark:shadow-2xl',
         surfaceBgAndBorderColors,
         position === 'popper' &&
           'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
@@ -104,7 +104,7 @@ const SelectContent = React.forwardRef<
         className={cn(
           'p-1',
           position === 'popper' &&
-            'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]',
+            'h-(--radix-select-trigger-height) min-w-(--radix-select-trigger-width) w-full',
         )}
       >
         {children}
@@ -137,7 +137,7 @@ const SelectItem = React.forwardRef<
     <SelectPrimitive.Item
       ref={ref}
       className={cn(
-        'relative flex w-full cursor-default select-none items-center rounded-lg py-1.5 pl-2 pr-8 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+        'outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 relative flex w-full cursor-default select-none items-center rounded-lg py-1.5 pl-2 pr-8 text-sm',
         nineFiftyTwoHundredTextColors[colorKey],
         surfaceFocusBgColors,
         className,
@@ -173,13 +173,13 @@ SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
 export {
   Select,
-  SelectGroup,
-  SelectValue,
-  SelectTrigger,
   SelectContent,
-  SelectLabel,
+  SelectGroup,
   SelectItem,
-  SelectSeparator,
-  SelectScrollUpButton,
+  SelectLabel,
   SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
 };

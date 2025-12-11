@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from 'src/lib';
+import { cn } from '../../../lib';
 
 function Skeleton({
   className,

@@ -1,5 +1,3 @@
-import * as React from 'react';
-import { GenericAlertProps } from './types';
 import {
   CheckCircle,
   Info,
@@ -7,8 +5,10 @@ import {
   WarningCircle,
   X,
 } from '@phosphor-icons/react';
+import * as React from 'react';
+import { cn } from '../../../lib';
 import { Alert, AlertDescription, AlertTitle } from './Alert';
-import { cn } from 'src/lib';
+import { GenericAlertProps } from './types';
 
 const GenericAlert = React.forwardRef<HTMLDivElement, GenericAlertProps>(
   (

@@ -1,9 +1,9 @@
-import * as React from 'react';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import { cn } from 'src/lib';
-import { FormLabelProps, FormMessageProps } from './types';
+import * as React from 'react';
+import { cn } from '../../../lib';
 import { Label } from './Label/Label';
+import { FormLabelProps, FormMessageProps } from './types';
 
 const FormItem = React.forwardRef<
   HTMLDivElement,
@@ -72,4 +72,4 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, FormMessageProps>(
 );
 FormMessage.displayName = 'FormMessage';
 
-export { FormItem, FormLabel, FormControl, FormDescription, FormMessage };
+export { FormControl, FormDescription, FormItem, FormLabel, FormMessage };

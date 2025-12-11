@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { cn } from 'src/lib';
-import { useTheme } from 'src/state';
+import { cn } from '../../../lib';
+import { useTheme } from '../../../state';
 import {
   fiveHundredFourHundredTextColors,
   neutralThreeHundredOverSeventySevenHundredOverSeventyBorderColors,
   surfaceBgAndBorderColors,
-} from 'src/styles';
+} from '../../../styles';
 
 const TableContainer = React.forwardRef<
   HTMLDivElement,
@@ -66,7 +66,7 @@ const TableFooter = React.forwardRef<
   <tfoot
     ref={ref}
     className={cn(
-      'border-t bg-neutral-100/50 font-medium dark:bg-neutral-800/50 [&>tr]:last:border-b-0',
+      'border-t bg-neutral-100/50 font-medium dark:bg-neutral-800/50 last:[&>tr]:border-b-0',
       className,
     )}
     {...props}
@@ -100,7 +100,7 @@ const TableHead = React.forwardRef<
     <th
       ref={ref}
       className={cn(
-        'h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+        '*:[[role=checkbox]]:translate-y-[2px] h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0',
         fiveHundredFourHundredTextColors[colorKey],
         className,
       )}
@@ -117,7 +117,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      'p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+      '*:[[role=checkbox]]:translate-y-[2px] p-2 align-middle [&:has([role=checkbox])]:pr-0',
       className,
     )}
     {...props}
@@ -141,13 +141,13 @@ const TableCaption = React.forwardRef<
 TableCaption.displayName = 'TableCaption';
 
 export {
-  TableContainer,
   Table,
-  TableHeader,
   TableBody,
+  TableCaption,
+  TableCell,
+  TableContainer,
   TableFooter,
   TableHead,
+  TableHeader,
   TableRow,
-  TableCell,
-  TableCaption,
 };

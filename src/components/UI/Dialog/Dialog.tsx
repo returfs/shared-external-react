@@ -1,14 +1,14 @@
-import * as React from 'react';
-import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { X } from '@phosphor-icons/react';
-import { cn } from 'src/lib';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import * as React from 'react';
+import { cn } from '../../../lib';
+import { useTheme } from '../../../state';
 import {
   dataStateOpenTwoHundredEightHundredBgColors,
   fiveHundredFourHundredTextColors,
-} from 'src/styles';
-import { useTheme } from 'src/state';
-import { nineFiftyThreeHundredFocusRingColors } from 'src/styles/colors/Ring';
-import { surfaceBgAndBorderColors } from 'src/styles/colors/Group';
+} from '../../../styles';
+import { surfaceBgAndBorderColors } from '../../../styles/colors/Group';
+import { nineFiftyThreeHundredFocusRingColors } from '../../../styles/colors/Ring';
 
 const Dialog = DialogPrimitive.Root;
 
@@ -56,7 +56,7 @@ const DialogContent = React.forwardRef<
         {children}
         <DialogPrimitive.Close
           className={cn(
-            'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-neutral-500 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:text-neutral-500 dark:data-[state=open]:text-neutral-400',
+            'rounded-xs focus:outline-hidden absolute right-4 top-4 opacity-70 ring-offset-neutral-500 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:text-neutral-500 dark:data-[state=open]:text-neutral-400',
             dataStateOpenTwoHundredEightHundredBgColors,
             nineFiftyThreeHundredFocusRingColors[colorKey],
           )}
@@ -135,13 +135,13 @@ const DialogDescription = React.forwardRef<
 DialogDescription.displayName = DialogPrimitive.Description.displayName;
 export {
   Dialog,
-  DialogPortal,
-  DialogOverlay,
-  DialogTrigger,
   DialogClose,
   DialogContent,
-  DialogHeader,
-  DialogFooter,
-  DialogTitle,
   DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
 };

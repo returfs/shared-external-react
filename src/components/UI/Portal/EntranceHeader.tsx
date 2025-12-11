@@ -1,7 +1,8 @@
-import React, { forwardRef, Ref } from 'react';
-import { Surface } from 'src/components/Grids';
-import { cn } from 'src/lib';
-import { turfPx } from 'src/styles';
+import { forwardRef, Ref } from 'react';
+// import { Surface } from '../../../src/components/Grids';
+import { cn } from '../../../lib';
+import { turfPx } from '../../../styles';
+import { Surface } from '../../Grids';
 import { EntranceHeaderProps } from './types';
 
 const EntranceHeader = forwardRef<HTMLDivElement, EntranceHeaderProps>(
@@ -15,7 +16,7 @@ const EntranceHeader = forwardRef<HTMLDivElement, EntranceHeaderProps>(
           )}
           ref={ref}
         >
-          <div className="flex min-w-0 flex-shrink items-center gap-2 overflow-hidden pr-2 lg:pr-3">
+          <div className="flex min-w-0 shrink items-center gap-2 overflow-hidden pr-2 lg:pr-3">
             <span className="text-bold scrollbar-cloak block overflow-x-auto whitespace-nowrap text-sm">
               {fullname}
             </span>

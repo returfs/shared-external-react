@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
-import { cn } from 'src/lib';
+import { cn } from '../../../lib';
 import { CaretRight, DotsThree } from '@phosphor-icons/react';
-import { useTheme } from 'src/state';
+import { useTheme } from '../../../state';
 import {
   fiveHundredFourHundredTextColors,
   nineFiftyFiftyHoverTextColors,
   nineFiftyFiftyTextColors,
-} from 'src/styles';
+} from '../../../styles';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -27,7 +27,7 @@ const BreadcrumbList = React.forwardRef<
     <ol
       ref={ref}
       className={cn(
-        'flex flex-wrap items-center gap-1.5 break-words text-sm sm:gap-2.5',
+        'flex flex-wrap items-center gap-1.5 wrap-break-word text-sm sm:gap-2.5',
         fiveHundredFourHundredTextColors[colorKey],
         className,
       )}

@@ -88,16 +88,16 @@ export const dataStateActiveTwoHundredEightHundredBgColors: Color = {
 };
 
 export const oneHundredEightHundredBgChildrenColors: Color = {
-  red: '*:bg-red-100 *:dark:bg-red-800',
-  orange: '*:bg-orange-100 *:dark:bg-orange-800',
-  yellow: '*:bg-yellow-100 *:dark:bg-yellow-800',
-  gray: '*:bg-gray-100 *:dark:bg-gray-800',
-  green: '*:bg-green-100 *:dark:bg-green-800',
-  blue: '*:bg-blue-100 *:dark:bg-blue-800',
-  indigo: '*:bg-indigo-100 *:dark:bg-indigo-800',
-  violet: '*:bg-violet-100 *:dark:bg-violet-800',
-  purple: '*:bg-purple-100 *:dark:bg-purple-800',
-  pink: '*:bg-pink-100 *:dark:bg-pink-800',
+  red: '*:bg-red-100 dark:*:bg-red-800',
+  orange: '*:bg-orange-100 dark:*:bg-orange-800',
+  yellow: '*:bg-yellow-100 dark:*:bg-yellow-800',
+  gray: '*:bg-gray-100 dark:*:bg-gray-800',
+  green: '*:bg-green-100 dark:*:bg-green-800',
+  blue: '*:bg-blue-100 dark:*:bg-blue-800',
+  indigo: '*:bg-indigo-100 dark:*:bg-indigo-800',
+  violet: '*:bg-violet-100 dark:*:bg-violet-800',
+  purple: '*:bg-purple-100 dark:*:bg-purple-800',
+  pink: '*:bg-pink-100 dark:*:bg-pink-800',
 };
 
 export const oneHundredEightHundredBgColors: Color = {
