@@ -1,0 +1,66 @@
+import {
+  CheckCircle,
+  Info,
+  Question,
+  WarningCircle,
+  X,
+} from '@phosphor-icons/react';
+import * as React from 'react';
+import { cn } from '../../../lib';
+import { Alert, AlertDescription, AlertTitle } from './Alert';
+import { GenericAlertProps } from './types';
+
+const GenericAlert = React.forwardRef<HTMLDivElement, GenericAlertProps>(
+  (
+    {
+      className,
+      variant,
+      title,
+      description,
+      icon,
+      alertType,
+      handleClose,
+      ...props
+    },
+    ref,
+  ) => {
+    const Icon =
+      variant === 'info' && !icon
+        ? Info
+        : variant === 'warning' || (variant === 'error' && !icon)
+          ? WarningCircle
+          : variant === 'success' && !icon
+            ? CheckCircle
+            : icon
+              ? icon
+              : Question;
+    return (
+      <Alert
+        ref={ref}
+        variant={variant}
+        className={cn(
+          'mt-3 w-[35%]',
+          alertType === 'slide' && 'mx-auto w-full',
+          className,
+        )}
+        {...props}
+      >
+        <Icon className="size-5" />
+        <AlertTitle className="ml-1">{title}</AlertTitle>
+        <AlertDescription className="ml-1">{description}</AlertDescription>
+        {handleClose && (
+          <button
+            onClick={handleClose}
+            className="absolute right-4 top-4"
+            aria-label="Close"
+          >
+            <X className="size-4" />
+          </button>
+        )}
+      </Alert>
+    );
+  },
+);
+GenericAlert.displayName = 'GenericAlert';
+
+export { GenericAlert };
