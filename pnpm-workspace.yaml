@@ -1,2 +1,15 @@
 packages:
+  # Public dev tooling & shared FE libraries (publishable)
+  - 'extension-packages/*'
+
+  # Shared backend (Laravel) libraries
+  - 'handler-packages/*'
+
+  # Submitted developer packages, pulled in for deploy
+  - 'extensions/*'
+  - 'handlers/*'
+  - 'services/*'
+
+  # Legacy submodule locations — removed after the submodule→subtree
+  # conversion (Phase 2) moves packages into the category dirs above.
   - 'returfs/*'

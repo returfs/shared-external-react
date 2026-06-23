@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Handler Registry",
+  "description": "Schema for the handler registry that defines all backend event handlers",
+  "type": "object",
+  "required": ["version", "handlers"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of the handler registry schema"
+    },
+    "handlers": {
+      "type": "array",
+      "description": "List of registered handlers",
+      "items": {
+        "$ref": "#/definitions/handler"
+      }
+    },
+    "shared": {
+      "type": "array",
+      "description": "Shared packages used by handlers",
+      "items": {
+        "$ref": "#/definitions/sharedPackage"
+      }
+    }
+  },
+  "definitions": {
+    "handler": {
+      "type": "object",
+      "required": ["id", "name", "version", "status", "events", "path"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the handler"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the handler"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of what the handler does"
+        },
+        "version": {
+          "type": "string",
+          "description": "Current version of the handler"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive", "needs-migration", "deprecated"],
+          "description": "Current status of the handler"
+        },
+        "statusReason": {
+          "type": "string",
+          "description": "Explanation for non-active status"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Event contracts this handler listens to"
+        },
+        "workflows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/workflow"
+          },
+          "description": "Workflows defined by this handler"
+        },
+        "path": {
+          "type": "string",
+          "description": "Relative path to the handler package"
+        }
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the workflow class"
+        },
+        "class": {
+          "type": "string",
+          "description": "Fully qualified class name (FQCN) of the workflow"
+        },
+        "activities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Activities/steps in the workflow"
+        }
+      }
+    },
+    "sharedPackage": {
+      "type": "object",
+      "required": ["id", "name", "version", "status", "path"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the shared package"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the shared package"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of what the package provides"
+        },
+        "version": {
+          "type": "string",
+          "description": "Current version of the package"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "pending-split", "deprecated"],
+          "description": "Current status of the package"
+        },
+        "statusReason": {
+          "type": "string",
+          "description": "Explanation for non-active status"
+        },
+        "path": {
+          "type": "string",
+          "description": "Relative path to the package"
+        }
+      }
+    }
+  }
+}

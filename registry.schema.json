@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Returfs Extension Registry",
+  "description": "Schema for the Returfs marketplace registry file",
+  "type": "object",
+  "required": ["version", "extensions"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Registry schema version"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Extension"
+      }
+    },
+    "services": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Service"
+      }
+    }
+  },
+  "definitions": {
+    "Extension": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "version",
+        "author",
+        "visibility",
+        "capabilities",
+        "supportedMimeTypes",
+        "path"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique identifier for the extension"
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "author": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": { "type": "string" },
+            "vendor": { "type": "string" },
+            "email": { "type": "string", "format": "email" },
+            "url": { "type": "string", "format": "uri" }
+          }
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["internal", "external", "private"],
+          "description": "Who can see/use this extension"
+        },
+        "tier": {
+          "type": "string",
+          "enum": ["free", "premium", "enterprise"],
+          "default": "free"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "read-resource",
+              "write-resource",
+              "realtime-collaboration",
+              "file-upload",
+              "external-api",
+              "storage-access"
+            ]
+          },
+          "minItems": 1
+        },
+        "services": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Service IDs this extension depends on"
+        },
+        "supportedMimeTypes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "supportedFileExtensions": {
+          "type": "array",
+          "description": "File extensions this extension can handle (e.g., .txt, .md)",
+          "items": {
+            "type": "string",
+            "pattern": "^\\.[a-zA-Z0-9]+$"
+          }
+        },
+        "updateStrategy": {
+          "type": "string",
+          "enum": ["bridge", "self-managed"],
+          "default": "bridge",
+          "description": "How the extension persists data"
+        },
+        "ports": {
+          "type": "object",
+          "properties": {
+            "dev": { "type": "integer" },
+            "federated": { "type": "integer" }
+          }
+        },
+        "path": {
+          "type": "string",
+          "description": "Relative path from registry root to extension directory"
+        },
+        "review": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["pending", "approved", "rejected"]
+            },
+            "submittedAt": { "type": "string", "format": "date-time" },
+            "reviewedAt": { "type": "string", "format": "date-time" },
+            "reviewer": { "type": "string" }
+          }
+        }
+      }
+    },
+    "Service": {
+      "type": "object",
+      "required": ["id", "name", "type", "path"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["websocket", "http", "grpc", "worker"]
+        },
+        "requiredBy": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Extension IDs that require this service"
+        },
+        "ports": {
+          "type": "object",
+          "properties": {
+            "dev": { "type": "integer" },
+            "production": { "type": "integer" }
+          }
+        },
+        "path": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
