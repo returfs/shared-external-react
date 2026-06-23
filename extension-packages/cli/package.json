@@ -1,0 +1,22 @@
+{
+  "name": "generator-returfs-package",
+  "version": "0.1.0",
+  "description": "yeoman generator for creating returfs extensions",
+  "type": "module",
+  "author": "Toluwani Adewale",
+  "license": "MIT",
+  "files": [
+    "skeleton-returfs-package"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "returfs",
+    "returfs-extension",
+    "extension"
+  ],
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "yeoman-generator": "^7.4.0",
+    "yosay": "^3.0.0"
+  }
+}
