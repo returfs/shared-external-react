@@ -15,7 +15,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "typecheck": "turbo run typecheck",
-    "new:extension": "pnpm --filter @returfs/cli new"
+    "new:extension": "node extension-packages/cli/bin/returfs.js new"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

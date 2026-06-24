@@ -36,7 +36,21 @@ pnpm lint
 pnpm typecheck
 
 # Scaffold a new extension (via the CLI)
-pnpm new:extension
+pnpm new:extension my-extension
+```
+
+## CLI (`@returfs/cli`)
+
+The developer CLI (`extension-packages/cli`) exposes a single `returfs` binary.
+`new` is a commander front-end over the yeoman scaffolding generator; the rest
+are local dev helpers. There is intentionally **no publish** — extensions are
+submitted via GitHub and deployed by Returfs.
+
+```bash
+returfs new [name]   # scaffold a new extension (Laravel and/or React)
+returfs dev          # run the extension's dev server (project's `dev` script)
+returfs build        # build the extension (project's `build` script)
+returfs validate     # check the extension structure
 ```
 
 ## Extension Lifecycle
