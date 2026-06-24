@@ -5,14 +5,28 @@ import {
   ResourceSettings,
   ResourceUser,
 } from '../../../logic/Models/types';
+import { HeaderNode } from '../MenuBar/types';
 
 export interface EntranceProps extends HTMLAttributes<HTMLDivElement> {
   themeColor: ColorKey;
 }
 
-export interface EntranceHeaderProps extends HTMLAttributes<HTMLDivElement> {
-  fullname: string;
-  children: ReactNode;
+export interface EntranceHeaderProps
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
+  /** Document name shown in the start region. */
+  fullname?: string;
+  /** Richer start-region slot; overrides `fullname` when provided. */
+  title?: ReactNode;
+  /**
+   * Declarative, responsive menu region. When provided, renders a
+   * `HeaderMenuBar` that collapses overflow into a "More" menu instead of
+   * scrolling. Falls back to `children` when omitted (legacy).
+   */
+  menu?: HeaderNode[];
+  /** End region — status indicators / primary actions (e.g. SaveStatus). */
+  end?: ReactNode;
+  /** Legacy escape hatch: rendered in the menu region only when `menu` is absent. */
+  children?: ReactNode;
 }
 
 export interface PortalSystemPropsRequired {

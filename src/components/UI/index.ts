@@ -11,6 +11,7 @@ export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
 export * from './Field';
+export * from './MenuBar';
 export * from './Portal';
 export * from './Popover';
 export * from './Progress';
