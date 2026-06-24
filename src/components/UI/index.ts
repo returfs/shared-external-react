@@ -10,6 +10,7 @@ export * from './Command';
 export * from './Dialog';
 export * from './DropdownMenu';
 export * from './Form';
+export * from './Field';
 export * from './Portal';
 export * from './Popover';
 export * from './Progress';

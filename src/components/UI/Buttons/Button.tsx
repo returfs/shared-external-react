@@ -43,7 +43,7 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           ),
           ghost:
             'shadow-xs transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
-          link: 'shadow-xs text-neutral-900 underline-offset-4 transition-colors duration-200 hover:underline dark:text-neutral-50',
+          link: 'cursor-pointer text-neutral-900 underline-offset-4 shadow-none transition-colors duration-200 hover:underline dark:text-neutral-50',
           menu: cn(
             'shadow-xs transform justify-start text-left transition-colors duration-200',
             surfaceHoverBgColors,
@@ -60,7 +60,7 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           default: 'h-9 p-2',
           sm: 'h-8 rounded-lg px-2 text-xs',
           lg: 'h-10 rounded-lg px-8',
-          icon: 'size-8 shrink-0 [&_svg]:size-4',
+          icon: 'size-7 shrink-0 [&_svg]:size-4',
           menu: 'h-[30px] w-full rounded-none px-4 py-2',
         },
       },

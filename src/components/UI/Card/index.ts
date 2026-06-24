@@ -6,3 +6,11 @@ export {
   CardDescription,
   CardContent,
 } from './Card';
+
+export {
+  CardSkeleton,
+  CardHeaderSkeleton,
+  CardContentSkeleton,
+  CardFooterSkeleton,
+  CardFullSkeleton,
+} from './CardSkeleton';
