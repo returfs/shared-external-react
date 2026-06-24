@@ -1,8 +1,0 @@
-.turbo
-node_modules
-build
-dist
-bundle-analysis.html
-
-*storybook.log
-storybook-static
