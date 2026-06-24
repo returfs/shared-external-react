@@ -1,3 +1,8 @@
-/.turbo
+.turbo
 node_modules
-pnpm-lock.yaml
+build
+dist
+bundle-analysis.html
+
+*storybook.log
+storybook-static
