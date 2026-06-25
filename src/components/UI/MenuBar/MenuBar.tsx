@@ -1,5 +1,7 @@
-import { CaretDown, DotsThreeVertical } from '@phosphor-icons/react';
+import { CaretDown, Check, DotsThreeVertical } from '@phosphor-icons/react';
 import { Fragment, ReactNode } from 'react';
+
+type Appearance = 'toolbar' | 'menubar';
 import { cn } from '../../../lib';
 import { Button } from '../Buttons';
 import {
@@ -49,11 +51,11 @@ function renderMenuItems(nodes: HeaderNode[]): ReactNode {
             key={node.id}
             disabled={node.disabled}
             onSelect={() => node.onSelect()}
-            className={cn(
-              node.active && 'font-medium',
-              node.danger && 'text-red-500 focus:text-red-500',
-            )}
+            className={cn(node.danger && 'text-red-500 focus:text-red-500')}
           >
+            {/* Check shown inline only when toggled on — no reserved gutter, so
+                non-toggle items (About, Export…) start flush at the left. */}
+            {node.active && <Check className="size-4 shrink-0" />}
             {node.icon}
             <span>{node.label}</span>
             {node.shortcut && (
@@ -84,7 +86,12 @@ function renderMenuItems(nodes: HeaderNode[]): ReactNode {
 }
 
 /** Render a single node in its top-level (visible) form. */
-function renderTopLevel(node: HeaderNode, index: number): ReactNode {
+function renderTopLevel(
+  node: HeaderNode,
+  index: number,
+  appearance: Appearance,
+): ReactNode {
+  const isMenubar = appearance === 'menubar';
   switch (node.type) {
     case 'separator':
       return (
@@ -96,20 +103,34 @@ function renderTopLevel(node: HeaderNode, index: number): ReactNode {
       );
     case 'custom':
       return <Fragment key={node.id}>{node.render()}</Fragment>;
-    case 'menu':
+    case 'menu': {
+      // The App menu (emphasized, menubar only) reads as a bold text label that
+      // underlines on hover — not a button — and sits flush-left (px-0) so it
+      // aligns with the filename below it.
+      const emphasized = isMenubar && node.emphasized;
       return (
         <DropdownMenu key={node.id}>
           <DropdownMenuTrigger asChild>
             <Button
               type="button"
-              variant="outline"
+              variant={emphasized ? 'link' : isMenubar ? 'ghost' : 'outline'}
               size="sm"
               disabled={node.disabled}
-              className="shrink-0 gap-1"
+              className={cn(
+                // h-7 in the 42px row leaves a clean ~7px inset top/bottom,
+                // matching the toolbar controls below.
+                'h-7 shrink-0',
+                // App label: chrome-less bold text, flush-left (px-0) to align
+                // with the filename below, plus right margin so the first real
+                // menu (File) isn't cramped against it.
+                emphasized && 'mr-3 px-0 font-bold',
+                isMenubar && !emphasized && 'font-normal',
+                !isMenubar && 'gap-1',
+              )}
             >
               {node.icon}
               <span>{node.label}</span>
-              <CaretDown className="opacity-60" />
+              {!isMenubar && <CaretDown className="opacity-60" />}
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
@@ -117,6 +138,7 @@ function renderTopLevel(node: HeaderNode, index: number): ReactNode {
           </DropdownMenuContent>
         </DropdownMenu>
       );
+    }
     case 'action': {
       const display = node.display ?? (node.pinned ? 'icon' : 'both');
       const showLabel = display !== 'icon';
@@ -124,7 +146,7 @@ function renderTopLevel(node: HeaderNode, index: number): ReactNode {
       const button = (
         <Button
           type="button"
-          variant="outline"
+          variant={isMenubar ? 'ghost' : 'outline'}
           size={showLabel ? 'sm' : 'icon'}
           isActive={node.active}
           disabled={node.disabled}
@@ -132,8 +154,11 @@ function renderTopLevel(node: HeaderNode, index: number): ReactNode {
           aria-label={node.label}
           aria-pressed={node.active}
           className={cn(
-            'shrink-0',
+            // h-7 matches the icon-button height (size-7) so every toolbar /
+            // menu-bar control is the same height, inset from the 42px row.
+            'h-7 shrink-0',
             showLabel && 'gap-1',
+            isMenubar && showLabel && 'font-normal',
             node.danger && 'text-red-500',
           )}
         >
@@ -163,18 +188,25 @@ function renderTopLevel(node: HeaderNode, index: number): ReactNode {
  * collapses (right-to-left) into a trailing "More" dropdown. On a very narrow
  * container everything collapses into a single kebab. See `useOverflowMenu`.
  */
-export function HeaderMenuBar({ items, className }: HeaderMenuBarProps) {
-  const { containerRef, measureRef, moreRef, visibleCount } =
-    useOverflowMenu(items.length);
+export function HeaderMenuBar({
+  items,
+  className,
+  appearance = 'toolbar',
+}: HeaderMenuBarProps) {
+  const { containerRef, measureRef, moreRef, visibleCount } = useOverflowMenu(
+    items.length,
+  );
 
   const visible = trimSeparators(items.slice(0, visibleCount));
   const overflow = items.slice(visibleCount);
   const hasOverflow = overflow.length > 0;
+  const renderTop = (node: HeaderNode, index: number) =>
+    renderTopLevel(node, index, appearance);
 
   const moreButton = (
     <Button
       type="button"
-      variant="outline"
+      variant={appearance === 'menubar' ? 'ghost' : 'outline'}
       size="icon"
       aria-label="More actions"
       className="shrink-0"
@@ -188,7 +220,7 @@ export function HeaderMenuBar({ items, className }: HeaderMenuBarProps) {
       <div
         ref={containerRef}
         className={cn(
-          'relative flex min-w-0 items-center gap-1 overflow-hidden lg:gap-2',
+          'relative flex min-w-0 items-center gap-0.5 overflow-hidden lg:gap-1',
           className,
         )}
       >
@@ -196,9 +228,9 @@ export function HeaderMenuBar({ items, className }: HeaderMenuBarProps) {
         <div
           ref={measureRef}
           aria-hidden
-          className="pointer-events-none invisible absolute left-0 top-0 flex w-max items-center gap-1 lg:gap-2"
+          className="pointer-events-none invisible absolute left-0 top-0 flex w-max items-center gap-0.5 lg:gap-1"
         >
-          {items.map(renderTopLevel)}
+          {items.map(renderTop)}
         </div>
         <div
           ref={moreRef}
@@ -209,7 +241,7 @@ export function HeaderMenuBar({ items, className }: HeaderMenuBarProps) {
         </div>
 
         {/* Visible row */}
-        {visible.map(renderTopLevel)}
+        {visible.map(renderTop)}
         {hasOverflow && (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>{moreButton}</DropdownMenuTrigger>

@@ -18,6 +18,12 @@ export interface EntranceHeaderProps
   /** Richer start-region slot; overrides `fullname` when provided. */
   title?: ReactNode;
   /**
+   * macOS-style menu-bar row rendered ABOVE the toolbar (App menu + File/Edit/
+   * View). Declarative `HeaderNode[]` — typically from `useExtensionMenuBar`.
+   * Omitted → no menu-bar row (single-row header).
+   */
+  menubar?: HeaderNode[];
+  /**
    * Declarative, responsive menu region. When provided, renders a
    * `HeaderMenuBar` that collapses overflow into a "More" menu instead of
    * scrolling. Falls back to `children` when omitted (legacy).

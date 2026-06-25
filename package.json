@@ -1,6 +1,6 @@
 {
   "name": "@returfs/shared-external-react",
-  "version": "0.3.17",
+  "version": "0.3.23",
   "description": "react shared logic for returfs external and internal marketplace",
   "scripts": {
     "build": "tsc && vite build && npm run build:css",

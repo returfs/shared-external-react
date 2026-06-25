@@ -50,6 +50,12 @@ export interface HeaderMenuNode {
   icon?: ReactNode;
   items: HeaderNode[];
   disabled?: boolean;
+  /**
+   * Render the trigger as an emphasized, chrome-less label (bold, underline on
+   * hover) rather than a button — used for the macOS App menu (extension name)
+   * in `menubar` appearance.
+   */
+  emphasized?: boolean;
 }
 
 /** A visual divider between groups. */
@@ -74,8 +80,14 @@ export interface HeaderCustomNode {
 export interface HeaderMenuBarProps {
   items: HeaderNode[];
   className?: string;
+  /**
+   * Visual style of the top-level triggers:
+   * - `toolbar` (default): bordered `outline` buttons + dropdown carets.
+   * - `menubar`: flat, borderless macOS-style menu labels (no carets).
+   */
+  appearance?: 'toolbar' | 'menubar';
 }
 
 export function nodeKey(node: HeaderNode, index: number): string {
-  return node.type === 'separator' ? node.id ?? `sep-${index}` : node.id;
+  return node.type === 'separator' ? (node.id ?? `sep-${index}`) : node.id;
 }

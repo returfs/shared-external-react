@@ -6,46 +6,70 @@ import { EntranceHeaderProps } from './types';
 import { turfPx } from '../../../styles';
 
 /**
- * Extension header shell with three regions:
- *  - start  : document name (`fullname`) or a custom `title`
- *  - menu   : declarative `menu` (renders a responsive `HeaderMenuBar` that
- *             collapses overflow into a "More" menu) — or legacy `children`
- *  - end    : status / primary actions (e.g. SaveStatus)
+ * Extension header shell. Optionally two rows:
+ *  - menubar : macOS-style menu-bar row (App menu + File/Edit/View), shown only
+ *              when `menubar` is provided. Sits ABOVE the toolbar row.
+ *  - toolbar : start (`fullname`/`title`) · `menu` (responsive `HeaderMenuBar`,
+ *              or legacy `children`) · `end` (status / actions, e.g. SaveStatus)
  *
- * Stays `sticky top-0` and a fixed height so it never scrolls with the body.
- * Passing `children` (instead of `menu`) preserves the original horizontal
- * scroll behavior for back-compat.
+ * The whole header is `sticky top-0` so it never scrolls with the body. Passing
+ * `children` (instead of `menu`) preserves the original horizontal scroll for
+ * back-compat.
  */
 const EntranceHeader = forwardRef<HTMLDivElement, EntranceHeaderProps>(
-  ({ fullname, title, menu, end, children }, ref: Ref<HTMLDivElement>) => {
+  (
+    { fullname, title, menubar, menu, end, children },
+    ref: Ref<HTMLDivElement>,
+  ) => {
     return (
       <Surface
-        className={cn(
-          'sticky inset-x-0 top-0 z-50 mx-auto mb-2 flex h-[46px] w-full select-none flex-row items-center divide-x',
-          turfPx,
-        )}
         ref={ref}
+        className="sticky inset-x-0 top-0 z-50 mx-auto mb-2 flex w-full select-none flex-col overflow-hidden"
       >
-        <div className="flex min-w-0 shrink items-center gap-2 overflow-hidden pr-2 lg:pr-3">
-          {title ?? (
-            <span className="text-bold scrollbar-cloak block overflow-x-auto whitespace-nowrap text-sm">
-              {fullname}
-            </span>
-          )}
-        </div>
+        {/* macOS-style menu-bar row — flush inside the same card, separated from
+            the toolbar by a hairline so the two rows read as one header. */}
+        {menubar && (
+          <div
+            className={cn(
+              'flex h-[42px] w-full items-center border-b border-neutral-200 dark:border-neutral-800',
+              turfPx,
+            )}
+          >
+            <HeaderMenuBar
+              items={menubar}
+              appearance="menubar"
+              className="min-w-0 flex-1"
+            />
+          </div>
+        )}
 
-        <div className="flex min-w-0 flex-1 items-center gap-2 pl-2 lg:pl-3">
-          {menu ? (
-            <HeaderMenuBar items={menu} className="min-w-0 flex-1" />
-          ) : (
-            <div className="scrollbar-cloak flex min-w-0 flex-1 flex-nowrap items-center justify-end overflow-x-scroll">
-              {children}
-            </div>
+        <div
+          className={cn(
+            'flex h-[42px] w-full items-center divide-x divide-neutral-200 dark:divide-neutral-800',
+            turfPx,
           )}
+        >
+          <div className="flex min-w-0 shrink items-center gap-2 overflow-hidden pr-2 lg:pr-3">
+            {title ?? (
+              <span className="scrollbar-cloak block overflow-x-auto whitespace-nowrap text-xs font-medium">
+                {fullname}
+              </span>
+            )}
+          </div>
 
-          {end && (
-            <div className="flex shrink-0 items-center gap-2 pl-2">{end}</div>
-          )}
+          <div className="flex min-w-0 flex-1 items-center gap-2 pl-2 lg:pl-3">
+            {menu ? (
+              <HeaderMenuBar items={menu} className="min-w-0 flex-1" />
+            ) : (
+              <div className="scrollbar-cloak flex min-w-0 flex-1 flex-nowrap items-center justify-end overflow-x-scroll">
+                {children}
+              </div>
+            )}
+
+            {end && (
+              <div className="flex shrink-0 items-center gap-2 pl-2">{end}</div>
+            )}
+          </div>
         </div>
       </Surface>
     );
