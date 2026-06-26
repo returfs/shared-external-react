@@ -31,7 +31,7 @@ const EntranceHeader = forwardRef<HTMLDivElement, EntranceHeaderProps>(
         {menubar && (
           <div
             className={cn(
-              'flex h-[42px] w-full items-center border-b border-neutral-200 dark:border-neutral-800',
+              'flex h-9 w-full items-center border-b border-neutral-200 dark:border-neutral-800',
               turfPx,
             )}
           >
@@ -45,7 +45,7 @@ const EntranceHeader = forwardRef<HTMLDivElement, EntranceHeaderProps>(
 
         <div
           className={cn(
-            'flex h-[42px] w-full items-center divide-x divide-neutral-200 dark:divide-neutral-800',
+            'flex h-9 w-full items-center divide-x divide-neutral-200 dark:divide-neutral-800',
             turfPx,
           )}
         >

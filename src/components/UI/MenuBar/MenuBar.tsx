@@ -1,7 +1,18 @@
 import { CaretDown, Check, DotsThreeVertical } from '@phosphor-icons/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useState } from 'react';
 
 type Appearance = 'toolbar' | 'menubar';
+
+/**
+ * Coordinates open state across sibling menus so the bar behaves like a real
+ * menu bar: only one menu open at a time, and hovering another menu while one is
+ * already open switches to it. `onCloseAutoFocus` is also suppressed so clicking
+ * away (e.g. into an editor) doesn't yank focus back to the trigger.
+ */
+interface MenuControl {
+  openId: string | null;
+  setOpenId: (updater: (prev: string | null) => string | null) => void;
+}
 import { cn } from '../../../lib';
 import { Button } from '../Buttons';
 import {
@@ -90,6 +101,7 @@ function renderTopLevel(
   node: HeaderNode,
   index: number,
   appearance: Appearance,
+  menuControl?: MenuControl,
 ): ReactNode {
   const isMenubar = appearance === 'menubar';
   switch (node.type) {
@@ -98,7 +110,7 @@ function renderTopLevel(
         <Separator
           key={nodeKey(node, index)}
           orientation="vertical"
-          className="h-6 shrink-0"
+          className="mx-1 h-5 shrink-0"
         />
       );
     case 'custom':
@@ -108,14 +120,35 @@ function renderTopLevel(
       // underlines on hover — not a button — and sits flush-left (px-0) so it
       // aligns with the filename below it.
       const emphasized = isMenubar && node.emphasized;
+      // When coordinated, drive open state from the shared controller so only
+      // one menu is open at a time and hovering switches between them.
+      const controlled = !!menuControl;
+      const dropdownProps = controlled
+        ? {
+            open: menuControl.openId === node.id,
+            onOpenChange: (o: boolean) =>
+              menuControl.setOpenId(prev =>
+                o ? node.id : prev === node.id ? null : prev,
+              ),
+          }
+        : {};
       return (
-        <DropdownMenu key={node.id}>
+        <DropdownMenu key={node.id} {...dropdownProps}>
           <DropdownMenuTrigger asChild>
             <Button
               type="button"
               variant={emphasized ? 'link' : isMenubar ? 'ghost' : 'outline'}
               size="sm"
               disabled={node.disabled}
+              // macOS-style: once a menu is open, hovering a sibling switches.
+              onPointerEnter={
+                controlled && !node.disabled
+                  ? () =>
+                      menuControl.setOpenId(prev =>
+                        prev !== null && prev !== node.id ? node.id : prev,
+                      )
+                  : undefined
+              }
               className={cn(
                 // h-7 in the 42px row leaves a clean ~7px inset top/bottom,
                 // matching the toolbar controls below.
@@ -133,7 +166,15 @@ function renderTopLevel(
               {!isMenubar && <CaretDown className="opacity-60" />}
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
+          <DropdownMenuContent
+            align="start"
+            // Don't pull focus back to the trigger on close — lets a click into
+            // the editor keep focus there (so the next keypress goes to text,
+            // not re-opening the menu).
+            onCloseAutoFocus={
+              controlled ? e => e.preventDefault() : undefined
+            }
+          >
             {renderMenuItems(node.items)}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -197,10 +238,19 @@ export function HeaderMenuBar({
     items.length,
   );
 
+  // Shared open state so sibling menus behave like one menu bar (one open at a
+  // time + hover-to-switch). See MenuControl.
+  const [openMenuId, setOpenMenuId] = useState<string | null>(null);
+  const menuControl: MenuControl = { openId: openMenuId, setOpenId: setOpenMenuId };
+
   const visible = trimSeparators(items.slice(0, visibleCount));
   const overflow = items.slice(visibleCount);
   const hasOverflow = overflow.length > 0;
   const renderTop = (node: HeaderNode, index: number) =>
+    renderTopLevel(node, index, appearance, menuControl);
+  // Measurement copies must stay uncontrolled, or an open menu would also open
+  // a duplicate (invisible) portal from the hidden layer.
+  const renderMeasure = (node: HeaderNode, index: number) =>
     renderTopLevel(node, index, appearance);
 
   const moreButton = (
@@ -230,7 +280,7 @@ export function HeaderMenuBar({
           aria-hidden
           className="pointer-events-none invisible absolute left-0 top-0 flex w-max items-center gap-0.5 lg:gap-1"
         >
-          {items.map(renderTop)}
+          {items.map(renderMeasure)}
         </div>
         <div
           ref={moreRef}
