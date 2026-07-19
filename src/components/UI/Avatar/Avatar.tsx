@@ -1,24 +1,21 @@
 import * as React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cn } from '../../../lib';
-import { threeHundredSevenHundredBorderColors } from '../../../styles/colors/Border';
+import { neutralTwoHundredEightHundredBorderColors } from '../../../styles/colors/Border';
 import { AvatarProps } from './types';
-import { useTheme } from '../../../state';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../styles';
+import { neutralThreeHundredSixHundredFocusVisibleRingColors } from '../../../styles';
 
 const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Root>,
   AvatarProps
 >(({ className, ...props }, ref) => {
-  const { colorKey } = useTheme();
-
   return (
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(
         'relative flex size-7 shrink-0 cursor-pointer overflow-hidden rounded-full border',
-        threeHundredSevenHundredBorderColors[colorKey],
-        nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
+        neutralTwoHundredEightHundredBorderColors,
+        neutralThreeHundredSixHundredFocusVisibleRingColors,
         className,
       )}
       {...props}

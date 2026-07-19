@@ -43,156 +43,171 @@ export const evenNTrBgColors = 'even:bg-neutral-50 dark:even:bg-neutral-800';
 export const oddNTrBgColors = 'odd:bg-neutral-50 dark:odd:bg-neutral-800';
 
 export const whiteEightHundredBgColors: Color = {
-  red: 'bg-white dark:bg-red-800',
-  orange: 'bg-white dark:bg-orange-800',
-  yellow: 'bg-white dark:bg-yellow-800',
-  gray: 'bg-white dark:bg-gray-800',
-  green: 'bg-white dark:bg-green-800',
-  blue: 'bg-white dark:bg-blue-800',
-  indigo: 'bg-white dark:bg-indigo-800',
-  violet: 'bg-white dark:bg-violet-800',
-  purple: 'bg-white dark:bg-purple-800',
-  pink: 'bg-white dark:bg-pink-800',
+  red: 'bg-white dark:bg-(--accent-800)',
+  orange: 'bg-white dark:bg-(--accent-800)',
+  yellow: 'bg-white dark:bg-(--accent-800)',
+  gray: 'bg-white dark:bg-(--accent-800)',
+  green: 'bg-white dark:bg-(--accent-800)',
+  blue: 'bg-white dark:bg-(--accent-800)',
+  indigo: 'bg-white dark:bg-(--accent-800)',
+  violet: 'bg-white dark:bg-(--accent-800)',
+  purple: 'bg-white dark:bg-(--accent-800)',
+  pink: 'bg-white dark:bg-(--accent-800)',
 };
 
 export const twoHundredEightHundredBgColors: Color = {
-  red: 'bg-red-200 dark:bg-red-800',
-  orange: 'bg-orange-200 dark:bg-orange-800',
-  yellow: 'bg-yellow-200 dark:bg-yellow-800',
-  gray: 'bg-gray-200 dark:bg-gray-800',
-  green: 'bg-green-200 dark:bg-green-800',
-  blue: 'bg-blue-200 dark:bg-blue-800',
-  indigo: 'bg-indigo-200 dark:bg-indigo-800',
-  violet: 'bg-violet-200 dark:bg-violet-800',
-  purple: 'bg-purple-200 dark:bg-purple-800',
-  pink: 'bg-pink-200 dark:bg-pink-800',
+  red: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  orange: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  yellow: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  gray: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  green: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  blue: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  indigo: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  violet: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  purple: 'bg-(--accent-200) dark:bg-(--accent-800)',
+  pink: 'bg-(--accent-200) dark:bg-(--accent-800)',
 };
 
 export const dataStateActiveTwoHundredEightHundredBgColors: Color = {
-  red: 'data-[state=active]:bg-red-200 dark:data-[state=active]:bg-red-800',
+  red: 'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
   orange:
-    'data-[state=active]:bg-orange-200 dark:data-[state=active]:bg-orange-800',
+    'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
   yellow:
-    'data-[state=active]:bg-yellow-200 dark:data-[state=active]:bg-yellow-800',
-  gray: 'data-[state=active]:bg-gray-200 dark:data-[state=active]:bg-gray-800',
+    'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
+  gray: 'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
   green:
-    'data-[state=active]:bg-green-200 dark:data-[state=active]:bg-green-800',
-  blue: 'data-[state=active]:bg-blue-200 dark:data-[state=active]:bg-blue-800',
+    'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
+  blue: 'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
   indigo:
-    'data-[state=active]:bg-indigo-200 dark:data-[state=active]:bg-indigo-800',
+    'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
   violet:
-    'data-[state=active]:bg-violet-200 dark:data-[state=active]:bg-violet-800',
+    'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
   purple:
-    'data-[state=active]:bg-purple-200 dark:data-[state=active]:bg-purple-800',
-  pink: 'data-[state=active]:bg-pink-200 dark:data-[state=active]:bg-pink-800',
+    'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
+  pink: 'data-[state=active]:bg-(--accent-200) dark:data-[state=active]:bg-(--accent-800)',
 };
 
 export const oneHundredEightHundredBgChildrenColors: Color = {
-  red: '*:bg-red-100 dark:*:bg-red-800',
-  orange: '*:bg-orange-100 dark:*:bg-orange-800',
-  yellow: '*:bg-yellow-100 dark:*:bg-yellow-800',
-  gray: '*:bg-gray-100 dark:*:bg-gray-800',
-  green: '*:bg-green-100 dark:*:bg-green-800',
-  blue: '*:bg-blue-100 dark:*:bg-blue-800',
-  indigo: '*:bg-indigo-100 dark:*:bg-indigo-800',
-  violet: '*:bg-violet-100 dark:*:bg-violet-800',
-  purple: '*:bg-purple-100 dark:*:bg-purple-800',
-  pink: '*:bg-pink-100 dark:*:bg-pink-800',
+  red: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  orange: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  yellow: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  gray: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  green: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  blue: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  indigo: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  violet: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  purple: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
+  pink: '*:bg-(--accent-100) dark:*:bg-(--accent-800)',
 };
 
 export const oneHundredEightHundredBgColors: Color = {
-  red: 'bg-red-100 dark:bg-red-800',
-  orange: 'bg-orange-100 dark:bg-orange-800',
-  yellow: 'bg-yellow-100 dark:bg-yellow-800',
-  gray: 'bg-gray-100 dark:bg-gray-800',
-  green: 'bg-green-100 dark:bg-green-800',
-  blue: 'bg-blue-100 dark:bg-blue-800',
-  indigo: 'bg-indigo-100 dark:bg-indigo-800',
-  violet: 'bg-violet-100 dark:bg-violet-800',
-  purple: 'bg-purple-100 dark:bg-purple-800',
-  pink: 'bg-pink-100 dark:bg-pink-800',
+  red: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  orange: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  yellow: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  gray: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  green: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  blue: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  indigo: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  violet: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  purple: 'bg-(--accent-100) dark:bg-(--accent-800)',
+  pink: 'bg-(--accent-100) dark:bg-(--accent-800)',
 };
 
 export const twoHundredNineHundredBgColors: Color = {
-  red: 'bg-red-200 dark:bg-red-900',
-  orange: 'bg-orange-200 dark:bg-orange-900',
-  yellow: 'bg-yellow-200 dark:bg-yellow-900',
-  gray: 'bg-gray-200 dark:bg-gray-900',
-  green: 'bg-green-200 dark:bg-green-900',
-  blue: 'bg-blue-200 dark:bg-blue-900',
-  indigo: 'bg-indigo-200 dark:bg-indigo-900',
-  violet: 'bg-violet-200 dark:bg-violet-900',
-  purple: 'bg-purple-200 dark:bg-purple-900',
-  pink: 'bg-pink-200 dark:bg-pink-900',
+  red: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  orange: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  yellow: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  gray: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  green: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  blue: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  indigo: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  violet: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  purple: 'bg-(--accent-200) dark:bg-(--accent-900)',
+  pink: 'bg-(--accent-200) dark:bg-(--accent-900)',
 };
 
 export const eightHundredOneHundredBgColors: Color = {
-  red: 'bg-red-800 dark:bg-red-100',
-  orange: 'bg-orange-800 dark:bg-orange-100',
-  yellow: 'bg-yellow-800 dark:bg-yellow-100',
-  gray: 'bg-gray-800 dark:bg-gray-100',
-  green: 'bg-green-800 dark:bg-green-100',
-  blue: 'bg-blue-800 dark:bg-blue-100',
-  indigo: 'bg-indigo-800 dark:bg-indigo-100',
-  violet: 'bg-violet-800 dark:bg-violet-100',
-  purple: 'bg-purple-800 dark:bg-purple-100',
-  pink: 'bg-pink-800 dark:bg-pink-100',
+  red: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  orange: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  yellow: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  gray: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  green: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  blue: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  indigo: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  violet: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  purple: 'bg-(--accent-800) dark:bg-(--accent-100)',
+  pink: 'bg-(--accent-800) dark:bg-(--accent-100)',
 };
 
 export const nineFiftyTwoHundredBgColors: Color = {
-  red: 'bg-red-950 dark:bg-red-200',
-  orange: 'bg-orange-950 dark:bg-orange-200',
-  yellow: 'bg-yellow-950 dark:bg-yellow-200',
-  gray: 'bg-gray-950 dark:bg-gray-200',
-  green: 'bg-green-950 dark:bg-green-200',
-  blue: 'bg-blue-950 dark:bg-blue-200',
-  indigo: 'bg-indigo-950 dark:bg-indigo-200',
-  violet: 'bg-violet-950 dark:bg-violet-200',
-  purple: 'bg-purple-950 dark:bg-purple-200',
-  pink: 'bg-pink-950 dark:bg-pink-200',
+  red: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  orange: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  yellow: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  gray: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  green: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  blue: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  indigo: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  violet: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  purple: 'bg-(--accent-950) dark:bg-(--accent-200)',
+  pink: 'bg-(--accent-950) dark:bg-(--accent-200)',
 };
 
 export const dataStateCheckedNineHundredFiftyBgColors: Color = {
-  red: 'data-[state=checked]:bg-red-900 dark:data-[state=checked]:bg-red-50',
+  red: 'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
   orange:
-    'data-[state=checked]:bg-orange-900 dark:data-[state=checked]:bg-orange-50',
+    'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
   yellow:
-    'data-[state=checked]:bg-yellow-900 dark:data-[state=checked]:bg-yellow-50',
-  gray: 'data-[state=checked]:bg-gray-900 dark:data-[state=checked]:bg-gray-50',
+    'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
+  gray: 'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
   green:
-    'data-[state=checked]:bg-green-900 dark:data-[state=checked]:bg-green-50',
-  blue: 'data-[state=checked]:bg-blue-900 dark:data-[state=checked]:bg-blue-50',
+    'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
+  blue: 'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
   indigo:
-    'data-[state=checked]:bg-indigo-900 dark:data-[state=checked]:bg-indigo-50',
+    'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
   violet:
-    'data-[state=checked]:bg-violet-900 dark:data-[state=checked]:bg-violet-50',
+    'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
   purple:
-    'data-[state=checked]:bg-purple-900 dark:data-[state=checked]:bg-purple-50',
-  pink: 'data-[state=checked]:bg-pink-900 dark:data-[state=checked]:bg-pink-50',
+    'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
+  pink: 'data-[state=checked]:bg-(--accent-900) dark:data-[state=checked]:bg-(--accent-50)',
 };
 
 export const fiftyNineFiftyBgColors: Color = {
-  red: 'bg-red-50 dark:bg-red-950',
-  orange: 'bg-orange-50 dark:bg-orange-950',
-  yellow: 'bg-yellow-50 dark:bg-yellow-950',
-  gray: 'bg-gray-50 dark:bg-gray-950',
-  green: 'bg-green-50 dark:bg-green-950',
-  blue: 'bg-blue-50 dark:bg-blue-950',
-  indigo: 'bg-indigo-50 dark:bg-indigo-950',
-  violet: 'bg-violet-50 dark:bg-violet-950',
-  purple: 'bg-purple-50 dark:bg-purple-950',
-  pink: 'bg-pink-50 dark:bg-pink-950',
+  red: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  orange: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  yellow: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  gray: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  green: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  blue: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  indigo: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  violet: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  purple: 'bg-(--accent-50) dark:bg-(--accent-950)',
+  pink: 'bg-(--accent-50) dark:bg-(--accent-950)',
 };
 
 export const hoverTwoHundredEightHundredBgColors: Color = {
-  red: 'hover:bg-red-200 dark:hover:bg-red-800',
-  orange: 'hover:bg-orange-200 dark:hover:bg-orange-800',
-  yellow: 'hover:bg-yellow-200 dark:hover:bg-yellow-800',
-  gray: 'hover:bg-gray-200 dark:hover:bg-gray-800',
-  green: 'hover:bg-green-200 dark:hover:bg-green-800',
-  blue: 'hover:bg-blue-200 dark:hover:bg-blue-800',
-  indigo: 'hover:bg-indigo-200 dark:hover:bg-indigo-800',
-  violet: 'hover:bg-violet-200 dark:hover:bg-violet-800',
-  purple: 'hover:bg-purple-200 dark:hover:bg-purple-800',
-  pink: 'hover:bg-pink-200 dark:hover:bg-pink-800',
+  red: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  orange: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  yellow: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  gray: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  green: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  blue: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  indigo: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  violet: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  purple: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
+  pink: 'hover:bg-(--accent-200) dark:hover:bg-(--accent-800)',
 };
+
+/**
+ * Accent TINT surfaces — a low-opacity wash of the accent over whatever neutral
+ * sits beneath, via `color-mix`. This is the "Balanced" design language: chrome
+ * stays neutral and the accent only *tints* selected/hovered surfaces, so the UI
+ * stays cohesive for ANY user-picked hue (a solid accent fill on large areas
+ * looks garish for saturated hues — see the sidebar redesign). Colour-key
+ * agnostic (driven purely by the `--accent-*` vars), so exported as plain
+ * strings. Stronger in dark mode where a faint tint would otherwise vanish.
+ */
+export const accentSelectedBgColor =
+  'bg-[color-mix(in_oklab,var(--accent-500)_12%,transparent)] dark:bg-[color-mix(in_oklab,var(--accent-500)_22%,transparent)]';
+
+export const accentHoverBgColor =
+  'hover:bg-[color-mix(in_oklab,var(--accent-500)_7%,transparent)] dark:hover:bg-[color-mix(in_oklab,var(--accent-500)_14%,transparent)]';

@@ -3,8 +3,6 @@ import { type DialogProps } from '@radix-ui/react-dialog';
 import { Command as CommandPrimitive } from 'cmdk';
 import * as React from 'react';
 import { cn } from '../../../lib';
-import { useTheme } from '../../../state';
-import { fiveHundredFourHundredPlaceholderTextColors } from '../../../styles';
 import {
   surfaceBgColors,
   surfaceBorderBgColors,
@@ -49,7 +47,6 @@ const CommandInput = React.forwardRef<
       hasSeparator?: boolean;
     }
 >(({ className, icon, hasIcon = true, hasSeparator = true, ...props }, ref) => {
-  const { colorKey } = useTheme();
   const InputIcon = icon || MagnifyingGlass;
 
   return (
@@ -67,8 +64,7 @@ const CommandInput = React.forwardRef<
       <CommandPrimitive.Input
         ref={ref}
         className={cn(
-          'outline-hidden flex h-9 w-full rounded-lg border-0 bg-transparent px-2 py-1 text-base ring-0 focus-visible:border-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-          fiveHundredFourHundredPlaceholderTextColors[colorKey],
+          'outline-hidden flex h-9 w-full rounded-lg border-0 bg-transparent px-2 py-1 text-base ring-0 focus-visible:border-0 focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-400',
           className,
         )}
         {...props}

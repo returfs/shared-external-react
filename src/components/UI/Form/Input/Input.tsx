@@ -1,12 +1,9 @@
 import React, { forwardRef } from 'react';
 import { InputProps } from './types';
 import { cn } from '../../../../lib';
-import { threeHundredSevenHundredBorderColors } from '../../../../styles/colors/Border';
-import {
-  fiveHundredFourHundredPlaceholderTextColors,
-  nineFiftyFiftyFileTextColors,
-} from '../../../../styles';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
+import { neutralTwoHundredEightHundredBorderColors } from '../../../../styles/colors/Border';
+import { nineFiftyFiftyFileTextColors } from '../../../../styles';
+import { neutralThreeHundredSixHundredFocusVisibleRingColors as focusRing } from '../../../../styles/colors/Ring';
 import { useTheme } from '../../../../state';
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -23,10 +20,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               type="submit"
               className={cn(
                 'focus:shadow-outline focus:outline-hidden dark:bg-transparent',
-                threeHundredSevenHundredBorderColors[colorKey],
+                neutralTwoHundredEightHundredBorderColors,
                 nineFiftyFiftyFileTextColors[colorKey],
-                fiveHundredFourHundredPlaceholderTextColors[colorKey],
-                nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
+                'placeholder:text-neutral-500 dark:placeholder:text-neutral-400',
+                focusRing,
               )}
             >
               <InputIcon className="size-6 shrink-0" />
@@ -37,10 +34,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           type={type}
           className={cn(
             'shadow-xs focus-visible:outline-hidden flex h-9 w-full rounded-lg border bg-transparent px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
-            threeHundredSevenHundredBorderColors[colorKey],
+            neutralTwoHundredEightHundredBorderColors,
             nineFiftyFiftyFileTextColors[colorKey],
-            fiveHundredFourHundredPlaceholderTextColors[colorKey],
-            nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
+            'placeholder:text-neutral-500 dark:placeholder:text-neutral-400',
+            focusRing,
             icon && 'pl-9',
             className,
           )}

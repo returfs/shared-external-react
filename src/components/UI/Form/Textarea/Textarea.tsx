@@ -1,30 +1,21 @@
 import * as React from 'react';
 
 import { cn } from '../../../../lib/utils';
-import { useTheme } from '../../../../state';
-import {
-  fiveHundredFourHundredPlaceholderTextColors,
-  nineFiftyFiftyFileTextColors,
-  nineFiftyThreeHundredFocusVisibleRingColors,
-  threeHundredSevenHundredBorderColors,
-} from '../../../../styles';
+import { neutralTwoHundredEightHundredBorderColors } from '../../../../styles/colors/Border';
+import { neutralThreeHundredSixHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
 
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,
   React.ComponentProps<'textarea'> & { bottomPane?: React.ReactNode }
 >(({ className, bottomPane, ...props }, ref) => {
-  const { colorKey } = useTheme();
-
   return (
     <div className="relative flex flex-col">
       <textarea
         className={cn(
-          'shadow-xs focus-visible:outline-hidden flex min-h-[56px] w-full rounded-lg border bg-transparent px-3 py-2 text-base focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+          'shadow-xs focus-visible:outline-hidden flex min-h-[56px] w-full rounded-lg border bg-transparent px-3 py-2 text-base focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm placeholder:text-neutral-500 dark:placeholder:text-neutral-400',
           bottomPane && 'pb-8',
-          threeHundredSevenHundredBorderColors[colorKey],
-          nineFiftyFiftyFileTextColors[colorKey],
-          fiveHundredFourHundredPlaceholderTextColors[colorKey],
-          nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
+          neutralTwoHundredEightHundredBorderColors,
+          neutralThreeHundredSixHundredFocusVisibleRingColors,
           className,
         )}
         ref={ref}

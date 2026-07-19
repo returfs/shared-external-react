@@ -22,4 +22,29 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
   }
+
+  /*
+    Accent theme ramp. The accent colour maps (styles/colors/*) reference these
+    custom properties via `bg-(--accent-200) dark:bg-(--accent-800)` so a single
+    user-chosen colour re-tints the whole app (and every extension consuming the
+    shared components) without generating Tailwind classes at runtime. Defaults
+    below are the historic gray accent; the host overrides them from the user's
+    chosen hex at SSR (inline) and on the client (accentCssVars + setProperty).
+    The ramp is mode-independent: the `dark:` variant selects the darker step.
+  */
+  :root {
+    --accent-50: #f9fafb;
+    --accent-100: #f3f4f6;
+    --accent-200: #e5e7eb;
+    --accent-300: #d1d5db;
+    --accent-400: #9ca3af;
+    --accent-500: #6b7280;
+    --accent-600: #4b5563;
+    --accent-700: #374151;
+    --accent-800: #1f2937;
+    --accent-900: #111827;
+    --accent-950: #030712;
+    --accent-fg-light: #0a0a0a;
+    --accent-fg-dark: #fafafa;
+  }
 }

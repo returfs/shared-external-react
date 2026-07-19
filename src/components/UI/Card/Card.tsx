@@ -6,7 +6,6 @@ import { ComponentHasIsActive } from '../../types';
 
 import { ColorKey } from '../../../logic';
 import {
-  fiveHundredFourHundredTextColors,
   fiveHundredSixHundredRingColors,
   neutralNineHundredBgColors,
   surfaceBorderColors,
@@ -101,14 +100,11 @@ const CardDescription = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
-  const { colorKey } = useTheme();
-
   return (
     <div
       ref={ref}
       className={cn(
-        'text-sm',
-        fiveHundredFourHundredTextColors[colorKey],
+        'text-sm text-neutral-500 dark:text-neutral-400',
         className,
       )}
       {...props}

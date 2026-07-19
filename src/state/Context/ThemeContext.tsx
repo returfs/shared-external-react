@@ -3,8 +3,12 @@ import { ThemeContextProps, ThemeProviderProps } from './types';
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export const ThemeProvider = ({ children, colorKey }: ThemeProviderProps) => {
-  const value = useMemo(() => ({ colorKey }), [colorKey]);
+export const ThemeProvider = ({
+  children,
+  colorKey,
+  hex,
+}: ThemeProviderProps) => {
+  const value = useMemo(() => ({ colorKey, hex }), [colorKey, hex]);
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

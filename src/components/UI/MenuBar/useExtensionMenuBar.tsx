@@ -1,6 +1,7 @@
 import { ReactNode, useMemo, useState } from 'react';
 import { AboutDialog, AboutManifest } from './AboutDialog';
 import { HeaderMenuNode, HeaderNode } from './types';
+import { useViewMode } from '../../../state/viewMode';
 
 /** Standard menu slots returfs defines; the extension fills the items. */
 export interface ExtensionMenuBarMenus {
@@ -28,9 +29,10 @@ export interface UseExtensionMenuBarResult {
 /**
  * Builds the macOS-style menu-bar row for an extension and owns the About
  * dialog. returfs owns the **App menu** (labeled with the extension name, with a
- * standard "About" item); the extension supplies the **File/Edit/View** items
- * (and any custom top-level menus). Reuses the declarative `HeaderNode` model, so
- * the same `HeaderMenuBar` renders it with nesting + overflow + disabled support.
+ * standard "About" item) and the **Window menu** (Maximize / Full Screen); the
+ * extension supplies the **File/Edit/View** items (and any custom top-level
+ * menus). Reuses the declarative `HeaderNode` model, so the same `HeaderMenuBar`
+ * renders it with nesting + overflow + disabled support.
  */
 export function useExtensionMenuBar({
   manifest,
@@ -38,6 +40,7 @@ export function useExtensionMenuBar({
   appItems,
 }: UseExtensionMenuBarOptions): UseExtensionMenuBarResult {
   const [aboutOpen, setAboutOpen] = useState(false);
+  const vm = useViewMode();
 
   const menubar = useMemo<HeaderNode[]>(() => {
     const nodes: HeaderNode[] = [];
@@ -77,13 +80,38 @@ export function useExtensionMenuBar({
       }
     }
 
+    // Window menu (returfs-owned), placed after View. returfs owns the
+    // window/view controls (Maximize / Full Screen) here so every extension gets
+    // them for free — they write the shared view-mode store.
+    nodes.push({
+      type: 'menu',
+      id: 'window',
+      label: 'Window',
+      items: [
+        {
+          type: 'action',
+          id: 'window-maximize',
+          label: vm.isMaximized ? 'Exit Maximize' : 'Maximize',
+          active: vm.isMaximized,
+          onSelect: () => (vm.isMaximized ? vm.restore() : vm.maximize()),
+        },
+        {
+          type: 'action',
+          id: 'window-fullscreen',
+          label: vm.isFullscreen ? 'Exit Full Screen' : 'Full Screen',
+          active: vm.isFullscreen,
+          onSelect: () => (vm.isFullscreen ? vm.maximize() : vm.fullscreen()),
+        },
+      ],
+    });
+
     // Extra custom top-level menus.
     if (menus?.custom && menus.custom.length > 0) {
       nodes.push(...menus.custom);
     }
 
     return nodes;
-  }, [manifest.displayName, menus, appItems]);
+  }, [manifest.displayName, menus, appItems, vm.isMaximized, vm.isFullscreen]);
 
   const aboutDialog = (
     <AboutDialog

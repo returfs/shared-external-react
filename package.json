@@ -1,6 +1,6 @@
 {
   "name": "@returfs/shared-external-react",
-  "version": "0.3.25",
+  "version": "0.4.6",
   "description": "react shared logic for returfs external and internal marketplace",
   "scripts": {
     "build": "tsc && vite build && npm run build:css",
@@ -82,7 +82,9 @@
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",
     "date-fns": "^4.1.0",
+    "i18next": "^26.3.6",
     "react-day-picker": "^9.4.11",
+    "react-i18next": "^17.0.9",
     "react-resizable-panels": "^2.1.7",
     "sonner": "^1.7.0"
   }

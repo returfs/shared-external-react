@@ -2,9 +2,9 @@ import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../../lib';
 import { useTheme } from '../../../state';
-import { nineFiftyTwoHundredBorderColors } from '../../../styles/colors/Border';
-import { eightHundredOneHundredBgColors } from '../../../styles/colors/Background/Background';
-import { oneHundredEightHundredTextColors } from '../../../styles/colors/Text/Text';
+import { neutralTwoHundredEightHundredBorderColors } from '../../../styles/colors/Border';
+import { accentSelectedBgColor } from '../../../styles/colors/Background/Background';
+import { sixHundredFourHundredTextColors } from '../../../styles/colors/Text/Text';
 import { ColorKey } from '../../../logic/Data';
 
 const badgeVariants = (colorKey: ColorKey) =>
@@ -14,9 +14,10 @@ const badgeVariants = (colorKey: ColorKey) =>
       variants: {
         variant: {
           default: cn(
+            // Soft accent tint + accent text (not a solid accent slab).
             'border-transparent shadow-sm hover:opacity-80',
-            oneHundredEightHundredTextColors[colorKey],
-            eightHundredOneHundredBgColors[colorKey],
+            accentSelectedBgColor,
+            sixHundredFourHundredTextColors[colorKey],
           ),
           error:
             'shadow-xs border-red-500 bg-red-50 text-red-800 dark:border-red-900 dark:bg-red-900 dark:text-red-200',
@@ -25,7 +26,7 @@ const badgeVariants = (colorKey: ColorKey) =>
           warning:
             'shadow-xs border-yellow-500 bg-yellow-50 text-yellow-800 dark:border-yellow-900 dark:bg-yellow-900 dark:text-yellow-200',
           info: 'shadow-xs border-blue-500 bg-blue-50 text-blue-800 dark:border-blue-900 dark:bg-blue-900 dark:text-blue-200',
-          outline: cn(nineFiftyTwoHundredBorderColors[colorKey]),
+          outline: cn(neutralTwoHundredEightHundredBorderColors),
         },
       },
       defaultVariants: {

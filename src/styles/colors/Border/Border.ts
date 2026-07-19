@@ -13,80 +13,92 @@ export const neutralThreeHundredFiveHundredBorderColors =
 export const neutralFourHundredBorderColors = 'border-neutral-400';
 
 export const nineFiftyTwoHundredBorderColors: Color = {
-  red: 'border-red-950 dark:border-red-200',
-  orange: 'border-orange-950 dark:border-orange-200',
-  yellow: 'border-yellow-950 dark:border-yellow-200',
-  gray: 'border-gray-950 dark:border-gray-200',
-  green: 'border-green-950 dark:border-green-200',
-  blue: 'border-blue-950 dark:border-blue-200',
-  indigo: 'border-indigo-950 dark:border-indigo-200',
-  violet: 'border-violet-950 dark:border-violet-200',
-  purple: 'border-purple-950 dark:border-purple-200',
-  pink: 'border-pink-950 dark:border-pink-200',
+  red: 'border-(--accent-950) dark:border-(--accent-200)',
+  orange: 'border-(--accent-950) dark:border-(--accent-200)',
+  yellow: 'border-(--accent-950) dark:border-(--accent-200)',
+  gray: 'border-(--accent-950) dark:border-(--accent-200)',
+  green: 'border-(--accent-950) dark:border-(--accent-200)',
+  blue: 'border-(--accent-950) dark:border-(--accent-200)',
+  indigo: 'border-(--accent-950) dark:border-(--accent-200)',
+  violet: 'border-(--accent-950) dark:border-(--accent-200)',
+  purple: 'border-(--accent-950) dark:border-(--accent-200)',
+  pink: 'border-(--accent-950) dark:border-(--accent-200)',
 };
 
 export const twoHundredSevenHundredBorderColors: Color = {
-  red: 'border-red-200 dark:border-red-700',
-  orange: 'border-orange-200 dark:border-orange-700',
-  yellow: 'border-yellow-200 dark:border-yellow-700',
-  gray: 'border-gray-200 dark:border-gray-700',
-  green: 'border-green-200 dark:border-green-700',
-  blue: 'border-blue-200 dark:border-blue-700',
-  indigo: 'border-indigo-200 dark:border-indigo-700',
-  violet: 'border-violet-200 dark:border-violet-700',
-  purple: 'border-purple-200 dark:border-purple-700',
-  pink: 'border-pink-200 dark:border-pink-700',
+  red: 'border-(--accent-200) dark:border-(--accent-700)',
+  orange: 'border-(--accent-200) dark:border-(--accent-700)',
+  yellow: 'border-(--accent-200) dark:border-(--accent-700)',
+  gray: 'border-(--accent-200) dark:border-(--accent-700)',
+  green: 'border-(--accent-200) dark:border-(--accent-700)',
+  blue: 'border-(--accent-200) dark:border-(--accent-700)',
+  indigo: 'border-(--accent-200) dark:border-(--accent-700)',
+  violet: 'border-(--accent-200) dark:border-(--accent-700)',
+  purple: 'border-(--accent-200) dark:border-(--accent-700)',
+  pink: 'border-(--accent-200) dark:border-(--accent-700)',
 };
 
 export const twoHundredEightHundredBorderColors: Color = {
-  red: 'border-red-200 dark:border-red-800',
-  orange: 'border-orange-200 dark:border-orange-800',
-  yellow: 'border-yellow-200 dark:border-yellow-800',
-  gray: 'border-gray-200 dark:border-gray-800',
-  green: 'border-green-200 dark:border-green-800',
-  blue: 'border-blue-200 dark:border-blue-800',
-  indigo: 'border-indigo-200 dark:border-indigo-800',
-  violet: 'border-violet-200 dark:border-violet-800',
-  purple: 'border-purple-200 dark:border-purple-800',
-  pink: 'border-pink-200 dark:border-pink-800',
+  red: 'border-(--accent-200) dark:border-(--accent-800)',
+  orange: 'border-(--accent-200) dark:border-(--accent-800)',
+  yellow: 'border-(--accent-200) dark:border-(--accent-800)',
+  gray: 'border-(--accent-200) dark:border-(--accent-800)',
+  green: 'border-(--accent-200) dark:border-(--accent-800)',
+  blue: 'border-(--accent-200) dark:border-(--accent-800)',
+  indigo: 'border-(--accent-200) dark:border-(--accent-800)',
+  violet: 'border-(--accent-200) dark:border-(--accent-800)',
+  purple: 'border-(--accent-200) dark:border-(--accent-800)',
+  pink: 'border-(--accent-200) dark:border-(--accent-800)',
 };
 
 export const twoHundredOverSeventySevenHundredOverSeventyBorderColors: Color = {
-  red: 'border-red-200/70 dark:border-red-700/70',
-  orange: 'border-orange-200/70 dark:border-orange-700/70',
-  yellow: 'border-yellow-200/70 dark:border-yellow-700/70',
-  gray: 'border-gray-200/70 dark:border-gray-700/70',
-  green: 'border-green-200/70 dark:border-green-700/70',
-  blue: 'border-blue-200/70 dark:border-blue-700/70',
-  indigo: 'border-indigo-200/70 dark:border-indigo-700/70',
-  violet: 'border-violet-200/70 dark:border-violet-700/70',
-  purple: 'border-purple-200/70 dark:border-purple-700/70',
-  pink: 'border-pink-200/70 dark:border-pink-700/70',
+  red: 'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  orange:
+    'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  yellow:
+    'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  gray: 'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  green:
+    'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  blue: 'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  indigo:
+    'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  violet:
+    'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  purple:
+    'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+  pink: 'border-[color-mix(in_oklab,var(--accent-200)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
 };
 
 export const threeHundredOverSeventySevenHundredOverSeventyBorderColors: Color =
   {
-    red: 'border-red-300/70 dark:border-red-700/70',
-    orange: 'border-orange-300/70 dark:border-orange-700/70',
-    yellow: 'border-yellow-300/70 dark:border-yellow-700/70',
-    gray: 'border-gray-300/70 dark:border-gray-700/70',
-    green: 'border-green-300/70 dark:border-green-700/70',
-    blue: 'border-blue-300/70 dark:border-blue-700/70',
-    indigo: 'border-indigo-300/70 dark:border-indigo-700/70',
-    violet: 'border-violet-300/70 dark:border-violet-700/70',
-    purple: 'border-purple-300/70 dark:border-purple-700/70',
-    pink: 'border-pink-300/70 dark:border-pink-700/70',
+    red: 'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    orange:
+      'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    yellow:
+      'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    gray: 'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    green:
+      'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    blue: 'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    indigo:
+      'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    violet:
+      'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    purple:
+      'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
+    pink: 'border-[color-mix(in_oklab,var(--accent-300)_70%,transparent)] dark:border-[color-mix(in_oklab,var(--accent-700)_70%,transparent)]',
   };
 
 export const threeHundredSevenHundredBorderColors: Color = {
-  red: 'border-red-300 dark:border-red-700',
-  orange: 'border-orange-300 dark:border-orange-700',
-  yellow: 'border-yellow-300 dark:border-yellow-700',
-  gray: 'border-gray-300 dark:border-gray-700',
-  green: 'border-green-300 dark:border-green-700',
-  blue: 'border-blue-300 dark:border-blue-700',
-  indigo: 'border-indigo-300 dark:border-indigo-700',
-  violet: 'border-violet-300 dark:border-violet-700',
-  purple: 'border-purple-300 dark:border-purple-700',
-  pink: 'border-pink-300 dark:border-pink-700',
+  red: 'border-(--accent-300) dark:border-(--accent-700)',
+  orange: 'border-(--accent-300) dark:border-(--accent-700)',
+  yellow: 'border-(--accent-300) dark:border-(--accent-700)',
+  gray: 'border-(--accent-300) dark:border-(--accent-700)',
+  green: 'border-(--accent-300) dark:border-(--accent-700)',
+  blue: 'border-(--accent-300) dark:border-(--accent-700)',
+  indigo: 'border-(--accent-300) dark:border-(--accent-700)',
+  violet: 'border-(--accent-300) dark:border-(--accent-700)',
+  purple: 'border-(--accent-300) dark:border-(--accent-700)',
+  pink: 'border-(--accent-300) dark:border-(--accent-700)',
 };

@@ -7,12 +7,12 @@ import {
   neutralTwoHundredSevenHundredBgColors,
   nineFiftyTwoHundredTextColors,
 } from '../../../../styles';
-import { threeHundredSevenHundredBorderColors } from '../../../../styles/colors/Border';
+import { neutralTwoHundredEightHundredBorderColors } from '../../../../styles/colors/Border';
+import { neutralThreeHundredSixHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
 import {
   surfaceBgAndBorderColors,
   surfaceFocusBgColors,
 } from '../../../../styles/colors/Group';
-import { nineFiftyThreeHundredFocusVisibleRingColors } from '../../../../styles/colors/Ring';
 import { SelectItemProps, SelectProps } from './types';
 
 const Select = SelectPrimitive.Root;
@@ -25,15 +25,16 @@ const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   SelectProps
 >(({ className, children, ...props }, ref) => {
-  const { colorKey } = useTheme();
-
   return (
     <SelectPrimitive.Trigger
       ref={ref}
       className={cn(
-        'shadow-xs focus:outline-hidden flex h-9 w-full items-center justify-between whitespace-nowrap rounded-lg border bg-transparent px-3 py-2 text-sm focus:ring-1 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
-        threeHundredSevenHundredBorderColors[colorKey],
-        nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
+        // focus-VISIBLE (not focus): a plain mouse-focus after closing the
+        // dropdown must NOT paint a ring (that showed a stray white outline);
+        // only keyboard focus gets the subtle neutral ring.
+        'shadow-xs focus-visible:outline-hidden flex h-9 w-full items-center justify-between whitespace-nowrap rounded-lg border bg-transparent px-3 py-2 text-sm focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+        neutralTwoHundredEightHundredBorderColors,
+        neutralThreeHundredSixHundredFocusVisibleRingColors,
         className,
       )}
       {...props}

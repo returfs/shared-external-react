@@ -15,6 +15,7 @@ export * from './MenuBar';
 export * from './Portal';
 export * from './Popover';
 export * from './Progress';
+export * from './SearchField';
 export * from './Separation';
 export * from './Skeleton';
 export * from './Sonner';

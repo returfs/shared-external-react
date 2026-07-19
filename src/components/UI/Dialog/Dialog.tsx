@@ -42,7 +42,10 @@ const DialogContent = React.forwardRef<
   const { colorKey } = useTheme();
 
   return (
-    <>
+    // Portal to body (like AlertDialog): without it, a dialog opened from
+    // inside a stacking context (e.g. the fixed z-10 sidebar) gets trapped
+    // there and any z-indexed main content paints over it.
+    <DialogPortal>
       <DialogOverlay />
       <DialogPrimitive.Content
         ref={ref}
@@ -66,7 +69,7 @@ const DialogContent = React.forwardRef<
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>
       </DialogPrimitive.Content>
-    </>
+    </DialogPortal>
   );
 });
 DialogContent.displayName = DialogPrimitive.Content.displayName;

@@ -6,27 +6,33 @@ import { cn } from '../../../lib';
 import { ColorKey } from '../../../logic/Data';
 import { useTheme } from '../../../state';
 import {
+  neutralTwoHundredEightHundredBorderColors,
   nineFiftyThreeHundredFocusVisibleRingColors,
-  surfaceActiveBgColors,
+  sixHundredFourHundredTextColors,
   surfaceHoverBgColors,
-  threeHundredSevenHundredBorderColors,
 } from '../../../styles';
 import {
-  hoverTwoHundredEightHundredBgColors,
-  twoHundredEightHundredBgColors,
+  accentHoverBgColor,
+  accentSelectedBgColor,
 } from '../../../styles/colors/Background/Background';
 import { ButtonProps } from './types';
 
-const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
-  cva(
+const buttonVariants = (colorKey: ColorKey, isActive: boolean) => {
+  // Single, uniform "active" treatment for every interactive variant: the accent
+  // TINT + accent text (the Balanced language). Call sites should NEVER hand-roll
+  // accent bg classes — they pass `isActive` and the Button owns the look.
+  const active =
+    isActive && cn(accentSelectedBgColor, sixHundredFourHundredTextColors[colorKey]);
+
+  return cva(
     'focus-visible:outline-hidden inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:ring-1 focus-visible:ring-neutral-950 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-neutral-300 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
     {
       variants: {
         variant: {
           default: cn(
             'shadow-xs transform transition-colors duration-200 [&_svg]:size-5',
-            hoverTwoHundredEightHundredBgColors[colorKey],
-            isActive && twoHundredEightHundredBgColors[colorKey],
+            accentHoverBgColor,
+            active,
           ),
           error:
             'shadow-xs border border-red-200 bg-red-50 text-red-800 transition-colors duration-200 dark:border-red-700 dark:bg-red-900 dark:text-red-200 [&>svg]:text-red-800 dark:[&>svg]:text-red-200',
@@ -37,22 +43,24 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
           info: 'shadow-xs border border-blue-200 bg-blue-50 text-blue-800 transition-colors duration-200 dark:border-blue-700 dark:bg-blue-900 dark:text-blue-200 [&>svg]:text-blue-800 dark:[&>svg]:text-blue-200',
           outline: cn(
             'shadow-xs border transition-colors duration-200 hover:opacity-70',
-            threeHundredSevenHundredBorderColors[colorKey],
+            neutralTwoHundredEightHundredBorderColors,
             nineFiftyThreeHundredFocusVisibleRingColors[colorKey],
-            isActive && twoHundredEightHundredBgColors[colorKey],
+            active,
           ),
-          ghost:
+          ghost: cn(
             'shadow-xs transition-colors duration-200 hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50',
+            active,
+          ),
           link: 'cursor-pointer text-neutral-900 underline-offset-4 shadow-none transition-colors duration-200 hover:underline dark:text-neutral-50',
           menu: cn(
             'shadow-xs transform justify-start text-left transition-colors duration-200',
             surfaceHoverBgColors,
-            isActive && surfaceActiveBgColors,
+            active,
           ),
           tab: cn(
             'shadow-xs transform justify-start text-left transition-colors duration-200',
-            hoverTwoHundredEightHundredBgColors[colorKey],
-            isActive && twoHundredEightHundredBgColors[colorKey],
+            accentHoverBgColor,
+            active,
           ),
         },
         size: {
@@ -70,6 +78,7 @@ const buttonVariants = (colorKey: ColorKey, isActive: boolean) =>
       },
     },
   );
+};
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (

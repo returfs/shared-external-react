@@ -4,6 +4,7 @@ import { Surface } from '../../Grids';
 import { HeaderMenuBar } from '../MenuBar';
 import { EntranceHeaderProps } from './types';
 import { turfPx } from '../../../styles';
+import { useViewMode } from '../../../state/viewMode';
 
 /**
  * Extension header shell. Optionally two rows:
@@ -21,6 +22,12 @@ const EntranceHeader = forwardRef<HTMLDivElement, EntranceHeaderProps>(
     { fullname, title, menubar, menu, end, children },
     ref: Ref<HTMLDivElement>,
   ) => {
+    const { isFullscreen } = useViewMode();
+
+    // Full screen hides even the extension's own header — content only. The
+    // host renders a hover/Esc control to exit.
+    if (isFullscreen) return null;
+
     return (
       <Surface
         ref={ref}
